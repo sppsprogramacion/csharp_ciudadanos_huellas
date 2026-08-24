@@ -1,0 +1,6 @@
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\bin\Debug\CommonCache.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\bin\Debug\CommonCache.pdb
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.csproj.AssemblyReference.cache
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.csproj.CoreCompileInputs.cache
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.pdb

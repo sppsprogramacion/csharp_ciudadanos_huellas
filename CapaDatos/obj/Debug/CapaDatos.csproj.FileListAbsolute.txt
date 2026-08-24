@@ -1,0 +1,6 @@
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\bin\Debug\CapaDatos.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.pdb

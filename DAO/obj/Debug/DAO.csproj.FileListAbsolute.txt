@@ -1,0 +1,9 @@
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\bin\Debug\DAO.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\bin\Debug\DAO.pdb
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\bin\Debug\CapaDatos.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\bin\Debug\CapaDatos.pdb
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.pdb
