@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVerAnticipadas = new System.Windows.Forms.Button();
+            this.btnVerificarHuellas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCiudadanos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -149,11 +150,23 @@
             this.btnVerAnticipadas.UseVisualStyleBackColor = false;
             this.btnVerAnticipadas.Click += new System.EventHandler(this.btnVerAnticipadas_Click);
             // 
+            // btnVerificarHuellas
+            // 
+            this.btnVerificarHuellas.BackColor = System.Drawing.Color.White;
+            this.btnVerificarHuellas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerificarHuellas.Location = new System.Drawing.Point(351, 117);
+            this.btnVerificarHuellas.Name = "btnVerificarHuellas";
+            this.btnVerificarHuellas.Size = new System.Drawing.Size(146, 37);
+            this.btnVerificarHuellas.TabIndex = 46;
+            this.btnVerificarHuellas.Text = "Verificar huellas";
+            this.btnVerificarHuellas.UseVisualStyleBackColor = false;
+            // 
             // CiudadanoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 559);
+            this.Controls.Add(this.btnVerificarHuellas);
             this.Controls.Add(this.btnVerAnticipadas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
@@ -182,5 +195,6 @@
         public System.Windows.Forms.DataGridView dataListadoCiudadanos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVerAnticipadas;
+        private System.Windows.Forms.Button btnVerificarHuellas;
     }
 }

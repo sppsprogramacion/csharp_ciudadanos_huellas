@@ -118,6 +118,18 @@
     <Compile Include="FormExcepcionesIngreso.designer.cs">
       <DependentUpon>FormExcepcionesIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHuellaCiudadanoVerificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHuellaCiudadanoVerificar.Designer.cs">
+      <DependentUpon>FormHuellaCiudadanoVerificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHuellasCiudadanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHuellasCiudadanos.Designer.cs">
+      <DependentUpon>FormHuellasCiudadanos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProhibicionesAnticipadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +236,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormExcepcionesIngreso.resx">
       <DependentUpon>FormExcepcionesIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHuellaCiudadanoVerificar.resx">
+      <DependentUpon>FormHuellaCiudadanoVerificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHuellasCiudadanos.resx">
+      <DependentUpon>FormHuellasCiudadanos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProhibicionesAnticipadas.resx">
       <DependentUpon>FormProhibicionesAnticipadas.cs</DependentUpon>
@@ -344,6 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_spps2.ico" />
+    <None Include="Resources\manos_lila.png" />
     <None Include="Resources\logo_spps2.png" />
   </ItemGroup>
   <ItemGroup />
