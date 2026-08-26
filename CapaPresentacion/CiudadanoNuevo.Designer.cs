@@ -39,7 +39,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVerAnticipadas = new System.Windows.Forms.Button();
-            this.btnVerificarHuellas = new System.Windows.Forms.Button();
+            this.radbAdministrar = new System.Windows.Forms.RadioButton();
+            this.radbGestionarHuellas = new System.Windows.Forms.RadioButton();
+            this.radbVerificarNuevasHuellas = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCiudadanos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +72,7 @@
             // 
             // txtBuscarApellido
             // 
-            this.txtBuscarApellido.Location = new System.Drawing.Point(22, 41);
+            this.txtBuscarApellido.Location = new System.Drawing.Point(22, 34);
             this.txtBuscarApellido.Name = "txtBuscarApellido";
             this.txtBuscarApellido.Size = new System.Drawing.Size(246, 20);
             this.txtBuscarApellido.TabIndex = 0;
@@ -80,7 +82,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(520, 25);
+            this.btnBuscar.Location = new System.Drawing.Point(520, 18);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(46, 39);
             this.btnBuscar.TabIndex = 3;
@@ -90,7 +92,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(354, 25);
+            this.label1.Location = new System.Drawing.Point(354, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 40;
@@ -99,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 25);
+            this.label2.Location = new System.Drawing.Point(19, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 41;
@@ -107,7 +109,7 @@
             // 
             // txtBuscarDni
             // 
-            this.txtBuscarDni.Location = new System.Drawing.Point(357, 41);
+            this.txtBuscarDni.Location = new System.Drawing.Point(357, 34);
             this.txtBuscarDni.Name = "txtBuscarDni";
             this.txtBuscarDni.Size = new System.Drawing.Size(157, 20);
             this.txtBuscarDni.TabIndex = 2;
@@ -116,7 +118,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(274, 25);
+            this.button1.Location = new System.Drawing.Point(274, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 39);
             this.button1.TabIndex = 1;
@@ -125,15 +127,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radbVerificarNuevasHuellas);
+            this.groupBox1.Controls.Add(this.radbGestionarHuellas);
+            this.groupBox1.Controls.Add(this.radbAdministrar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtBuscarApellido);
             this.groupBox1.Controls.Add(this.txtBuscarDni);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 26);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(920, 85);
+            this.groupBox1.Size = new System.Drawing.Size(579, 99);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar ciudadano";
@@ -150,23 +155,48 @@
             this.btnVerAnticipadas.UseVisualStyleBackColor = false;
             this.btnVerAnticipadas.Click += new System.EventHandler(this.btnVerAnticipadas_Click);
             // 
-            // btnVerificarHuellas
+            // radbAdministrar
             // 
-            this.btnVerificarHuellas.BackColor = System.Drawing.Color.White;
-            this.btnVerificarHuellas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerificarHuellas.Location = new System.Drawing.Point(351, 117);
-            this.btnVerificarHuellas.Name = "btnVerificarHuellas";
-            this.btnVerificarHuellas.Size = new System.Drawing.Size(146, 37);
-            this.btnVerificarHuellas.TabIndex = 46;
-            this.btnVerificarHuellas.Text = "Verificar huellas";
-            this.btnVerificarHuellas.UseVisualStyleBackColor = false;
+            this.radbAdministrar.AutoSize = true;
+            this.radbAdministrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbAdministrar.Location = new System.Drawing.Point(22, 71);
+            this.radbAdministrar.Name = "radbAdministrar";
+            this.radbAdministrar.Size = new System.Drawing.Size(148, 19);
+            this.radbAdministrar.TabIndex = 42;
+            this.radbAdministrar.TabStop = true;
+            this.radbAdministrar.Text = "Administrar ciudadano";
+            this.radbAdministrar.UseVisualStyleBackColor = true;
+            // 
+            // radbGestionarHuellas
+            // 
+            this.radbGestionarHuellas.AutoSize = true;
+            this.radbGestionarHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbGestionarHuellas.Location = new System.Drawing.Point(192, 71);
+            this.radbGestionarHuellas.Name = "radbGestionarHuellas";
+            this.radbGestionarHuellas.Size = new System.Drawing.Size(121, 19);
+            this.radbGestionarHuellas.TabIndex = 43;
+            this.radbGestionarHuellas.TabStop = true;
+            this.radbGestionarHuellas.Text = "Gestionar huellas";
+            this.radbGestionarHuellas.UseVisualStyleBackColor = true;
+            // 
+            // radbVerificarNuevasHuellas
+            // 
+            this.radbVerificarNuevasHuellas.AutoSize = true;
+            this.radbVerificarNuevasHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbVerificarNuevasHuellas.Location = new System.Drawing.Point(342, 71);
+            this.radbVerificarNuevasHuellas.Name = "radbVerificarNuevasHuellas";
+            this.radbVerificarNuevasHuellas.Size = new System.Drawing.Size(154, 19);
+            this.radbVerificarNuevasHuellas.TabIndex = 44;
+            this.radbVerificarNuevasHuellas.TabStop = true;
+            this.radbVerificarNuevasHuellas.Text = "Verificar nuevas huellas";
+            this.radbVerificarNuevasHuellas.UseVisualStyleBackColor = true;
+            this.radbVerificarNuevasHuellas.CheckedChanged += new System.EventHandler(this.radbVerificarNuevasHuellas_CheckedChanged);
             // 
             // CiudadanoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 559);
-            this.Controls.Add(this.btnVerificarHuellas);
             this.Controls.Add(this.btnVerAnticipadas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
@@ -195,6 +225,8 @@
         public System.Windows.Forms.DataGridView dataListadoCiudadanos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVerAnticipadas;
-        private System.Windows.Forms.Button btnVerificarHuellas;
+        private System.Windows.Forms.RadioButton radbAdministrar;
+        private System.Windows.Forms.RadioButton radbVerificarNuevasHuellas;
+        private System.Windows.Forms.RadioButton radbGestionarHuellas;
     }
 }

@@ -112,3 +112,5 @@ D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\AtencionCiudadano.exe
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\AtencionCiudadano.pdb
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\CapaPresentacion.FormHuellaCiudadanoVerificar.resources
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\CapaPresentacion.FormHuellasCiudadanos.resources

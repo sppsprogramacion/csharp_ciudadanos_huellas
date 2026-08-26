@@ -35,6 +35,8 @@ namespace CapaPresentacion
         {
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
+
+            radbAdministrar.Checked = true;
         }
 
         public CiudadanoNuevo()
@@ -155,6 +157,14 @@ namespace CapaPresentacion
 
                 this.idCiudadanoGlobal = Convert.ToInt32(dataListadoCiudadanos.CurrentRow.Cells["id_ciudadano"].Value.ToString());
 
+                if (radbGestionarHuellas.Checked == true)
+                {
+                    FormHuellasCiudadanos formHuellas = new FormHuellasCiudadanos(this.idCiudadanoGlobal);
+                    formHuellas.ShowDialog();
+                    return;
+                }
+
+
                 if (dataListadoCiudadanos.SelectedRows.Count > 0)
                 {
                     if (this.idCiudadanoGlobal > 0)
@@ -167,6 +177,7 @@ namespace CapaPresentacion
                         MessageBox.Show("Debe seleccionar un ciudadano.");
                     }
                 }
+                
             }
         }
 
@@ -239,6 +250,19 @@ namespace CapaPresentacion
             FormProhibicionesAnticipadas formProhibicionesAnticipadas = new FormProhibicionesAnticipadas();
 
             formProhibicionesAnticipadas.ShowDialog();
+        }
+
+        private void radbVerificarNuevasHuellas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radbVerificarNuevasHuellas.Checked)
+            {
+                if (radbVerificarNuevasHuellas.Enabled == true)
+                {
+                    FormHuellasCiudadanos formHuellas = new FormHuellasCiudadanos(0);
+                    formHuellas.ShowDialog();
+                    return;
+                }
+            }
         }
     }
 }

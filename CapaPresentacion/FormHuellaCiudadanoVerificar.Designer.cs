@@ -42,6 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupVisita = new System.Windows.Forms.GroupBox();
+            this.txtFechaAlta = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.picFotoVisita = new System.Windows.Forms.PictureBox();
             this.dataCivil = new System.Windows.Forms.DataGridView();
             this.txtApellidoCivil = new System.Windows.Forms.TextBox();
@@ -50,10 +54,6 @@
             this.txtNombreCivil = new System.Windows.Forms.TextBox();
             this.txtDniCivil = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtFechaAlta = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoVisita)).BeginInit();
@@ -219,6 +219,50 @@
             this.groupVisita.TabStop = false;
             this.groupVisita.Text = "DATOS CIUDADANO";
             // 
+            // txtFechaAlta
+            // 
+            this.txtFechaAlta.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtFechaAlta.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaAlta.Location = new System.Drawing.Point(16, 495);
+            this.txtFechaAlta.Name = "txtFechaAlta";
+            this.txtFechaAlta.ReadOnly = true;
+            this.txtFechaAlta.Size = new System.Drawing.Size(267, 26);
+            this.txtFechaAlta.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 475);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 19);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "FECHA ALTA";
+            // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtFechaNacimiento.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(16, 442);
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.ReadOnly = true;
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(267, 26);
+            this.txtFechaNacimiento.TabIndex = 25;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 422);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 19);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "FECHA NACIMIENTO";
+            // 
             // picFotoVisita
             // 
             this.picFotoVisita.BackColor = System.Drawing.Color.Transparent;
@@ -303,50 +347,6 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "DNI:";
             // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtFechaNacimiento.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(16, 442);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.ReadOnly = true;
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(267, 26);
-            this.txtFechaNacimiento.TabIndex = 25;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 422);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 19);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "FECHA NACIMIENTO";
-            // 
-            // txtFechaAlta
-            // 
-            this.txtFechaAlta.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtFechaAlta.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaAlta.Location = new System.Drawing.Point(16, 495);
-            this.txtFechaAlta.Name = "txtFechaAlta";
-            this.txtFechaAlta.ReadOnly = true;
-            this.txtFechaAlta.Size = new System.Drawing.Size(267, 26);
-            this.txtFechaAlta.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 475);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 19);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "FECHA ALTA";
-            // 
             // FormHuellaCiudadanoVerificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +369,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormHuellaCiudadanoVerificar";
             this.Text = "VERIFICAR HUELLAS";
+            this.Load += new System.EventHandler(this.FormHuellaCiudadanoVerificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupVisita.ResumeLayout(false);
             this.groupVisita.PerformLayout();

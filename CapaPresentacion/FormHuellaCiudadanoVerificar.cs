@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void FormHuellaCiudadanoVerificar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
