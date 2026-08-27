@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AtencionCiudadano.exe.manifest" size="14542">
+    <dependentAssembly dependencyType="install" codebase="AtencionCiudadano.exe.manifest" size="19966">
       <assemblyIdentity name="AtencionCiudadano.exe" version="1.0.0.19" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sOF5aw+DZfSBJe3zY46bxycFiTTZwceu5el9a8mBG8g=</dsig:DigestValue>
+        <dsig:DigestValue>pSUl+CQiHEscJTeIIzjaTc/6b1smbJI93y6XeTdDWts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

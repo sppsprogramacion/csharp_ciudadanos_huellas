@@ -1,5 +1,7 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.Biometria;
+using CapaPresentacion.FuncionesGenerales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,24 +11,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Biometria;
 
 namespace CapaPresentacion
 {
     public partial class FormHuellasCiudadanos : Form
     {
+        private FingerprintCapture fingerprintCapture;
+
         private int idCiudadanoGlobal = 0;
+
+
         public FormHuellasCiudadanos(int idCiudadano)
         {
             InitializeComponent();
+            fingerprintCapture = new FingerprintCapture();
+
+            fingerprintCapture.FingerDetected += FingerprintCapture_FingerDetected;
+            fingerprintCapture.FingerRemoved += FingerprintCapture_FingerRemoved;
+            fingerprintCapture.CaptureError += FingerprintCapture_CaptureError;
 
             idCiudadanoGlobal = idCiudadano;
         }
 
         private async void FormHuellasCiudadanos_Load(object sender, EventArgs e)
         {
-            if(this.idCiudadanoGlobal == 0)
+
+            //// Ajustar el tamaño del formulario            
+            FormularioAyudas.AjustarFormulario(this);
+
+            if (this.idCiudadanoGlobal == 0)
             {
+                lblTitulo.Text = "Verificar huellas";
                 return;
+            }
+            else{
+                lblTitulo.Text = "Gestionar huellas del ciudadano";
             }
 
             NCiudadano nCiudadano = new NCiudadano();
@@ -47,6 +67,114 @@ namespace CapaPresentacion
             txtFechaAlta.Text = dCiudadano.fecha_alta.ToShortDateString();
             picFotoVisita.Load(dCiudadano.foto);
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            frmNuevo FNuevo = new frmNuevo();
+            FNuevo.ShowDialog();
+        }
+
+        private void btnVerificarHuellas_Click(object sender, EventArgs e)
+        {
+            lblTituloImagenHuellas.Text = "Verificar huellas";
+
+            btnVerificarHuellas.Enabled = false;
+            btnCancelarVerificar.Enabled = true;
+            gboxRegistrar.Enabled = false;
+
+            fingerprintCapture.Start();
+
+            lblEstado.Text = "Esperando huella...";
+        }
+
+        private void btnCancelarVerificar_Click(object sender, EventArgs e)
+        {
+            lblTituloImagenHuellas.Text = "_";
+
+            btnVerificarHuellas.Enabled = true;
+            btnCancelarVerificar.Enabled = false;
+            gboxRegistrar.Enabled = true;
+
+            fingerprintCapture.Stop();
+
+            lblEstado.Text = "Lector detenido";
+            lblDedo.Text = "Esperando...";
+        }
+
+        private void btnIniciarRegistro_Click(object sender, EventArgs e)
+        {
+            lblTituloImagenHuellas.Text = "Registrar una huella";
+
+            btnIniciarRegistro.Enabled = false;
+            btnGuardar.Enabled = true;
+            btnCancelarRegistrar.Enabled = true;
+            gboxVerificar.Enabled = false;
+        }
+
+        
+
+        private void btnCancelarRegistrar_Click(object sender, EventArgs e)
+        {
+            lblTituloImagenHuellas.Text = "_";
+
+            btnIniciarRegistro.Enabled = true;
+            btnGuardar.Enabled = false;
+            btnCancelarRegistrar.Enabled = false;
+            gboxVerificar.Enabled = true;
+        }
+
+        private void FingerprintCapture_FingerDetected(
+            object sender,
+            EventArgs e)
+        {
+            EjecutarEnUI(() =>
+            {
+                lblDedo.Text = "Dedo detectado";
+            });
+        }
+
+        private void FingerprintCapture_FingerRemoved(
+            object sender,
+            EventArgs e)
+        {
+            EjecutarEnUI(() =>
+            {
+                lblDedo.Text = "Dedo retirado";
+            });
+        }
+
+        private void FingerprintCapture_CaptureError(
+            object sender,
+            string e)
+        {
+            MessageBox.Show(
+                e,
+                "Error del lector",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            );
+        }
+
+        protected override void OnFormClosing(
+            FormClosingEventArgs e)
+        {
+            fingerprintCapture?.Dispose();
+
+            base.OnFormClosing(e);
+        }
+
+        private void EjecutarEnUI(Action accion)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(accion);
+                return;
+            }
+
+            accion();
         }
     }
 }

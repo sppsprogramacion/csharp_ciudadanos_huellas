@@ -114,3 +114,11 @@ D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\AtencionCiudadano.pdb
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\CapaPresentacion.FormHuellaCiudadanoVerificar.resources
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\obj\Debug\CapaPresentacion.FormHuellasCiudadanos.resources
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPDevNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPEngNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPGuiNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPShrNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPVerNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPCtlXWrapperNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPCtlXTypeLibNET.dll
+D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\CapaPresentacion\bin\Debug\DPFPShrXTypeLibNET.dll

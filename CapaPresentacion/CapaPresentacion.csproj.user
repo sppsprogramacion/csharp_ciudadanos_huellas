@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
-    <PublishUrlHistory>D:\Programar\C-Sharp\Proyectos\SPPS\01-Instaladores\AtencionCiudadano\AtencionCiudadano_20260210_1150\|D:\Programar\C-Sharp\Proyectos\SPPS\01-Instaladores\AtencionCiudadano\|D:\PROGRAMACION\PROGRAMACION_CSHARP\INSTALADOR_CIUDADANO_26SEPTIEMBRE25\</PublishUrlHistory>
+    <PublishUrlHistory>G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\03-instaladores\Ciudadanos\Ciudadanos-20260610\|D:\Programar\C-Sharp\Proyectos\SPPS\01-Instaladores\AtencionCiudadano\AtencionCiudadano_20260210_1150\|D:\Programar\C-Sharp\Proyectos\SPPS\01-Instaladores\AtencionCiudadano\|D:\PROGRAMACION\PROGRAMACION_CSHARP\INSTALADOR_CIUDADANO_26SEPTIEMBRE25\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />
