@@ -362,6 +362,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_spps2.ico" />
+    <None Include="Resources\huella_scaneo_8.png" />
+    <None Include="Resources\huella2.jpg" />
     <None Include="Resources\manos_lila.png" />
     <None Include="Resources\logo_spps2.png" />
   </ItemGroup>

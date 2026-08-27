@@ -42,6 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupVisita = new System.Windows.Forms.GroupBox();
+            this.txtSexo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIdCiudadano = new System.Windows.Forms.TextBox();
+            this.labelId = new System.Windows.Forms.Label();
             this.txtFechaAlta = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
@@ -54,10 +58,6 @@
             this.txtNombreCivil = new System.Windows.Forms.TextBox();
             this.txtDniCivil = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtIdCiudadano = new System.Windows.Forms.TextBox();
-            this.labelId = new System.Windows.Forms.Label();
-            this.txtSexo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.imgHuella = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -230,6 +230,50 @@
             this.groupVisita.TabStop = false;
             this.groupVisita.Text = "DATOS CIUDADANO";
             // 
+            // txtSexo
+            // 
+            this.txtSexo.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtSexo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSexo.Location = new System.Drawing.Point(15, 441);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.ReadOnly = true;
+            this.txtSexo.Size = new System.Drawing.Size(267, 26);
+            this.txtSexo.TabIndex = 31;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(11, 422);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 19);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Sexo";
+            // 
+            // txtIdCiudadano
+            // 
+            this.txtIdCiudadano.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtIdCiudadano.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdCiudadano.Location = new System.Drawing.Point(15, 249);
+            this.txtIdCiudadano.Name = "txtIdCiudadano";
+            this.txtIdCiudadano.ReadOnly = true;
+            this.txtIdCiudadano.Size = new System.Drawing.Size(267, 26);
+            this.txtIdCiudadano.TabIndex = 29;
+            // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.BackColor = System.Drawing.Color.Transparent;
+            this.labelId.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.White;
+            this.labelId.Location = new System.Drawing.Point(11, 230);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(107, 19);
+            this.labelId.TabIndex = 28;
+            this.labelId.Text = "Id Ciudadano";
+            // 
             // txtFechaAlta
             // 
             this.txtFechaAlta.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -359,55 +403,12 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "DNI";
             // 
-            // txtIdCiudadano
-            // 
-            this.txtIdCiudadano.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtIdCiudadano.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdCiudadano.Location = new System.Drawing.Point(15, 249);
-            this.txtIdCiudadano.Name = "txtIdCiudadano";
-            this.txtIdCiudadano.ReadOnly = true;
-            this.txtIdCiudadano.Size = new System.Drawing.Size(267, 26);
-            this.txtIdCiudadano.TabIndex = 29;
-            // 
-            // labelId
-            // 
-            this.labelId.AutoSize = true;
-            this.labelId.BackColor = System.Drawing.Color.Transparent;
-            this.labelId.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.ForeColor = System.Drawing.Color.White;
-            this.labelId.Location = new System.Drawing.Point(11, 230);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(107, 19);
-            this.labelId.TabIndex = 28;
-            this.labelId.Text = "Id Ciudadano";
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.txtSexo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSexo.Location = new System.Drawing.Point(15, 441);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.ReadOnly = true;
-            this.txtSexo.Size = new System.Drawing.Size(267, 26);
-            this.txtSexo.TabIndex = 31;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(11, 422);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 19);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Sexo";
-            // 
             // imgHuella
             // 
             this.imgHuella.BackColor = System.Drawing.Color.Transparent;
             this.imgHuella.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgHuella.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgHuella.Image = global::CapaPresentacion.Properties.Resources.huella_scaneo_8;
             this.imgHuella.Location = new System.Drawing.Point(342, 332);
             this.imgHuella.Name = "imgHuella";
             this.imgHuella.Size = new System.Drawing.Size(279, 253);
