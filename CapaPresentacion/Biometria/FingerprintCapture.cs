@@ -11,20 +11,28 @@ namespace CapaPresentacion.Biometria
 {
     public class FingerprintCapture : IDisposable
     {
+        // Objeto principal para controlar el lector.
         private DPFPCapture.Capture capturer;
+        // Maneja los eventos generados por el SDK.
         private DPFPCapture.EventHandler captureHandler;
 
+        // Se dispara cuando el lector detecta que se colocó un dedo.
         public event System.EventHandler FingerDetected;
+        // Se dispara cuando se retira el dedo del lector.
         public event System.EventHandler FingerRemoved;
+        // Se dispara cuando ocurre un error durante la captura.
         public event System.EventHandler<string> CaptureError;
+        // Se dispara cuando el lector obtiene una muestra de huella.
         public event System.EventHandler<SampleEventArgs> SampleCaptured;
 
+        // Inicializa el lector y prepara el manejador de eventos.
         public FingerprintCapture()
         {
             capturer = new DPFPCapture.Capture();
             captureHandler = new CaptureHandler(this);
         }
 
+        // Inicia la captura de huellas.
         public void Start()
         {
             if (capturer == null)
@@ -33,15 +41,19 @@ namespace CapaPresentacion.Biometria
 
             try
             {
+                // Asigna nuestro manejador de eventos al lector.
                 capturer.EventHandler = captureHandler;
+                // Comienza a esperar huellas.
                 capturer.StartCapture();
             }
             catch (Exception ex)
             {
+                // Informa al formulario que ocurrió un error.
                 CaptureError?.Invoke(this, ex.Message);
             }
         }
 
+        // Detiene la captura de huellas.
         public void Stop()
         {
             if (capturer != null)
@@ -57,6 +69,7 @@ namespace CapaPresentacion.Biometria
             }
         }
 
+        // Notifica que se colocó un dedo en el lector.
         private void FingerTouch(object Capture,string ReaderSerialNumber)
         {
             FingerDetected?.Invoke(
@@ -65,6 +78,7 @@ namespace CapaPresentacion.Biometria
             );
         }
 
+        // Notifica que se retiró el dedo del lector.
         private void FingerGone(object Capture,string ReaderSerialNumber)
         {
             FingerRemoved?.Invoke(
@@ -73,6 +87,7 @@ namespace CapaPresentacion.Biometria
             );
         }
 
+        // Libera los recursos utilizados por el lector.
         public void Dispose()
         {
             Stop();
@@ -84,6 +99,7 @@ namespace CapaPresentacion.Biometria
             }
         }
 
+        // Contiene la muestra de huella capturada.
         public class SampleEventArgs : EventArgs
         {
             public DPFP.Sample Sample { get; private set; }
@@ -94,6 +110,7 @@ namespace CapaPresentacion.Biometria
             }
         }
 
+        // Envía la muestra capturada a la aplicación.
         private void SampleComplete(DPFP.Sample sample)
         {
             SampleCaptured?.Invoke(
@@ -102,23 +119,26 @@ namespace CapaPresentacion.Biometria
             );
         }
 
+        // Clase que recibe los eventos directamente desde DigitalPersona.
         private class CaptureHandler : DPFPCapture.EventHandler
         {
+            // Referencia a la clase FingerprintCapture.
             private readonly FingerprintCapture owner;
 
+            // Guarda la referencia a la clase principal.
             public CaptureHandler(FingerprintCapture owner)
             {
                 this.owner = owner;
             }
 
+            // Se ejecuta cuando DigitalPersona obtiene una muestra.
             public void OnComplete(object Capture,string ReaderSerialNumber,DPFP.Sample Sample)
             {
                 owner.SampleComplete(Sample);
             }
 
-            public void OnFingerGone(
-                object Capture,
-                string ReaderSerialNumber)
+            // Se ejecuta cuando se retira el dedo.
+            public void OnFingerGone( object Capture,string ReaderSerialNumber)
             {
                 owner.FingerGone(
                     Capture,
@@ -126,9 +146,8 @@ namespace CapaPresentacion.Biometria
                 );
             }
 
-            public void OnFingerTouch(
-                object Capture,
-                string ReaderSerialNumber)
+            // Se ejecuta cuando se coloca el dedo.
+            public void OnFingerTouch(object Capture,string ReaderSerialNumber)
             {
                 owner.FingerTouch(
                     Capture,
@@ -136,25 +155,20 @@ namespace CapaPresentacion.Biometria
                 );
             }
 
-            public void OnReaderConnect(
-                object Capture,
-                string ReaderSerialNumber)
+            // Se ejecuta cuando se conecta el lector.
+            public void OnReaderConnect( object Capture,string ReaderSerialNumber)
             {
             }
 
-            public void OnReaderDisconnect(
-                object Capture,
-                string ReaderSerialNumber)
+            // Se ejecuta cuando se desconecta el lector.
+            public void OnReaderDisconnect(object Capture, string ReaderSerialNumber)
             {
             }
 
-            public void OnSampleQuality(
-                object Capture,
-                string ReaderSerialNumber,
-                DPFP.Capture.CaptureFeedback CaptureFeedback)
+            // Informa la calidad de la muestra capturada.
+            public void OnSampleQuality( object Capture, string ReaderSerialNumber, DPFP.Capture.CaptureFeedback CaptureFeedback)
             {
             }
-
 
         }
     }

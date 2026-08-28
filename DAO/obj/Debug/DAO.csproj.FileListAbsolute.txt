@@ -7,3 +7,12 @@ D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.csproj.
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.dll
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\DAO\obj\Debug\DAO.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\bin\Debug\DAO.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\bin\Debug\DAO.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\bin\Debug\CapaDatos.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\bin\Debug\CapaDatos.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\obj\Debug\DAO.csproj.CopyComplete
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\obj\Debug\DAO.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\DAO\obj\Debug\DAO.pdb

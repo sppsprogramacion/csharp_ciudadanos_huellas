@@ -4,3 +4,9 @@ D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\Com
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.csproj.CoreCompileInputs.cache
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.dll
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CommonCache\obj\Debug\CommonCache.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CommonCache\bin\Debug\CommonCache.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CommonCache\bin\Debug\CommonCache.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CommonCache\obj\Debug\CommonCache.csproj.AssemblyReference.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CommonCache\obj\Debug\CommonCache.csproj.CoreCompileInputs.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CommonCache\obj\Debug\CommonCache.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CommonCache\obj\Debug\CommonCache.pdb

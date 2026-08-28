@@ -10,3 +10,9 @@ D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\Conexion\obj\Debu
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\Conexion\obj\Debug\Conexion.csproj.CoreCompileInputs.cache
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\Conexion\obj\Debug\Conexion.dll
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos-Huellas\Conexion\obj\Debug\Conexion.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\Conexion\bin\Debug\Conexion.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\Conexion\bin\Debug\Conexion.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\Conexion\obj\Debug\Conexion.csproj.AssemblyReference.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\Conexion\obj\Debug\Conexion.csproj.CoreCompileInputs.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\Conexion\obj\Debug\Conexion.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\Conexion\obj\Debug\Conexion.pdb

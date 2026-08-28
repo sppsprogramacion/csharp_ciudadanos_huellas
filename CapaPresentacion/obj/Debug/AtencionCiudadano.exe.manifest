@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RDo23DXIq5K8iq9XpVcGAA9Jt6yESjkFv1YBHnrlrYU=</dsig:DigestValue>
+        <dsig:DigestValue>LHrSXj0Fz7PsA+jXC5K6703aEl5nCkrvfcag0UaLH3c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sE++YpScI1vud/TwehjejvuyfI9uVWAo6Ig6dOd56Ig=</dsig:DigestValue>
+        <dsig:DigestValue>+C7ueJM/E7Q8mWm0V5DMTlfgV9CQW+tzwszVQQy8/k8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D55Tein9tNSFVShgm73bG6FPYlLfuqrUy7zFNkURU5k=</dsig:DigestValue>
+        <dsig:DigestValue>Ye5KKcpcuLMrhOQEiooVnCab6VqORYqnbcvZnzLMc4w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4TjjOcYe74zPTO9J5VmyUVI73Y2MHrGXL8h/fiPGKEs=</dsig:DigestValue>
+        <dsig:DigestValue>qgeguDGUYkrM/kB1500DsisAOJHkTpX4s+fWLgLWcLc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -122,7 +122,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>npaXr4+P8MF/tdyCy1dIY9HakHMql9MNgui+0UOn1CI=</dsig:DigestValue>
+        <dsig:DigestValue>5GmvU/n+VH2ng2ctYt2AVVo0z7Qx5+5w5SMj7/oBzWI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Scd+7+Qk1p3N84wDcLcf/jvkcLIBAHVbUwuuKxBTP9k=</dsig:DigestValue>
+        <dsig:DigestValue>ZzCyQZUElxJ6glKEzjdFUn4nkmsr/V6oWmqnaknkcoY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -330,13 +330,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AtencionCiudadano.exe.config" size="539">
+  <file name="AtencionCiudadano.exe.config" size="526">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sXfsnSlMPtUrop0tJk9wyGxfMTs0HMXRcA1W8Cbjl5Y=</dsig:DigestValue>
+      <dsig:DigestValue>mEoZLwwLqGKcypZH/cAMGPFWbErz8qihoVbzKm0LdfM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo_spps2.ico" size="93574">
