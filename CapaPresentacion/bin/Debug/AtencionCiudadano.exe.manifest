@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AtencionCiudadano.exe" size="3002880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AtencionCiudadano.exe" size="3010560">
       <assemblyIdentity name="AtencionCiudadano" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LHrSXj0Fz7PsA+jXC5K6703aEl5nCkrvfcag0UaLH3c=</dsig:DigestValue>
+        <dsig:DigestValue>ES8Eyb8T3MuN30FXix2c5XboiwijagBGJJumpQOlJGU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+C7ueJM/E7Q8mWm0V5DMTlfgV9CQW+tzwszVQQy8/k8=</dsig:DigestValue>
+        <dsig:DigestValue>sE++YpScI1vud/TwehjejvuyfI9uVWAo6Ig6dOd56Ig=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZzCyQZUElxJ6glKEzjdFUn4nkmsr/V6oWmqnaknkcoY=</dsig:DigestValue>
+        <dsig:DigestValue>Scd+7+Qk1p3N84wDcLcf/jvkcLIBAHVbUwuuKxBTP9k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -330,13 +330,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AtencionCiudadano.exe.config" size="526">
+  <file name="AtencionCiudadano.exe.config" size="539">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mEoZLwwLqGKcypZH/cAMGPFWbErz8qihoVbzKm0LdfM=</dsig:DigestValue>
+      <dsig:DigestValue>sXfsnSlMPtUrop0tJk9wyGxfMTs0HMXRcA1W8Cbjl5Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo_spps2.ico" size="93574">

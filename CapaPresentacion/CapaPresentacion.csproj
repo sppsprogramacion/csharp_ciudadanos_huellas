@@ -132,6 +132,8 @@
     </Compile>
     <Compile Include="Biometria\FingerprintCapture.cs" />
     <Compile Include="Biometria\FingerprintProcessor.cs" />
+    <Compile Include="Biometria\FingerprintTemplate.cs" />
+    <Compile Include="Biometria\FingerprintVerifier.cs" />
     <Compile Include="CrearReporte.cs" />
     <Compile Include="CrearTicket.cs" />
     <Compile Include="FormExcepcionesIngreso.cs">
@@ -384,6 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_spps2.ico" />
+    <None Include="Resources\lista_novedades.jpg" />
     <None Include="Resources\huella_scaneo_8.png" />
     <None Include="Resources\huella2.jpg" />
     <None Include="Resources\manos_lila.png" />

@@ -11,14 +11,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaPresentacion.Biometria;
 
 namespace CapaPresentacion
 {
     public partial class FormHuellasCiudadanos : Form
     {
+        //para huellas
         private FingerprintCapture fingerprintCapture;
+        private FingerprintProcessor fingerprintProcessor;
+        private FingerprintTemplate fingerprintTemplate;
+        private FingerprintVerifier fingerprintVerifier;
+        private DPFP.Template templateRegistrado;
+        private bool modoVerificacion = false;
 
+        //variabloes generales
         private int idCiudadanoGlobal = 0;
 
 
@@ -26,10 +32,15 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             fingerprintCapture = new FingerprintCapture();
+            fingerprintProcessor = new FingerprintProcessor();
+            fingerprintTemplate = new FingerprintTemplate();
+            fingerprintVerifier = new FingerprintVerifier();
 
             fingerprintCapture.FingerDetected += FingerprintCapture_FingerDetected;
             fingerprintCapture.FingerRemoved += FingerprintCapture_FingerRemoved;
             fingerprintCapture.CaptureError += FingerprintCapture_CaptureError;
+            fingerprintCapture.SampleCaptured += FingerprintCapture_SampleCaptured;
+
 
             idCiudadanoGlobal = idCiudadano;
         }
@@ -81,9 +92,9 @@ namespace CapaPresentacion
         {
             lblTituloImagenHuellas.Text = "Verificar huellas";
 
-            btnVerificarHuellas.Enabled = false;
-            btnCancelarVerificar.Enabled = true;
-            gboxRegistrar.Enabled = false;
+            //btnVerificarHuellas.Enabled = false;
+            //btnCancelarVerificar.Enabled = true;
+            //gboxRegistrar.Enabled = false;
 
             fingerprintCapture.Start();
 
@@ -94,9 +105,9 @@ namespace CapaPresentacion
         {
             lblTituloImagenHuellas.Text = "_";
 
-            btnVerificarHuellas.Enabled = true;
-            btnCancelarVerificar.Enabled = false;
-            gboxRegistrar.Enabled = true;
+            //btnVerificarHuellas.Enabled = true;
+            //btnCancelarVerificar.Enabled = false;
+            //gboxRegistrar.Enabled = true;
 
             fingerprintCapture.Stop();
 
@@ -108,10 +119,10 @@ namespace CapaPresentacion
         {
             lblTituloImagenHuellas.Text = "Registrar una huella";
 
-            btnIniciarRegistro.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnCancelarRegistrar.Enabled = true;
-            gboxVerificar.Enabled = false;
+            //btnIniciarRegistro.Enabled = false;
+            //btnGuardar.Enabled = true;
+            //btnCancelarRegistrar.Enabled = true;
+            //gboxVerificar.Enabled = false;
         }
 
         
@@ -120,12 +131,14 @@ namespace CapaPresentacion
         {
             lblTituloImagenHuellas.Text = "_";
 
-            btnIniciarRegistro.Enabled = true;
-            btnGuardar.Enabled = false;
-            btnCancelarRegistrar.Enabled = false;
-            gboxVerificar.Enabled = true;
+            //btnIniciarRegistro.Enabled = true;
+            //btnGuardar.Enabled = false;
+            //btnCancelarRegistrar.Enabled = false;
+            //gboxVerificar.Enabled = true;
         }
 
+
+        //METODOS PARA HUELLAS
         private void FingerprintCapture_FingerDetected(
             object sender,
             EventArgs e)
@@ -146,9 +159,7 @@ namespace CapaPresentacion
             });
         }
 
-        private void FingerprintCapture_CaptureError(
-            object sender,
-            string e)
+        private void FingerprintCapture_CaptureError(object sender, string e)
         {
             MessageBox.Show(
                 e,
@@ -157,6 +168,202 @@ namespace CapaPresentacion
                 MessageBoxIcon.Error
             );
         }
+
+        //private void FingerprintCapture_SampleCaptured(object sender, FingerprintCapture.SampleEventArgs e)
+        //{
+        //    try
+        //    {
+        //        DPFP.FeatureSet featureSet;
+
+        //        bool resultado = fingerprintProcessor.ExtractFeatures( e.Sample, out featureSet);
+
+        //        if (!resultado)
+        //        {
+        //            EjecutarEnUI(() =>
+        //            {
+        //                lblEstado.Text =
+        //                    "La calidad de la huella no es suficiente.";
+        //            });
+
+        //            return;
+        //        }
+
+
+        //        // Agrega la muestra al proceso de Enrollment.
+        //        bool agregada = fingerprintTemplate.AddFeatures(featureSet);
+
+        //        uint faltantes =
+        //            fingerprintTemplate.FeaturesNeeded;
+
+        //        EjecutarEnUI(() =>
+        //        {
+        //            if (fingerprintTemplate.IsComplete)
+        //            {
+        //                // Obtiene el Template convertido a bytes.
+        //                //byte[] templateBytes =
+        //                //    fingerprintTemplate.GetTemplateBytes();
+
+        //                //lblEstado.Text =
+        //                //    "Template generado correctamente. " +
+        //                //    "Tamaño: " +
+        //                //    templateBytes.Length +
+        //                //    " bytes";
+
+        //                // Obtiene el Template como bytes.
+        //                byte[] templateBytes =
+        //                    fingerprintTemplate.GetTemplateBytes();
+
+        //                // Reconstruye el Template desde los bytes.
+        //                DPFP.Template templateReconstruido =
+        //                    fingerprintTemplate.LoadTemplate(templateBytes);
+
+        //                if (templateReconstruido != null)
+        //                {
+        //                    lblEstado.Text =
+        //                        "Template generado y reconstruido correctamente. " +
+        //                        "Tamaño: " +
+        //                        templateBytes.Length +
+        //                        " bytes";
+        //                }
+        //                else
+        //                {
+        //                    lblEstado.Text =
+        //                        "No se pudo reconstruir el Template.";
+        //                }
+        //            }
+        //            else if (agregada)
+        //            {
+        //                lblEstado.Text =
+        //                    "Captura correcta. Faltan " +
+        //                    faltantes +
+        //                    " muestras.";
+        //            }
+        //            else
+        //            {
+        //                lblEstado.Text =
+        //                    "La muestra no fue aceptada. " +
+        //                    "Coloque nuevamente el dedo.";
+        //            }
+        //        });
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        EjecutarEnUI(() =>
+        //        {
+        //            lblEstado.Text = "Error: " + ex.Message;
+        //        });
+        //    }
+        //}
+
+        private void FingerprintCapture_SampleCaptured(
+    object sender,
+    FingerprintCapture.SampleEventArgs e)
+        {
+            try
+            {
+                DPFP.FeatureSet featureSet;
+
+                bool resultado =
+                    fingerprintProcessor.ExtractFeatures(
+                        e.Sample,
+                        out featureSet
+                    );
+
+                if (!resultado)
+                {
+                    EjecutarEnUI(() =>
+                    {
+                        lblEstado.Text =
+                            "La calidad de la huella no es suficiente.";
+                    });
+
+                    return;
+                }
+
+
+                // -----------------------------------------
+                // MODO VERIFICACIÓN
+                // -----------------------------------------
+
+                if (modoVerificacion)
+                {
+                    bool coincide =
+                        fingerprintVerifier.Verify(
+                            featureSet,
+                            templateRegistrado
+                        );
+
+                    EjecutarEnUI(() =>
+                    {
+                        if (coincide)
+                        {
+                            lblEstado.Text =
+                                "HUELLA COINCIDE";
+                        }
+                        else
+                        {
+                            lblEstado.Text =
+                                "HUELLA NO COINCIDE";
+                        }
+                    });
+
+                    return;
+                }
+
+
+                // -----------------------------------------
+                // MODO REGISTRO
+                // -----------------------------------------
+
+                bool agregada =
+                    fingerprintTemplate.AddFeatures(featureSet);
+
+                uint faltantes =
+                    fingerprintTemplate.FeaturesNeeded;
+
+
+                EjecutarEnUI(() =>
+                {
+                    if (fingerprintTemplate.IsComplete)
+                    {
+                        templateRegistrado =
+                            fingerprintTemplate.GetTemplate();
+
+                        byte[] templateBytes =
+                            fingerprintTemplate.GetTemplateBytes();
+
+                        lblEstado.Text =
+                            "Template generado correctamente. " +
+                            "Tamaño: " +
+                            templateBytes.Length +
+                            " bytes";
+                    }
+                    else if (agregada)
+                    {
+                        lblEstado.Text =
+                            "Captura correcta. Faltan " +
+                            faltantes +
+                            " muestras.";
+                    }
+                    else
+                    {
+                        lblEstado.Text =
+                            "La muestra no fue aceptada. " +
+                            "Coloque nuevamente el dedo.";
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                EjecutarEnUI(() =>
+                {
+                    lblEstado.Text =
+                        "Error: " + ex.Message;
+                });
+            }
+        }
+
 
         protected override void OnFormClosing(
             FormClosingEventArgs e)
@@ -175,6 +382,35 @@ namespace CapaPresentacion
             }
 
             accion();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            modoVerificacion = false;
+
+            fingerprintTemplate =
+                new FingerprintTemplate();
+
+            templateRegistrado = null;
+
+            lblEstado.Text =
+                "Coloque el dedo para registrarlo.";
+        }
+
+        private void btnVerificar2_Click(object sender, EventArgs e)
+        {
+            if (templateRegistrado == null)
+            {
+                lblEstado.Text =
+                    "Primero debe registrar una huella.";
+
+                return;
+            }
+
+            modoVerificacion = true;
+
+            lblEstado.Text =
+                "Coloque el dedo para verificar.";
         }
     }
 }

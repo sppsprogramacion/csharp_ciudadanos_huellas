@@ -143,6 +143,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lista_novedades {
+            get {
+                object obj = ResourceManager.GetObject("lista_novedades", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_spps2 {
             get {
                 object obj = ResourceManager.GetObject("logo_spps2", resourceCulture);
@@ -192,7 +202,7 @@ namespace CapaPresentacion.Properties {
         ///      
         ///&lt;table&gt;
         ///    &lt;caption class=&quot;title&quot;&gt;&lt;strong &gt;SERVICIO PENITENCIARIO DE LA PROVINCIA DE SALTA&lt;/strong&gt;&lt;/caption&gt;
-        ///    &lt;caption class=&quot;title&quot;&gt;&lt;strong &gt;Declaración [resto de la cadena truncado]&quot;;.
+        ///    &lt;caption class=&quot;title&quot; [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {
