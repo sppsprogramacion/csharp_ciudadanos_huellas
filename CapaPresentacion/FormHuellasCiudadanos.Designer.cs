@@ -62,31 +62,34 @@
             this.label9 = new System.Windows.Forms.Label();
             this.imgHuella = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnVerificarHuellas = new System.Windows.Forms.Button();
             this.btnIniciarRegistro = new System.Windows.Forms.Button();
             this.gboxRegistrar = new System.Windows.Forms.GroupBox();
             this.btnCancelarRegistrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.gboxVerificar = new System.Windows.Forms.GroupBox();
+            this.gboxIdentificar = new System.Windows.Forms.GroupBox();
+            this.btnIdentificarHuellas = new System.Windows.Forms.Button();
             this.btnCancelarVerificar = new System.Windows.Forms.Button();
             this.lblTituloImagenHuellas = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblDedo = new System.Windows.Forms.Label();
             this.btnVerificar2 = new System.Windows.Forms.Button();
+            this.gboxVerificarHuella = new System.Windows.Forms.GroupBox();
+            this.btnCancelarIdentificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoVisita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataCivil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgHuella)).BeginInit();
             this.gboxRegistrar.SuspendLayout();
-            this.gboxVerificar.SuspendLayout();
+            this.gboxIdentificar.SuspendLayout();
+            this.gboxVerificarHuella.SuspendLayout();
             this.SuspendLayout();
             // 
             // opMED
             // 
             this.opMED.AutoSize = true;
             this.opMED.BackColor = System.Drawing.Color.Black;
-            this.opMED.Location = new System.Drawing.Point(342, 121);
+            this.opMED.Location = new System.Drawing.Point(342, 118);
             this.opMED.Name = "opMED";
             this.opMED.Size = new System.Drawing.Size(15, 14);
             this.opMED.TabIndex = 93;
@@ -96,7 +99,7 @@
             // 
             this.opAD.AutoSize = true;
             this.opAD.BackColor = System.Drawing.Color.Black;
-            this.opAD.Location = new System.Drawing.Point(386, 71);
+            this.opAD.Location = new System.Drawing.Point(386, 68);
             this.opAD.Name = "opAD";
             this.opAD.Size = new System.Drawing.Size(15, 14);
             this.opAD.TabIndex = 92;
@@ -106,7 +109,7 @@
             // 
             this.opMAD.AutoSize = true;
             this.opMAD.BackColor = System.Drawing.Color.Black;
-            this.opMAD.Location = new System.Drawing.Point(441, 54);
+            this.opMAD.Location = new System.Drawing.Point(441, 51);
             this.opMAD.Name = "opMAD";
             this.opMAD.Size = new System.Drawing.Size(15, 14);
             this.opMAD.TabIndex = 91;
@@ -116,7 +119,7 @@
             // 
             this.opID.AutoSize = true;
             this.opID.BackColor = System.Drawing.Color.Black;
-            this.opID.Location = new System.Drawing.Point(493, 52);
+            this.opID.Location = new System.Drawing.Point(493, 49);
             this.opID.Name = "opID";
             this.opID.Size = new System.Drawing.Size(15, 14);
             this.opID.TabIndex = 90;
@@ -126,7 +129,7 @@
             // 
             this.opPD.AutoSize = true;
             this.opPD.BackColor = System.Drawing.Color.Black;
-            this.opPD.Location = new System.Drawing.Point(575, 170);
+            this.opPD.Location = new System.Drawing.Point(575, 167);
             this.opPD.Name = "opPD";
             this.opPD.Size = new System.Drawing.Size(15, 14);
             this.opPD.TabIndex = 89;
@@ -136,7 +139,7 @@
             // 
             this.opPI.AutoSize = true;
             this.opPI.BackColor = System.Drawing.Color.Black;
-            this.opPI.Location = new System.Drawing.Point(621, 171);
+            this.opPI.Location = new System.Drawing.Point(621, 166);
             this.opPI.Name = "opPI";
             this.opPI.Size = new System.Drawing.Size(15, 14);
             this.opPI.TabIndex = 88;
@@ -146,7 +149,7 @@
             // 
             this.opII.AutoSize = true;
             this.opII.BackColor = System.Drawing.Color.Black;
-            this.opII.Location = new System.Drawing.Point(709, 45);
+            this.opII.Location = new System.Drawing.Point(709, 42);
             this.opII.Name = "opII";
             this.opII.Size = new System.Drawing.Size(15, 14);
             this.opII.TabIndex = 87;
@@ -156,7 +159,7 @@
             // 
             this.opMAI.AutoSize = true;
             this.opMAI.BackColor = System.Drawing.Color.Black;
-            this.opMAI.Location = new System.Drawing.Point(763, 45);
+            this.opMAI.Location = new System.Drawing.Point(763, 42);
             this.opMAI.Name = "opMAI";
             this.opMAI.Size = new System.Drawing.Size(15, 14);
             this.opMAI.TabIndex = 86;
@@ -166,7 +169,7 @@
             // 
             this.opAI.AutoSize = true;
             this.opAI.BackColor = System.Drawing.Color.Black;
-            this.opAI.Location = new System.Drawing.Point(819, 63);
+            this.opAI.Location = new System.Drawing.Point(819, 60);
             this.opAI.Name = "opAI";
             this.opAI.Size = new System.Drawing.Size(15, 14);
             this.opAI.TabIndex = 85;
@@ -177,7 +180,7 @@
             this.opMEI.AutoSize = true;
             this.opMEI.BackColor = System.Drawing.Color.Black;
             this.opMEI.ForeColor = System.Drawing.Color.Black;
-            this.opMEI.Location = new System.Drawing.Point(863, 114);
+            this.opMEI.Location = new System.Drawing.Point(863, 111);
             this.opMEI.Name = "opMEI";
             this.opMEI.Size = new System.Drawing.Size(15, 14);
             this.opMEI.TabIndex = 84;
@@ -189,7 +192,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(370, 233);
+            this.label2.Location = new System.Drawing.Point(370, 225);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(193, 26);
             this.label2.TabIndex = 83;
@@ -201,7 +204,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(656, 233);
+            this.label1.Location = new System.Drawing.Point(656, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 26);
             this.label1.TabIndex = 82;
@@ -212,14 +215,14 @@
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.manos_lila;
             this.pictureBox1.Location = new System.Drawing.Point(342, 40);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(537, 261);
+            this.pictureBox1.Size = new System.Drawing.Size(536, 247);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 80;
             this.pictureBox1.TabStop = false;
             // 
             // groupVisita
             // 
-            this.groupVisita.BackColor = System.Drawing.Color.SlateGray;
+            this.groupVisita.BackColor = System.Drawing.Color.SteelBlue;
             this.groupVisita.Controls.Add(this.btnNuevo);
             this.groupVisita.Controls.Add(this.txtSexo);
             this.groupVisita.Controls.Add(this.label5);
@@ -458,25 +461,12 @@
             this.lblTitulo.TabIndex = 110;
             this.lblTitulo.Text = "TITULO";
             // 
-            // btnVerificarHuellas
-            // 
-            this.btnVerificarHuellas.BackColor = System.Drawing.Color.White;
-            this.btnVerificarHuellas.ForeColor = System.Drawing.Color.Black;
-            this.btnVerificarHuellas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerificarHuellas.Location = new System.Drawing.Point(10, 19);
-            this.btnVerificarHuellas.Name = "btnVerificarHuellas";
-            this.btnVerificarHuellas.Size = new System.Drawing.Size(146, 37);
-            this.btnVerificarHuellas.TabIndex = 111;
-            this.btnVerificarHuellas.Text = "Verificar huellas";
-            this.btnVerificarHuellas.UseVisualStyleBackColor = false;
-            this.btnVerificarHuellas.Click += new System.EventHandler(this.btnVerificarHuellas_Click);
-            // 
             // btnIniciarRegistro
             // 
             this.btnIniciarRegistro.BackColor = System.Drawing.Color.White;
             this.btnIniciarRegistro.ForeColor = System.Drawing.Color.Black;
             this.btnIniciarRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIniciarRegistro.Location = new System.Drawing.Point(11, 25);
+            this.btnIniciarRegistro.Location = new System.Drawing.Point(11, 17);
             this.btnIniciarRegistro.Name = "btnIniciarRegistro";
             this.btnIniciarRegistro.Size = new System.Drawing.Size(146, 37);
             this.btnIniciarRegistro.TabIndex = 112;
@@ -492,20 +482,21 @@
             this.gboxRegistrar.Controls.Add(this.btnIniciarRegistro);
             this.gboxRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxRegistrar.ForeColor = System.Drawing.Color.White;
-            this.gboxRegistrar.Location = new System.Drawing.Point(661, 427);
+            this.gboxRegistrar.Location = new System.Drawing.Point(661, 398);
             this.gboxRegistrar.Name = "gboxRegistrar";
-            this.gboxRegistrar.Size = new System.Drawing.Size(199, 176);
+            this.gboxRegistrar.Size = new System.Drawing.Size(199, 147);
             this.gboxRegistrar.TabIndex = 109;
             this.gboxRegistrar.TabStop = false;
-            this.gboxRegistrar.Text = "REGISTRAR HUELLA";
+            this.gboxRegistrar.Text = "ENROLAR HUELLA";
             // 
             // btnCancelarRegistrar
             // 
             this.btnCancelarRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnCancelarRegistrar.Enabled = false;
             this.btnCancelarRegistrar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelarRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarRegistrar.Image")));
             this.btnCancelarRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarRegistrar.Location = new System.Drawing.Point(11, 123);
+            this.btnCancelarRegistrar.Location = new System.Drawing.Point(11, 102);
             this.btnCancelarRegistrar.Name = "btnCancelarRegistrar";
             this.btnCancelarRegistrar.Size = new System.Drawing.Size(146, 37);
             this.btnCancelarRegistrar.TabIndex = 115;
@@ -517,10 +508,11 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(11, 80);
+            this.btnGuardar.Location = new System.Drawing.Point(11, 59);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(146, 37);
             this.btnGuardar.TabIndex = 114;
@@ -528,23 +520,37 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // gboxVerificar
+            // gboxIdentificar
             // 
-            this.gboxVerificar.BackColor = System.Drawing.Color.SlateGray;
-            this.gboxVerificar.Controls.Add(this.btnCancelarVerificar);
-            this.gboxVerificar.Controls.Add(this.btnVerificarHuellas);
-            this.gboxVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxVerificar.ForeColor = System.Drawing.Color.White;
-            this.gboxVerificar.Location = new System.Drawing.Point(661, 302);
-            this.gboxVerificar.Name = "gboxVerificar";
-            this.gboxVerificar.Size = new System.Drawing.Size(199, 115);
-            this.gboxVerificar.TabIndex = 116;
-            this.gboxVerificar.TabStop = false;
-            this.gboxVerificar.Text = "VERIFICAR HUELLA";
+            this.gboxIdentificar.BackColor = System.Drawing.Color.SlateGray;
+            this.gboxIdentificar.Controls.Add(this.btnCancelarIdentificar);
+            this.gboxIdentificar.Controls.Add(this.btnIdentificarHuellas);
+            this.gboxIdentificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxIdentificar.ForeColor = System.Drawing.Color.White;
+            this.gboxIdentificar.Location = new System.Drawing.Point(661, 287);
+            this.gboxIdentificar.Name = "gboxIdentificar";
+            this.gboxIdentificar.Size = new System.Drawing.Size(199, 106);
+            this.gboxIdentificar.TabIndex = 116;
+            this.gboxIdentificar.TabStop = false;
+            this.gboxIdentificar.Text = "IDENTIFICACION DE  HUELLA";
+            // 
+            // btnIdentificarHuellas
+            // 
+            this.btnIdentificarHuellas.BackColor = System.Drawing.Color.White;
+            this.btnIdentificarHuellas.ForeColor = System.Drawing.Color.Black;
+            this.btnIdentificarHuellas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIdentificarHuellas.Location = new System.Drawing.Point(11, 19);
+            this.btnIdentificarHuellas.Name = "btnIdentificarHuellas";
+            this.btnIdentificarHuellas.Size = new System.Drawing.Size(146, 37);
+            this.btnIdentificarHuellas.TabIndex = 117;
+            this.btnIdentificarHuellas.Text = "Identificar huellas";
+            this.btnIdentificarHuellas.UseVisualStyleBackColor = false;
+            this.btnIdentificarHuellas.Click += new System.EventHandler(this.btnIdentificarHuellas_Click);
             // 
             // btnCancelarVerificar
             // 
             this.btnCancelarVerificar.BackColor = System.Drawing.Color.White;
+            this.btnCancelarVerificar.Enabled = false;
             this.btnCancelarVerificar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelarVerificar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarVerificar.Image")));
             this.btnCancelarVerificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -562,8 +568,8 @@
             this.lblTituloImagenHuellas.AutoSize = true;
             this.lblTituloImagenHuellas.BackColor = System.Drawing.Color.Transparent;
             this.lblTituloImagenHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloImagenHuellas.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblTituloImagenHuellas.Location = new System.Drawing.Point(338, 311);
+            this.lblTituloImagenHuellas.ForeColor = System.Drawing.Color.White;
+            this.lblTituloImagenHuellas.Location = new System.Drawing.Point(338, 304);
             this.lblTituloImagenHuellas.Name = "lblTituloImagenHuellas";
             this.lblTituloImagenHuellas.Size = new System.Drawing.Size(20, 24);
             this.lblTituloImagenHuellas.TabIndex = 117;
@@ -575,7 +581,7 @@
             this.lblEstado.BackColor = System.Drawing.Color.Transparent;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblEstado.Location = new System.Drawing.Point(315, 601);
+            this.lblEstado.Location = new System.Drawing.Point(338, 601);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(86, 24);
             this.lblEstado.TabIndex = 118;
@@ -587,7 +593,7 @@
             this.lblDedo.BackColor = System.Drawing.Color.Transparent;
             this.lblDedo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDedo.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblDedo.Location = new System.Drawing.Point(582, 635);
+            this.lblDedo.Location = new System.Drawing.Point(338, 632);
             this.lblDedo.Name = "lblDedo";
             this.lblDedo.Size = new System.Drawing.Size(103, 24);
             this.lblDedo.TabIndex = 119;
@@ -598,25 +604,55 @@
             this.btnVerificar2.BackColor = System.Drawing.Color.White;
             this.btnVerificar2.ForeColor = System.Drawing.Color.Black;
             this.btnVerificar2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerificar2.Location = new System.Drawing.Point(819, 507);
+            this.btnVerificar2.Location = new System.Drawing.Point(11, 19);
             this.btnVerificar2.Name = "btnVerificar2";
-            this.btnVerificar2.Size = new System.Drawing.Size(89, 37);
+            this.btnVerificar2.Size = new System.Drawing.Size(146, 37);
             this.btnVerificar2.TabIndex = 116;
-            this.btnVerificar2.Text = "Verificar";
+            this.btnVerificar2.Text = "Verificacion de huella";
             this.btnVerificar2.UseVisualStyleBackColor = false;
             this.btnVerificar2.Click += new System.EventHandler(this.btnVerificar2_Click);
+            // 
+            // gboxVerificarHuella
+            // 
+            this.gboxVerificarHuella.BackColor = System.Drawing.Color.SlateGray;
+            this.gboxVerificarHuella.Controls.Add(this.btnVerificar2);
+            this.gboxVerificarHuella.Controls.Add(this.btnCancelarVerificar);
+            this.gboxVerificarHuella.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxVerificarHuella.ForeColor = System.Drawing.Color.White;
+            this.gboxVerificarHuella.Location = new System.Drawing.Point(662, 550);
+            this.gboxVerificarHuella.Name = "gboxVerificarHuella";
+            this.gboxVerificarHuella.Size = new System.Drawing.Size(199, 106);
+            this.gboxVerificarHuella.TabIndex = 118;
+            this.gboxVerificarHuella.TabStop = false;
+            this.gboxVerificarHuella.Text = "VERIFICACION DE  HUELLA";
+            // 
+            // btnCancelarIdentificar
+            // 
+            this.btnCancelarIdentificar.BackColor = System.Drawing.Color.White;
+            this.btnCancelarIdentificar.Enabled = false;
+            this.btnCancelarIdentificar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelarIdentificar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarIdentificar.Image")));
+            this.btnCancelarIdentificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarIdentificar.Location = new System.Drawing.Point(12, 60);
+            this.btnCancelarIdentificar.Name = "btnCancelarIdentificar";
+            this.btnCancelarIdentificar.Size = new System.Drawing.Size(146, 37);
+            this.btnCancelarIdentificar.TabIndex = 116;
+            this.btnCancelarIdentificar.Tag = " ";
+            this.btnCancelarIdentificar.Text = "Cancelar";
+            this.btnCancelarIdentificar.UseVisualStyleBackColor = false;
+            this.btnCancelarIdentificar.Click += new System.EventHandler(this.btnCancelarIdentificar_Click);
             // 
             // FormHuellasCiudadanos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(907, 661);
-            this.Controls.Add(this.btnVerificar2);
+            this.Controls.Add(this.gboxVerificarHuella);
             this.Controls.Add(this.lblDedo);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblTituloImagenHuellas);
-            this.Controls.Add(this.gboxVerificar);
+            this.Controls.Add(this.gboxIdentificar);
             this.Controls.Add(this.gboxRegistrar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.imgHuella);
@@ -645,7 +681,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataCivil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgHuella)).EndInit();
             this.gboxRegistrar.ResumeLayout(false);
-            this.gboxVerificar.ResumeLayout(false);
+            this.gboxIdentificar.ResumeLayout(false);
+            this.gboxVerificarHuella.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,17 +722,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox imgHuella;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnVerificarHuellas;
         private System.Windows.Forms.Button btnIniciarRegistro;
         private System.Windows.Forms.GroupBox gboxRegistrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelarRegistrar;
-        private System.Windows.Forms.GroupBox gboxVerificar;
+        private System.Windows.Forms.GroupBox gboxIdentificar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnCancelarVerificar;
         private System.Windows.Forms.Label lblTituloImagenHuellas;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblDedo;
         private System.Windows.Forms.Button btnVerificar2;
+        private System.Windows.Forms.Button btnIdentificarHuellas;
+        private System.Windows.Forms.Button btnCancelarIdentificar;
+        private System.Windows.Forms.GroupBox gboxVerificarHuella;
     }
 }

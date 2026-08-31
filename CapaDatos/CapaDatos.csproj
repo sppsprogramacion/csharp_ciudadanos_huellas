@@ -47,6 +47,7 @@
     <Compile Include="DCiudadanosCategorias.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="DExcepcionIngresoVisita.cs" />
+    <Compile Include="DHuella.cs" />
     <Compile Include="DInterno.cs" />
     <Compile Include="DLoginResponse.cs" />
     <Compile Include="DMenorACargo.cs" />

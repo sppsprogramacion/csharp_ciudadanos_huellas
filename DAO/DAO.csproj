@@ -49,6 +49,7 @@
     <Compile Include="IDepartamentoDao.cs" />
     <Compile Include="IEstadoCivilDao.cs" />
     <Compile Include="IExcepcionIngresoVisitaDao.cs" />
+    <Compile Include="IHuellaDao.cs" />
     <Compile Include="IInterno.cs" />
     <Compile Include="IInternoDao.cs" />
     <Compile Include="IMenorACargo.cs" />

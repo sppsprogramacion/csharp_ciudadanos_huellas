@@ -4,3 +4,9 @@ D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaD
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.dll
 D:\Programar\C-Sharp\Proyectos\SPPS\AtencionCiudadanos\CapaDatos\obj\Debug\CapaDatos.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CapaDatos\bin\Debug\CapaDatos.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CapaDatos\bin\Debug\CapaDatos.pdb
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CapaDatos\obj\Debug\CapaDatos.dll
+G:\Pedro\PROGRAMACION-SPPS\C-SHARP\PROYECTOS\SPPS\AtencionCiudadanosHuellas\CapaDatos\obj\Debug\CapaDatos.pdb

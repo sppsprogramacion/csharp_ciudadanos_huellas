@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AtencionCiudadano.exe" size="3010560">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AtencionCiudadano.exe" size="3022336">
       <assemblyIdentity name="AtencionCiudadano" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ES8Eyb8T3MuN30FXix2c5XboiwijagBGJJumpQOlJGU=</dsig:DigestValue>
+        <dsig:DigestValue>+wonFSrfZY1udlVw6h8kGjgDMy62b27pNyTaGP0rDLk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -67,26 +67,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="39936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="40448">
       <assemblyIdentity name="CapaDatos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/WCa/bl1vfOwzfic4jzxHvotdZiCJOl4My/wFmWdS2k=</dsig:DigestValue>
+        <dsig:DigestValue>HQkaSR55DbzxeHFLM26BoU/0U5IHRoXLUMWAAu0rRZg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="67584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="70656">
       <assemblyIdentity name="CapaNegocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sE++YpScI1vud/TwehjejvuyfI9uVWAo6Ig6dOd56Ig=</dsig:DigestValue>
+        <dsig:DigestValue>RO1hA0Tay7uFjGbU7OB5bJiiTb3zDc9TFBHdBzfpaj8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,26 +115,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAO.dll" size="11264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAO.dll" size="11776">
       <assemblyIdentity name="DAO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5GmvU/n+VH2ng2ctYt2AVVo0z7Qx5+5w5SMj7/oBzWI=</dsig:DigestValue>
+        <dsig:DigestValue>C93kl+XAqkYb7iwciemGtbAjvzv4sz5E25PWIhuxdMY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAOImplement.dll" size="112640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAOImplement.dll" size="117760">
       <assemblyIdentity name="DAOImplement" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Scd+7+Qk1p3N84wDcLcf/jvkcLIBAHVbUwuuKxBTP9k=</dsig:DigestValue>
+        <dsig:DigestValue>UH8rt0IsaK+X1dc4As9ANCJ8NYHr1airjvsQzxP+gIE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -330,13 +330,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AtencionCiudadano.exe.config" size="539">
+  <file name="AtencionCiudadano.exe.config" size="526">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sXfsnSlMPtUrop0tJk9wyGxfMTs0HMXRcA1W8Cbjl5Y=</dsig:DigestValue>
+      <dsig:DigestValue>mEoZLwwLqGKcypZH/cAMGPFWbErz8qihoVbzKm0LdfM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo_spps2.ico" size="93574">

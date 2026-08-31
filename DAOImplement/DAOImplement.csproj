@@ -52,6 +52,7 @@
     <Compile Include="DepartamentoDaolmpl.cs" />
     <Compile Include="EstadoCivilDaoImpl.cs" />
     <Compile Include="ExcepcionIngresoVisitaDaoImpl.cs" />
+    <Compile Include="HuellaDaoImplement.cs" />
     <Compile Include="InternoDaolmpl.cs" />
     <Compile Include="InternoDaolmpl1.cs" />
     <Compile Include="MenorACargoDaoImplement.cs" />

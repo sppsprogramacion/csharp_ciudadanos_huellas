@@ -330,7 +330,7 @@ namespace DAOImplement
         }//fin funcion Retornar Lista de Ciudadanos
 
         public async Task<(List<DCiudadano>, string error)> retornarListaCiudadanoXDni(int dni)
-        {//inicio funvion retornar listrado x dni
+        {
             //variable token
             string token = SessionManager.Token;
 
