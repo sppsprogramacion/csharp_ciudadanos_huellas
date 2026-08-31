@@ -103,6 +103,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buscar_identidad_29x29 {
+            get {
+                object obj = ResourceManager.GetObject("buscar_identidad_29x29", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eliminar_basura {
             get {
                 object obj = ResourceManager.GetObject("eliminar-basura", resourceCulture);
@@ -146,6 +156,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap lista_novedades {
             get {
                 object obj = ResourceManager.GetObject("lista_novedades", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_sin_codigo_rojo {
+            get {
+                object obj = ResourceManager.GetObject("logo_sin_codigo_rojo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +246,26 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap upload {
             get {
                 object obj = ResourceManager.GetObject("upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ver_novedades {
+            get {
+                object obj = ResourceManager.GetObject("ver_novedades", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verificar_identidad_1 {
+            get {
+                object obj = ResourceManager.GetObject("verificar_identidad_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

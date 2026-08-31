@@ -142,11 +142,11 @@
     <Compile Include="FormExcepcionesIngreso.designer.cs">
       <DependentUpon>FormExcepcionesIngreso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHuellaCiudadanoVerificar.cs">
+    <Compile Include="FormHuellasEncontrado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHuellaCiudadanoVerificar.Designer.cs">
-      <DependentUpon>FormHuellaCiudadanoVerificar.cs</DependentUpon>
+    <Compile Include="FormHuellasEncontrado.Designer.cs">
+      <DependentUpon>FormHuellasEncontrado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHuellasCiudadanos.cs">
       <SubType>Form</SubType>
@@ -261,8 +261,8 @@
     <EmbeddedResource Include="FormExcepcionesIngreso.resx">
       <DependentUpon>FormExcepcionesIngreso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHuellaCiudadanoVerificar.resx">
-      <DependentUpon>FormHuellaCiudadanoVerificar.cs</DependentUpon>
+    <EmbeddedResource Include="FormHuellasEncontrado.resx">
+      <DependentUpon>FormHuellasEncontrado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHuellasCiudadanos.resx">
       <DependentUpon>FormHuellasCiudadanos.cs</DependentUpon>
@@ -386,6 +386,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_spps2.ico" />
+    <None Include="Resources\buscar_identidad_29x29.png" />
+    <None Include="Resources\ver_novedades.png" />
+    <None Include="Resources\verificar_identidad_1.png" />
+    <None Include="Resources\logo_sin_codigo_rojo.png" />
     <None Include="Resources\lista_novedades.jpg" />
     <None Include="Resources\huella_scaneo_8.png" />
     <None Include="Resources\huella2.jpg" />

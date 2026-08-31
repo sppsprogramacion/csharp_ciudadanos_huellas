@@ -22,6 +22,7 @@ namespace CapaPresentacion
         //VARIABLES GLOBALES
         private ErrorProvider errorProvider = new ErrorProvider();
 
+
         //para huellas
         private FingerprintCapture fingerprintCapture;
         private FingerprintProcessor fingerprintProcessor;
@@ -35,7 +36,8 @@ namespace CapaPresentacion
 
         //variabloes generales
         private int idCiudadanoGlobal = 0;
-
+        private int IdDedoGlobal = 0;
+        private CheckBox dedoCheckGlobal = null;
 
         public FormHuellasCiudadanos(int idCiudadano)
         {
@@ -107,12 +109,15 @@ namespace CapaPresentacion
             btnIdentificarHuellas.Enabled = false;
             btnCancelarIdentificar.Enabled = true;
             gboxRegistrar.Enabled = false;
+            gboxHuellas.Enabled = false;
             gboxVerificarHuella.Enabled = false;
+            picHuella.Enabled = true;
 
             fingerprintCapture.Start();
             this.modoIdentificacion = true;
 
-            lblEstado.Text = "Esperando huella...";
+            lblEstado.Text = "Coloque el dedo para identificar....";
+            lblDedo.Text = "Esperando huella...";
         }
 
         private void btnCancelarIdentificar_Click(object sender, EventArgs e)
@@ -123,12 +128,14 @@ namespace CapaPresentacion
             btnIdentificarHuellas.Enabled = true;
             btnCancelarIdentificar.Enabled = false;
             gboxRegistrar.Enabled = true;
+            gboxHuellas.Enabled = true;
             gboxVerificarHuella.Enabled = true;
+            picHuella.Enabled = false;
+
 
             fingerprintCapture.Stop();
-
             lblEstado.Text = "Lector detenido";
-            lblDedo.Text = "Esperando...";
+            lblDedo.Text = "Detenido...";
         }
 
         
@@ -138,9 +145,9 @@ namespace CapaPresentacion
 
             btnIniciarRegistro.Enabled = false;
             btnGuardar.Enabled = true;
-            btnCancelarRegistrar.Enabled = true;
             gboxIdentificar.Enabled = false;
             gboxVerificarHuella.Enabled = false;
+            picHuella.Enabled = true;
 
             fingerprintCapture.Start();
             modoVerificacion = false;
@@ -149,19 +156,34 @@ namespace CapaPresentacion
 
             templateRegistrado = null;
 
-            lblEstado.Text = "Coloque el dedo para registrarlo. Esperando huella...";
-            //lblEstado.Text = "Esperando huella...";
+            lblEstado.Text = "Coloque el dedo para registrarlo.";
+            lblDedo.Text = "Esperando huella...";
         }
                
         private void btnCancelarRegistrar_Click(object sender, EventArgs e)
         {
             lblTituloImagenHuellas.Text = "_";
 
+            this.huellaBase64Global = "";
             btnIniciarRegistro.Enabled = true;
             btnGuardar.Enabled = false;
-            btnCancelarRegistrar.Enabled = false;
             gboxIdentificar.Enabled = true;
             gboxVerificarHuella.Enabled = true;
+            gboxHuellas.Enabled = true;
+            gboxRegistrar.Enabled = false;
+            picHuella.Enabled = false;
+
+
+            if (dedoCheckGlobal != null)
+            {
+                IdDedoGlobal = 0;
+                dedoCheckGlobal.Checked = false;
+
+            }
+
+            fingerprintCapture.Stop();
+            lblEstado.Text = "Lector detenido";
+            lblDedo.Text = "Detenido...";
         }
 
         private async void btnGuardar_Click(object sender, EventArgs e)
@@ -206,11 +228,19 @@ namespace CapaPresentacion
                 this.bloquearChecksHuellasCargadas(txtIdCiudadano.Text);
                 lblTituloImagenHuellas.Text = "_";
 
+                this.huellaBase64Global = ""; 
                 btnIniciarRegistro.Enabled = true;
                 btnGuardar.Enabled = false;
                 btnCancelarRegistrar.Enabled = false;
                 gboxIdentificar.Enabled = true;
                 gboxVerificarHuella.Enabled = true;
+                gboxRegistrar.Enabled = false;
+                gboxHuellas.Enabled = true;
+                picHuella.Enabled = false;
+
+                fingerprintCapture.Stop();
+                lblEstado.Text = "Lector detenido";
+                lblDedo.Text = "Detenido...";
 
             }
             else
@@ -218,6 +248,116 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
                 
+        }
+
+        private void opPD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opPD.Checked)
+            {
+                this.IdDedoGlobal = 1;
+                this.dedoCheckGlobal = opPD;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opID_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opID.Checked)
+            {
+                this.IdDedoGlobal = 2;
+                this.dedoCheckGlobal = opID;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opMAD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opMAD.Checked)
+            {
+                this.IdDedoGlobal = 3;
+                this.dedoCheckGlobal = opMAD;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opAD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opAD.Checked)
+            {
+                this.IdDedoGlobal = 4;
+                this.dedoCheckGlobal = opAD;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opMED_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opMED.Checked)
+            {
+                this.IdDedoGlobal = 1;
+                this.dedoCheckGlobal = opMED;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opPI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opPI.Checked)
+            {
+                this.IdDedoGlobal = 6;
+                this.dedoCheckGlobal = opPI;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opII_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opII.Checked)
+            {
+                this.IdDedoGlobal = 7;
+                this.dedoCheckGlobal = opII;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opMAI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opMAI.Checked)
+            {
+                this.IdDedoGlobal = 8;
+                this.dedoCheckGlobal = opMAI;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opAI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opAI.Checked)
+            {
+                this.IdDedoGlobal = 9;
+                this.dedoCheckGlobal = opAI;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
+        }
+
+        private void opMEI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opMEI.Checked)
+            {
+                this.IdDedoGlobal = 10;
+                this.dedoCheckGlobal = opMEI;
+                gboxHuellas.Enabled = false;
+                gboxRegistrar.Enabled = true;
+            }
         }
 
         private void btnVerificar2_Click(object sender, EventArgs e)
@@ -230,6 +370,7 @@ namespace CapaPresentacion
             btnCancelarVerificar.Enabled = true;
             gboxIdentificar.Enabled = false;
             gboxRegistrar.Enabled = false;
+            picHuella.Enabled = true;
 
             if (string.IsNullOrEmpty(txtIdCiudadano.Text))
             {
@@ -241,6 +382,7 @@ namespace CapaPresentacion
             modoVerificacion = true;
 
             lblEstado.Text = "Coloque el dedo para verificar.";
+            lblDedo.Text = "Esperando huella...";
         }
 
         private void btnCancelarVerificar_Click(object sender, EventArgs e)
@@ -252,11 +394,12 @@ namespace CapaPresentacion
             btnCancelarVerificar.Enabled = false;
             gboxIdentificar.Enabled= true;
             gboxRegistrar.Enabled = true;
+            picHuella.Enabled = false;
 
             fingerprintCapture.Stop();
 
             lblEstado.Text = "Lector detenido";
-            lblDedo.Text = "Esperando...";
+            lblDedo.Text = "Detenido...";
         }
 
 
@@ -416,6 +559,8 @@ namespace CapaPresentacion
                             {
                                 MessageBox.Show($"COINCIDE - dedo_id: {huella.dedo_id}");
 
+                                FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
+                                formHuellasEncontrado.ShowDialog();
                                 return;
                             }
                         }
@@ -457,26 +602,21 @@ namespace CapaPresentacion
                         this.huellaBase64Global = huellaBase64;
 
                         // Reconstruye el Template desde los bytes.
-                        DPFP.Template templateReconstruido = fingerprintTemplate.LoadTemplate(templateBytesRegistrado);
+                        //DPFP.Template templateReconstruido = fingerprintTemplate.LoadTemplate(templateBytesRegistrado);
 
                         // Para esta prueba utilizaremos
                         // únicamente el Template reconstruido.
-                        templateRegistrado = templateReconstruido;
+                        //templateRegistrado = templateReconstruido;
 
                         EjecutarEnUI(() =>
                         {
-                            if (templateRegistrado != null)
+                            if (huellaBase64 != "")
                             {
-                                lblEstado.Text =
-                                    "Template generado y reconstruido correctamente. " +
-                                    "Tamaño: " +
-                                    templateBytesRegistrado.Length +
-                                    " bytes";
+                                lblEstado.Text = "Template generado correctamente.";
                             }
                             else
                             {
-                                lblEstado.Text =
-                                    "Error al reconstruir el Template.";
+                                lblEstado.Text = "Error al construir el Template.";
                             }
                         });
                     }
@@ -602,13 +742,13 @@ namespace CapaPresentacion
                         opMAI.BackColor = Color.Green;
                         break;
                         
-                    case 10:
+                    case 9:
                         opAI.Enabled = false;
                         opAI.FlatStyle = FlatStyle.Flat;
                         opAI.BackColor = Color.Green;
                         break;
                         
-                    case 12:
+                    case 10:
                         opMEI.Enabled = false;
                         opMEI.FlatStyle = FlatStyle.Flat;
                         opMEI.BackColor = Color.Green;
@@ -620,7 +760,10 @@ namespace CapaPresentacion
 
                 }//fin switch
             }//fin foreach
-        }
-        //FIN PRocedimiento para bloquear dedos segun huella cargada
+        }//FIN PRocedimiento para bloquear dedos segun huella cargada
+
+        
+
+        
     }
 }

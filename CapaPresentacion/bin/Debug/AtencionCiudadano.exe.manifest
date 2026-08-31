@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AtencionCiudadano.exe" size="3022336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AtencionCiudadano.exe" size="3034112">
       <assemblyIdentity name="AtencionCiudadano" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+wonFSrfZY1udlVw6h8kGjgDMy62b27pNyTaGP0rDLk=</dsig:DigestValue>
+        <dsig:DigestValue>BhMMPS3yqAA0DY29Yo7DX7Kh8YHaURH3I+FngSbvvoA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RO1hA0Tay7uFjGbU7OB5bJiiTb3zDc9TFBHdBzfpaj8=</dsig:DigestValue>
+        <dsig:DigestValue>zpMIXCQ3vgqPFpQsixd4DEYEc9oykW+srSk73X5gfcs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -122,7 +122,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C93kl+XAqkYb7iwciemGtbAjvzv4sz5E25PWIhuxdMY=</dsig:DigestValue>
+        <dsig:DigestValue>x2SJRREVzBuBD6Oj3ZCngKR/h6l/PXUmy1Zjcl8Vfp4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UH8rt0IsaK+X1dc4As9ANCJ8NYHr1airjvsQzxP+gIE=</dsig:DigestValue>
+        <dsig:DigestValue>QZ+ApvTXjQubrAqIqsfsrkkx/LBhTzSuqJrQzBGAvUo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -330,13 +330,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AtencionCiudadano.exe.config" size="526">
+  <file name="AtencionCiudadano.exe.config" size="539">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mEoZLwwLqGKcypZH/cAMGPFWbErz8qihoVbzKm0LdfM=</dsig:DigestValue>
+      <dsig:DigestValue>sXfsnSlMPtUrop0tJk9wyGxfMTs0HMXRcA1W8Cbjl5Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo_spps2.ico" size="93574">
