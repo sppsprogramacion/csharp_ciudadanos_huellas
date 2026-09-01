@@ -248,6 +248,7 @@
             this.ClientSize = new System.Drawing.Size(548, 346);
             this.Controls.Add(this.groupVisita);
             this.Name = "FormHuellasEncontrado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CIUDADANO ENCONTRADO";
             this.Load += new System.EventHandler(this.FormHuellaCiudadanoVerificar_Load);
             this.groupVisita.ResumeLayout(false);

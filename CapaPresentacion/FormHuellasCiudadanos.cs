@@ -210,7 +210,7 @@ namespace CapaPresentacion
             var data = new
             {
                 ciudadano_id = Convert.ToInt32(txtIdCiudadano.Text),
-                dedo_id = 7,
+                dedo_id = IdDedoGlobal,
                 huella = this.huellaBase64Global,
                 detalle_motivo = "Registro inicial",
                 
@@ -256,6 +256,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 1;
                 this.dedoCheckGlobal = opPD;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled= false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -267,6 +269,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 2;
                 this.dedoCheckGlobal = opID;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -278,6 +282,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 3;
                 this.dedoCheckGlobal = opMAD;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -289,6 +295,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 4;
                 this.dedoCheckGlobal = opAD;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -298,8 +306,10 @@ namespace CapaPresentacion
         {
             if (opMED.Checked)
             {
-                this.IdDedoGlobal = 1;
+                this.IdDedoGlobal = 5;
                 this.dedoCheckGlobal = opMED;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -311,6 +321,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 6;
                 this.dedoCheckGlobal = opPI;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -322,6 +334,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 7;
                 this.dedoCheckGlobal = opII;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -333,6 +347,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 8;
                 this.dedoCheckGlobal = opMAI;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -344,6 +360,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 9;
                 this.dedoCheckGlobal = opAI;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -355,6 +373,8 @@ namespace CapaPresentacion
             {
                 this.IdDedoGlobal = 10;
                 this.dedoCheckGlobal = opMEI;
+                gboxIdentificar.Enabled = false;
+                gboxVerificarHuella.Enabled = false;
                 gboxHuellas.Enabled = false;
                 gboxRegistrar.Enabled = true;
             }
@@ -435,7 +455,7 @@ namespace CapaPresentacion
         }
 
         
-        //PROCESO DE CAPTURA PARA REGISTRO Y/O VERIFICACION
+        //METODO DE CAPTURA PARA REGISTRO Y/O VERIFICACION
         private async void FingerprintCapture_SampleCaptured(object sender, FingerprintCapture.SampleEventArgs e)
         {
             try
@@ -582,11 +602,9 @@ namespace CapaPresentacion
                 // MODO REGISTRO
                 // -----------------------------------------
 
-                bool agregada =
-                    fingerprintTemplate.AddFeatures(featureSet);
+                bool agregada = fingerprintTemplate.AddFeatures(featureSet);
 
-                uint faltantes =
-                    fingerprintTemplate.FeaturesNeeded;
+                uint faltantes = fingerprintTemplate.FeaturesNeeded;
 
 
                 EjecutarEnUI(() =>
@@ -600,14 +618,7 @@ namespace CapaPresentacion
                         templateBytesRegistrado = fingerprintTemplate.GetTemplateBytes();
                         string huellaBase64 = Convert.ToBase64String(templateBytesRegistrado);
                         this.huellaBase64Global = huellaBase64;
-
-                        // Reconstruye el Template desde los bytes.
-                        //DPFP.Template templateReconstruido = fingerprintTemplate.LoadTemplate(templateBytesRegistrado);
-
-                        // Para esta prueba utilizaremos
-                        // únicamente el Template reconstruido.
-                        //templateRegistrado = templateReconstruido;
-
+                                                
                         EjecutarEnUI(() =>
                         {
                             if (huellaBase64 != "")
@@ -619,19 +630,27 @@ namespace CapaPresentacion
                                 lblEstado.Text = "Error al construir el Template.";
                             }
                         });
+
+                        DSQLite sqlite = new DSQLite();
+
+                        sqlite.GuardarHuella(
+                            1,                          // id_huella_ciudadano
+                            4,                          // ciudadano_id
+                            7,                          // dedo_id
+                            templateBytesRegistrado     // template DigitalPersona
+                        );
+
+                        MessageBox.Show(
+                            "Huella guardada en SQLite correctamente."
+                        );
                     }
                     else if (agregada)
                     {
-                        lblEstado.Text =
-                            "Captura correcta. Faltan " +
-                            faltantes +
-                            " muestras.";
+                        lblEstado.Text = "Captura correcta. Faltan " + faltantes + " muestras.";
                     }
                     else
                     {
-                        lblEstado.Text =
-                            "La muestra no fue aceptada. " +
-                            "Coloque nuevamente el dedo.";
+                        lblEstado.Text = "La muestra no fue aceptada. " + "Coloque nuevamente el dedo.";
                     }
                 });
             }
@@ -643,7 +662,8 @@ namespace CapaPresentacion
                 });
             }
         }
-
+        //FIN METODO DE CAPTURA PARA REGISTRO Y/O VERIFICACION
+        //-----------------------------------------------------
 
         protected override void OnFormClosing(
             FormClosingEventArgs e)
@@ -653,6 +673,7 @@ namespace CapaPresentacion
             base.OnFormClosing(e);
         }
 
+        //PERMITE ACCEDER A CONTROLES DESDE UN METODO QUE NO PODRIA
         private void EjecutarEnUI(Action accion)
         {
             if (InvokeRequired)
@@ -664,7 +685,7 @@ namespace CapaPresentacion
             accion();
         }
 
-        //PRocedimiento para bloquear dedos segun huella cargada
+        //BLOQUEAR DEDOS SEGUN HUELLA CARGADA
         private async void bloquearChecksHuellasCargadas(string idCiudadano)
         {
             if (string.IsNullOrEmpty(txtIdCiudadano.Text))

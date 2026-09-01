@@ -1,6 +1,7 @@
 ﻿//using CapaDatos;
 //using CapaNegocio;
 //using Newtonsoft.Json;
+using CapaDatos;
 using CapaPresentacion.FuncionesGenerales;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,24 @@ namespace CapaPresentacion
             FormularioAyudas.AjustarFormulario(this);
 
             this.ControlBox = false;
+
+            //INICIAR SQLLITE
+            try
+            {
+                DSQLite sqlite = new DSQLite();
+
+                sqlite.Inicializar();
+
+                MessageBox.Show(
+                    "SQLite inicializado correctamente."
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message
+                );
+            }
         }
 
         private void btnRegistroDiario_Click(object sender, EventArgs e)
