@@ -38,10 +38,10 @@
             this.txtBuscarDni = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnVerAnticipadas = new System.Windows.Forms.Button();
-            this.radbAdministrar = new System.Windows.Forms.RadioButton();
             this.radbGestionarHuellas = new System.Windows.Forms.RadioButton();
-            this.radbVerificarNuevasHuellas = new System.Windows.Forms.RadioButton();
+            this.radbAdministrar = new System.Windows.Forms.RadioButton();
+            this.btnVerAnticipadas = new System.Windows.Forms.Button();
+            this.btnVerificarNuevaHuella = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCiudadanos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +127,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radbVerificarNuevasHuellas);
+            this.groupBox1.Controls.Add(this.btnVerificarNuevaHuella);
             this.groupBox1.Controls.Add(this.radbGestionarHuellas);
             this.groupBox1.Controls.Add(this.radbAdministrar);
             this.groupBox1.Controls.Add(this.label2);
@@ -143,17 +143,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar ciudadano";
             // 
-            // btnVerAnticipadas
+            // radbGestionarHuellas
             // 
-            this.btnVerAnticipadas.BackColor = System.Drawing.Color.White;
-            this.btnVerAnticipadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerAnticipadas.Location = new System.Drawing.Point(186, 117);
-            this.btnVerAnticipadas.Name = "btnVerAnticipadas";
-            this.btnVerAnticipadas.Size = new System.Drawing.Size(146, 37);
-            this.btnVerAnticipadas.TabIndex = 45;
-            this.btnVerAnticipadas.Text = "Ver anticipadas";
-            this.btnVerAnticipadas.UseVisualStyleBackColor = false;
-            this.btnVerAnticipadas.Click += new System.EventHandler(this.btnVerAnticipadas_Click);
+            this.radbGestionarHuellas.AutoSize = true;
+            this.radbGestionarHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbGestionarHuellas.Location = new System.Drawing.Point(192, 71);
+            this.radbGestionarHuellas.Name = "radbGestionarHuellas";
+            this.radbGestionarHuellas.Size = new System.Drawing.Size(121, 19);
+            this.radbGestionarHuellas.TabIndex = 43;
+            this.radbGestionarHuellas.TabStop = true;
+            this.radbGestionarHuellas.Text = "Gestionar huellas";
+            this.radbGestionarHuellas.UseVisualStyleBackColor = true;
             // 
             // radbAdministrar
             // 
@@ -167,30 +167,29 @@
             this.radbAdministrar.Text = "Administrar ciudadano";
             this.radbAdministrar.UseVisualStyleBackColor = true;
             // 
-            // radbGestionarHuellas
+            // btnVerAnticipadas
             // 
-            this.radbGestionarHuellas.AutoSize = true;
-            this.radbGestionarHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radbGestionarHuellas.Location = new System.Drawing.Point(192, 71);
-            this.radbGestionarHuellas.Name = "radbGestionarHuellas";
-            this.radbGestionarHuellas.Size = new System.Drawing.Size(121, 19);
-            this.radbGestionarHuellas.TabIndex = 43;
-            this.radbGestionarHuellas.TabStop = true;
-            this.radbGestionarHuellas.Text = "Gestionar huellas";
-            this.radbGestionarHuellas.UseVisualStyleBackColor = true;
+            this.btnVerAnticipadas.BackColor = System.Drawing.Color.White;
+            this.btnVerAnticipadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerAnticipadas.Location = new System.Drawing.Point(186, 117);
+            this.btnVerAnticipadas.Name = "btnVerAnticipadas";
+            this.btnVerAnticipadas.Size = new System.Drawing.Size(146, 37);
+            this.btnVerAnticipadas.TabIndex = 45;
+            this.btnVerAnticipadas.Text = "Ver anticipadas";
+            this.btnVerAnticipadas.UseVisualStyleBackColor = false;
+            this.btnVerAnticipadas.Click += new System.EventHandler(this.btnVerAnticipadas_Click);
             // 
-            // radbVerificarNuevasHuellas
+            // btnVerificarNuevaHuella
             // 
-            this.radbVerificarNuevasHuellas.AutoSize = true;
-            this.radbVerificarNuevasHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radbVerificarNuevasHuellas.Location = new System.Drawing.Point(342, 71);
-            this.radbVerificarNuevasHuellas.Name = "radbVerificarNuevasHuellas";
-            this.radbVerificarNuevasHuellas.Size = new System.Drawing.Size(154, 19);
-            this.radbVerificarNuevasHuellas.TabIndex = 44;
-            this.radbVerificarNuevasHuellas.TabStop = true;
-            this.radbVerificarNuevasHuellas.Text = "Verificar nuevas huellas";
-            this.radbVerificarNuevasHuellas.UseVisualStyleBackColor = true;
-            this.radbVerificarNuevasHuellas.CheckedChanged += new System.EventHandler(this.radbVerificarNuevasHuellas_CheckedChanged);
+            this.btnVerificarNuevaHuella.BackColor = System.Drawing.Color.White;
+            this.btnVerificarNuevaHuella.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerificarNuevaHuella.Location = new System.Drawing.Point(357, 62);
+            this.btnVerificarNuevaHuella.Name = "btnVerificarNuevaHuella";
+            this.btnVerificarNuevaHuella.Size = new System.Drawing.Size(146, 30);
+            this.btnVerificarNuevaHuella.TabIndex = 46;
+            this.btnVerificarNuevaHuella.Text = "Verificar nueva huella";
+            this.btnVerificarNuevaHuella.UseVisualStyleBackColor = false;
+            this.btnVerificarNuevaHuella.Click += new System.EventHandler(this.btnVerificarNuevaHuella_Click);
             // 
             // CiudadanoNuevo
             // 
@@ -226,7 +225,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVerAnticipadas;
         private System.Windows.Forms.RadioButton radbAdministrar;
-        private System.Windows.Forms.RadioButton radbVerificarNuevasHuellas;
         private System.Windows.Forms.RadioButton radbGestionarHuellas;
+        private System.Windows.Forms.Button btnVerificarNuevaHuella;
     }
 }

@@ -4,6 +4,7 @@ using CapaPresentacion.Biometria;
 using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.NuevoCiudadano.Datos;
 using CapaPresentacion.Validaciones.NuevoCiudadano.ValidacionNuevoCiudadano;
+using DPFP;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -108,7 +109,6 @@ namespace CapaPresentacion
 
             btnIdentificarHuellas.Enabled = false;
             btnCancelarIdentificar.Enabled = true;
-            gboxRegistrar.Enabled = false;
             gboxHuellas.Enabled = false;
             gboxVerificarHuella.Enabled = false;
             picHuella.Enabled = true;
@@ -127,7 +127,7 @@ namespace CapaPresentacion
             this.modoIdentificacion = false;
             btnIdentificarHuellas.Enabled = true;
             btnCancelarIdentificar.Enabled = false;
-            gboxRegistrar.Enabled = true;
+            gboxIdentificar.Enabled = true;
             gboxHuellas.Enabled = true;
             gboxVerificarHuella.Enabled = true;
             picHuella.Enabled = false;
@@ -254,6 +254,13 @@ namespace CapaPresentacion
         {
             if (opPD.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opPD.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 1;
                 this.dedoCheckGlobal = opPD;
                 gboxIdentificar.Enabled = false;
@@ -267,6 +274,13 @@ namespace CapaPresentacion
         {
             if (opID.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opID.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 2;
                 this.dedoCheckGlobal = opID;
                 gboxIdentificar.Enabled = false;
@@ -278,8 +292,16 @@ namespace CapaPresentacion
 
         private void opMAD_CheckedChanged(object sender, EventArgs e)
         {
+
             if (opMAD.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opMAD.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 3;
                 this.dedoCheckGlobal = opMAD;
                 gboxIdentificar.Enabled = false;
@@ -293,6 +315,13 @@ namespace CapaPresentacion
         {
             if (opAD.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opAD.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 4;
                 this.dedoCheckGlobal = opAD;
                 gboxIdentificar.Enabled = false;
@@ -304,8 +333,16 @@ namespace CapaPresentacion
 
         private void opMED_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (opMED.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opMED.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 5;
                 this.dedoCheckGlobal = opMED;
                 gboxIdentificar.Enabled = false;
@@ -317,8 +354,16 @@ namespace CapaPresentacion
 
         private void opPI_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (opPI.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opPI.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 6;
                 this.dedoCheckGlobal = opPI;
                 gboxIdentificar.Enabled = false;
@@ -330,8 +375,16 @@ namespace CapaPresentacion
 
         private void opII_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (opII.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opII.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 7;
                 this.dedoCheckGlobal = opII;
                 gboxIdentificar.Enabled = false;
@@ -343,8 +396,16 @@ namespace CapaPresentacion
 
         private void opMAI_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (opMAI.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opMAI.Checked= false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 8;
                 this.dedoCheckGlobal = opMAI;
                 gboxIdentificar.Enabled = false;
@@ -355,9 +416,17 @@ namespace CapaPresentacion
         }
 
         private void opAI_CheckedChanged(object sender, EventArgs e)
-        {
+        {          
+
             if (opAI.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opAI.Checked = false;
+                    return;
+                }
+
                 this.IdDedoGlobal = 9;
                 this.dedoCheckGlobal = opAI;
                 gboxIdentificar.Enabled = false;
@@ -368,9 +437,19 @@ namespace CapaPresentacion
         }
 
         private void opMEI_CheckedChanged(object sender, EventArgs e)
-        {
+        {            
+
             if (opMEI.Checked)
             {
+                if (string.IsNullOrEmpty(txtIdCiudadano.Text))
+                {
+                    MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    opMEI.Checked = false;
+                    return;
+
+                }
+
+
                 this.IdDedoGlobal = 10;
                 this.dedoCheckGlobal = opMEI;
                 gboxIdentificar.Enabled = false;
@@ -385,18 +464,19 @@ namespace CapaPresentacion
             //limpiar errores de provider
             errorProvider.Clear();
 
-            lblTituloImagenHuellas.Text = "VERIFICAR HUELLAS";
-            btnVerificar2.Enabled = false;
-            btnCancelarVerificar.Enabled = true;
-            gboxIdentificar.Enabled = false;
-            gboxRegistrar.Enabled = false;
-            picHuella.Enabled = true;
-
             if (string.IsNullOrEmpty(txtIdCiudadano.Text))
             {
                 MessageBox.Show("No hay un ciudadano seleccionado", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            lblTituloImagenHuellas.Text = "VERIFICAR HUELLAS";
+            btnVerificar2.Enabled = false;
+            btnCancelarVerificar.Enabled = true;
+            gboxIdentificar.Enabled = false;
+            gboxHuellas.Enabled = false;
+            picHuella.Enabled = true;
+
 
             fingerprintCapture.Start();
             modoVerificacion = true;
@@ -413,7 +493,7 @@ namespace CapaPresentacion
             btnVerificar2.Enabled = true;
             btnCancelarVerificar.Enabled = false;
             gboxIdentificar.Enabled= true;
-            gboxRegistrar.Enabled = true;
+            gboxHuellas.Enabled = true;
             picHuella.Enabled = false;
 
             fingerprintCapture.Stop();
@@ -500,7 +580,43 @@ namespace CapaPresentacion
                 if (modoVerificacion)
                 {
                     NHuella nHuellas = new NHuella();
-                    MessageBox.Show("verificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("verificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //PRUEBA SQLITE
+                    //DSQLite sqlite = new DSQLite();
+                    //byte[] bytesHuella = sqlite.ObtenerHuella(1);
+
+                    //if (bytesHuella == null)
+                    //{
+                    //    MessageBox.Show("No se encontró la huella.");
+                    //    return;
+                    //}
+
+                    //DPFP.Template templatePrueba =
+                    //    fingerprintTemplate.LoadTemplate(bytesHuella);
+
+                    //if (templatePrueba == null)
+                    //{
+                    //    MessageBox.Show("No se pudo reconstruir el template.");
+                    //    return;
+                    //}
+
+                    //MessageBox.Show(
+                    //    "Template recuperado correctamente desde SQLite."
+                    //);
+
+                    //if (fingerprintVerifier.Verify(featureSet, templatePrueba))
+                    //{
+                    //    MessageBox.Show("COINCIDE");
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("NO COINCIDE");
+                    //}
+
+                    //return;
+                    //MOMENTANEO
+
 
                     (List<DHuella> listaHuellas, string errorResponse) = await nHuellas.RetornarListaXCiudadano(Convert.ToInt32(txtIdCiudadano.Text));
                     if (listaHuellas == null)
@@ -511,7 +627,7 @@ namespace CapaPresentacion
 
                     if (listaHuellas.Count == 0)
                     {
-                        MessageBox.Show("El ciudadano no posee huellas registradas.","Atención al Ciudadano",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El ciudadano no posee huellas registradas.","Atención al Ciudadano",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         return;
                     }
@@ -526,7 +642,7 @@ namespace CapaPresentacion
 
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
-                                MessageBox.Show( $"COINCIDE - dedo_id: {huella.dedo_id}");
+                                MessageBox.Show( $"COINCIDE - dedo_id: {huella.dedo_id}", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 return;
                             }
@@ -538,7 +654,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    MessageBox.Show("NO COINCIDE");
+                    MessageBox.Show("NO COINCIDE", "Atención al Ciudadano",MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
                     
@@ -551,7 +667,7 @@ namespace CapaPresentacion
                 if (modoIdentificacion)
                 {
                     NHuella nHuellas = new NHuella();
-                    MessageBox.Show("Identificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Identificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     (List<DHuella> listaHuellas, string errorResponse) = await nHuellas.RetornarListaTodas();
                     if (listaHuellas == null)
@@ -577,7 +693,7 @@ namespace CapaPresentacion
 
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
-                                MessageBox.Show($"COINCIDE - dedo_id: {huella.dedo_id}");
+                                MessageBox.Show($"COINCIDE - dedo_id: {huella.dedo_id}", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
                                 formHuellasEncontrado.ShowDialog();
@@ -591,7 +707,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    MessageBox.Show("NO COINCIDE");
+                    MessageBox.Show("NO COINCIDE", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         
                     return;
 
@@ -631,18 +747,18 @@ namespace CapaPresentacion
                             }
                         });
 
-                        DSQLite sqlite = new DSQLite();
+                        //DSQLite sqlite = new DSQLite();
 
-                        sqlite.GuardarHuella(
-                            1,                          // id_huella_ciudadano
-                            4,                          // ciudadano_id
-                            7,                          // dedo_id
-                            templateBytesRegistrado     // template DigitalPersona
-                        );
+                        //sqlite.GuardarHuella(
+                        //    1,                          // id_huella_ciudadano
+                        //    4,                          // ciudadano_id
+                        //    7,                          // dedo_id
+                        //    templateBytesRegistrado     // template digitalpersona
+                        //);
 
-                        MessageBox.Show(
-                            "Huella guardada en SQLite correctamente."
-                        );
+                        //MessageBox.Show(
+                        //    "Huella guardada en SQLite correctamente."
+                        //);
                     }
                     else if (agregada)
                     {

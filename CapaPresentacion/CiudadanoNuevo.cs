@@ -252,17 +252,12 @@ namespace CapaPresentacion
             formProhibicionesAnticipadas.ShowDialog();
         }
 
-        private void radbVerificarNuevasHuellas_CheckedChanged(object sender, EventArgs e)
+        private void btnVerificarNuevaHuella_Click(object sender, EventArgs e)
         {
-            if (radbVerificarNuevasHuellas.Checked)
-            {
-                if (radbVerificarNuevasHuellas.Enabled == true)
-                {
-                    FormHuellasCiudadanos formHuellas = new FormHuellasCiudadanos(0);
-                    formHuellas.ShowDialog();
-                    return;
-                }
-            }
+            FormHuellasCiudadanos formHuellas = new FormHuellasCiudadanos(0);
+            formHuellas.ShowDialog();
+            return;
+              
         }
     }
 }
