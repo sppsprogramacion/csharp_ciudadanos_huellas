@@ -100,7 +100,7 @@ namespace CapaPresentacion
 
             sqlite.LimpiarHuellas();
 
-            foreach (DHuella huella in respuesta.huellas)
+            /*foreach (DHuella huella in respuesta.huellas)
             {
                 byte[] templateBytes =
                     Convert.FromBase64String(huella.huella);
@@ -115,7 +115,7 @@ namespace CapaPresentacion
 
             sqlite.GuardarUltimaVersion(
                 respuesta.version
-            );
+            );*/
             //FIN INICIALIZAR HUELLAS
            
 
