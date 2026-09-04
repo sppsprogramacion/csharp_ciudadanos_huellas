@@ -107,6 +107,7 @@
     <Compile Include="DSectoresDestino.cs" />
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
+    <Compile Include="DSincronizacionInicialHuellas.cs" />
     <Compile Include="DSQLite.cs" />
     <Compile Include="DTipoAcceso.cs" />
     <Compile Include="DTipoAtencion.cs" />

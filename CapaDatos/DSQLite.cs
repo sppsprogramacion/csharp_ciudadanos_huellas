@@ -104,6 +104,9 @@ namespace CapaDatos
             }
         }
 
+        
+
+        //BUSCAR HUELLA X ID
         public byte[] ObtenerHuella(int idHuella)
         {
             using (SQLiteConnection conexion =
@@ -126,15 +129,68 @@ namespace CapaDatos
 
                     object resultado = comando.ExecuteScalar();
 
-                    if (resultado == null ||
-                        resultado == DBNull.Value)
+                    if (resultado == null || resultado == DBNull.Value)
                     {
                         return null;
                     }
 
+                    Console.WriteLine(resultado);
                     return (byte[])resultado;
                 }
             }
         }
+        //FIN BUSCAR HUELLA
+        //------------------------------------------------------------------
+
+
+        //LIMPIAR HUELLAS
+        public void LimpiarHuellas()
+        {
+            using (SQLiteConnection conexion =
+                   new SQLiteConnection(cadenaConexion))
+            {
+                conexion.Open();
+
+                string sql = "DELETE FROM huellas;";
+
+                using (SQLiteCommand comando =
+                       new SQLiteCommand(sql, conexion))
+                {
+                    comando.ExecuteNonQuery();
+                }
+            }
+        }
+        //FIN LIMPÍAR HUELLAS
+        //-------------------------------------------------------------------
+
+        //GUARDAR ULTIMA VERSION
+        public void GuardarUltimaVersion(string version)
+        {
+            using (SQLiteConnection conexion =
+                   new SQLiteConnection(cadenaConexion))
+            {
+                conexion.Open();
+
+                string sql = @"INSERT INTO sincronizacion(id,ultima_version)
+                                VALUES(1,@version)
+                                    ON CONFLICT(id)
+                                    DO UPDATE SET
+                                        ultima_version = @version;
+                             ";
+
+                using (SQLiteCommand comando =
+                       new SQLiteCommand(sql, conexion))
+                {
+                    comando.Parameters.AddWithValue(
+                        "@version",version
+                    );
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+        }
+        //FIN GUARDAR ULTIMA VERSION
+        //--------------------------------------------------------------------
+
     }
 }

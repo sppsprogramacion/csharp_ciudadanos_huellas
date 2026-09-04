@@ -613,9 +613,9 @@
             this.lblEstado.ForeColor = System.Drawing.Color.Cyan;
             this.lblEstado.Location = new System.Drawing.Point(445, 520);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(111, 29);
+            this.lblEstado.Size = new System.Drawing.Size(181, 29);
             this.lblEstado.TabIndex = 118;
-            this.lblEstado.Text = "Detenido";
+            this.lblEstado.Text = "Lector detenido";
             // 
             // lblDedo
             // 
@@ -627,7 +627,7 @@
             this.lblDedo.Name = "lblDedo";
             this.lblDedo.Size = new System.Drawing.Size(116, 25);
             this.lblDedo.TabIndex = 119;
-            this.lblDedo.Text = "Esperando";
+            this.lblDedo.Text = "Detenido...";
             // 
             // btnVerificar2
             // 

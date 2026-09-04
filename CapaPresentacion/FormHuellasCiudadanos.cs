@@ -92,6 +92,34 @@ namespace CapaPresentacion
 
             this.bloquearChecksHuellasCargadas(txtIdCiudadano.Text);
 
+
+            //INICIALIZAR HUELLAS
+            DSQLite sqlite = new DSQLite();
+
+            sqlite.Inicializar();
+
+            sqlite.LimpiarHuellas();
+
+            foreach (DHuella huella in respuesta.huellas)
+            {
+                byte[] templateBytes =
+                    Convert.FromBase64String(huella.huella);
+
+                sqlite.GuardarHuella(
+                    huella.id_huella_ciudadano,
+                    huella.ciudadano_id,
+                    huella.dedo_id,
+                    templateBytes
+                );
+            }
+
+            sqlite.GuardarUltimaVersion(
+                respuesta.version
+            );
+            //FIN INICIALIZAR HUELLAS
+           
+
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
