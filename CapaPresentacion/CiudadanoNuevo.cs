@@ -31,12 +31,35 @@ namespace CapaPresentacion
         public int idCiudadanoGlobal { get; set; }
         
 
-        private void CiudadanoNuevo_Load(object sender, EventArgs e)
+        private async void CiudadanoNuevo_Load(object sender, EventArgs e)
         {
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
             radbAdministrar.Checked = true;
+
+            //SINCRONIZACION INICIAL
+            NHuella nHuella = new NHuella();
+
+            (bool estadoResponse, string errorResponse) = await nHuella.SincronizacionInicial();
+            
+            if (estadoResponse == false)
+            {
+                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DSQLite sqlite = new DSQLite();
+
+            sqlite.Inicializar();
+
+            long version = sqlite.ObtenerUltimaVersion();
+
+            MessageBox.Show(
+                $"Versión local: {version}"
+            );
+
+            //FIN SINCRONIZACION INICIAL
         }
 
         public CiudadanoNuevo()

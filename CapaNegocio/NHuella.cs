@@ -46,5 +46,17 @@ namespace CapaNegocio
             return (listaHuellas, errorResponse);
         }
         //FIN RETORNAR HUELLAS TODAS..................................
+
+        //SINCRONIZACION INICIAL
+        public async Task<(bool estado, string error)> SincronizacionInicial()
+        {
+            IHuellaDao huellaDao = new HuellaDaoImplement();
+
+            (bool estadoResponse, string errorResponse) = await huellaDao.sincronizacionInicial();
+
+            return (estadoResponse, errorResponse);
+        }
+        //FIN SINCRONIZACION INICIAL
+        //------------------------------------------------------------------------------------------
     }
 }

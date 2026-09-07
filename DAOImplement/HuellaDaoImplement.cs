@@ -19,6 +19,7 @@ namespace DAOImplement
         private string url_base = MiConexion.getConexion();
         HttpClient httpClient = new HttpClient();
 
+        //CREAR HUELLA
         public async Task<(DHuella, string error)> crearHuella(string huella)
         {
             string token = SessionManager.Token; // Aquí pones tu token real
@@ -68,12 +69,11 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN CREAR HUELLA
+        //----------------------------------------------------------------------------------
+               
 
-        public Task<(bool, string error)> quitarHuella(int idHuella, string detalle_motivo)
-        {
-            throw new NotImplementedException();
-        }
-
+        //LISTA TODAS LAS HUELLAS
         public async Task<(List<DHuella>, string error)> retornarListaTodas()
         {
             //variable token
@@ -120,7 +120,10 @@ namespace DAOImplement
             }
 
         }
+        //FIN LISTA TODAS LAS HUELLAS
+        //---------------------------------------------------------------------------------------
 
+        //LISTA HUELLAS X CIUDADANO
         public async Task<(List<DHuella>, string error)> retornarListaXCiudadano(int idCiudadano)
         {
             //variable token
@@ -167,5 +170,78 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN LISTA HUELLAS X CIUDADANO
+        //-----------------------------------------------------------------------------------------
+
+        //SINCRONIZACION INICIAL
+        public async Task<(bool estado, string error)> sincronizacionInicial()
+        {
+            //variable token
+            string token = SessionManager.Token;
+            DHuellasSincronizacionInicial dHuellasSincronizacionInicial = new DHuellasSincronizacionInicial();
+
+
+            try
+            {
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    //agregar tpken a la cabecera
+                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                    HttpResponseMessage httpResponse = await httpClient.GetAsync(url_base + "/huellas/sincronizacion-inicial");
+
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        var content = await httpResponse.Content.ReadAsStringAsync();
+                        dHuellasSincronizacionInicial = JsonConvert.DeserializeObject<DHuellasSincronizacionInicial>(content);
+
+                        //INICIALIZAR HUELLAS
+                        DSQLite sqlite = new DSQLite();
+
+                        sqlite.Inicializar();
+
+                        sqlite.GuardarSincronizacionInicial(
+                            dHuellasSincronizacionInicial.huellas,
+                            dHuellasSincronizacionInicial.version
+                        );
+                        //FIN INICIALIZAR HUELLAS
+
+                        return (true, null);
+                    }
+                    else
+                    {
+                        string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                        var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                        return (false, $"Error en la sincronizacion: {mensaje}");
+                    }
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (false, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (false, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN SINCRONIZACION INICIAL
+        //------------------------------------------------------------------------------------------
+
+
+        //QUITAR HUELLA
+        public Task<(bool, string error)> quitarHuella(int idHuella, string detalle_motivo)
+        {
+            throw new NotImplementedException();
+        }
+        //FIN QUITAR HUELLA
+        //-------------------------------------------------------------------------------------
     }
 }

@@ -13,6 +13,7 @@ namespace DAO
         Task<(DHuella, string error)> crearHuella(string huella);
         Task<(List<DHuella>, string error)> retornarListaXCiudadano(int idCiudadano);
         Task<(List<DHuella>, string error)> retornarListaTodas();
+        Task<(bool estado, string error)> sincronizacionInicial();
         Task<(bool, string error)> quitarHuella(int idHuella, string detalle_motivo);
     }
 }

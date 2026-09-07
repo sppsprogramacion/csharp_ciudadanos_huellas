@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class DSincronizacionInicialHuellas
+    public class DHuellasSincronizacionInicial
     {
         public string version { get; set; }
         public List<DHuella> huellas { get; set; }

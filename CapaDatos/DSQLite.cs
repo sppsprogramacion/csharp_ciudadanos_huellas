@@ -17,19 +17,13 @@ namespace CapaDatos
         public DSQLite()
         {
             carpetaDatos = Path.Combine(
-                Environment.GetFolderPath(
-                    Environment.SpecialFolder.LocalApplicationData
-                ),
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "AtencionCiudadano"
             );
 
-            rutaBase = Path.Combine(
-                carpetaDatos,
-                "huellas.db"
-            );
+            rutaBase = Path.Combine(carpetaDatos,"huellas.db");
 
-            cadenaConexion =
-                $"Data Source={rutaBase};Version=3;";
+            cadenaConexion =$"Data Source={rutaBase};Version=3;";
         }
 
         public void Inicializar()
@@ -109,23 +103,15 @@ namespace CapaDatos
         //BUSCAR HUELLA X ID
         public byte[] ObtenerHuella(int idHuella)
         {
-            using (SQLiteConnection conexion =
-                   new SQLiteConnection(cadenaConexion))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
                 conexion.Open();
 
-                string sql = @"
-                    SELECT huella
-                    FROM huellas
-                    WHERE id_huella_ciudadano = @idHuella;
-                ";
+                string sql = @"SELECT huella FROM huellas HERE id_huella_ciudadano = @idHuella;";
 
                 using (SQLiteCommand comando =new SQLiteCommand(sql, conexion))
                 {
-                    comando.Parameters.AddWithValue(
-                        "@idHuella",
-                        idHuella
-                    );
+                    comando.Parameters.AddWithValue("@idHuella",idHuella);
 
                     object resultado = comando.ExecuteScalar();
 
@@ -191,6 +177,114 @@ namespace CapaDatos
         }
         //FIN GUARDAR ULTIMA VERSION
         //--------------------------------------------------------------------
+
+        //SINCRONIZACION INICIAL
+        public void GuardarSincronizacionInicial(List<DHuella> huellas,string version)
+        {
+            using (SQLiteConnection conexion =new SQLiteConnection(cadenaConexion))
+            {
+                conexion.Open();
+
+                using (SQLiteTransaction transaccion = conexion.BeginTransaction())
+                {
+                    try
+                    {
+                        // ---------------------------------
+                        // BORRAR HUELLAS ACTUALES
+                        // ---------------------------------
+
+                        string sqlBorrar = "DELETE FROM huellas;";
+
+                        using (SQLiteCommand comando =new SQLiteCommand(sqlBorrar,conexion,transaccion))
+                        {
+                            comando.ExecuteNonQuery();
+                        }
+
+
+                        // ---------------------------------
+                        // INSERTAR HUELLAS
+                        // ---------------------------------
+
+                        string sqlHuella = @"INSERT INTO huellas(id_huella_ciudadano,ciudadano_id,dedo_id,huella)
+                                            VALUES(@idHuella,@ciudadanoId,@dedoId,@huella);";
+
+                        foreach (DHuella huella in huellas)
+                        {
+                            byte[] templateBytes = Convert.FromBase64String(huella.huella);
+
+                            using (SQLiteCommand comando = new SQLiteCommand(sqlHuella,conexion,transaccion))
+                            {
+                                comando.Parameters.AddWithValue("@idHuella",huella.id_huella_ciudadano);
+
+                                comando.Parameters.AddWithValue("@ciudadanoId",huella.ciudadano_id);
+
+                                comando.Parameters.AddWithValue("@dedoId",huella.dedo_id);
+
+                                comando.Parameters.Add("@huella",System.Data.DbType.Binary).Value = templateBytes;
+
+                                comando.ExecuteNonQuery();
+                            }
+                        }
+
+
+                        // ---------------------------------
+                        // GUARDAR VERSION
+                        // ---------------------------------
+
+                        string sqlVersion = @"INSERT INTO sincronizacion(id,ultima_version)
+                                             VALUES(1,@version)
+                                             ON CONFLICT(id) DO UPDATE SET ultima_version = @version;";
+
+                        using (SQLiteCommand comando = new SQLiteCommand(sqlVersion,conexion,transaccion))
+                        {
+                            comando.Parameters.AddWithValue("@version",version);
+
+                            comando.ExecuteNonQuery();
+                        }
+
+
+                        // ---------------------------------
+                        // CONFIRMAR TODO
+                        // ---------------------------------
+
+                        transaccion.Commit();
+                    }
+                    catch
+                    {
+                        transaccion.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+        //FIN SINCRONIZACION INICIAL
+        //------------------------------------------------------------------------------------
+
+        //OBTENER ULTIMA VERSION
+        public long ObtenerUltimaVersion()
+        {
+            using (SQLiteConnection conexion =new SQLiteConnection(cadenaConexion))
+            {
+                conexion.Open();
+
+                string sql = @"SELECT ultima_version FROM sincronizacion WHERE id = 1;";
+
+                using (SQLiteCommand comando =new SQLiteCommand(sql, conexion))
+                {
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado == null || resultado == DBNull.Value)
+                    {
+                        return 0;
+                    }
+
+                    return Convert.ToInt64(resultado);
+                }
+            }
+        }
+        //FIN OBTENER ULTIMA VERSION
+        //------------------------------------------------------------------------------------
+
 
     }
 }
