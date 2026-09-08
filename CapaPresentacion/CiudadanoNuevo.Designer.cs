@@ -38,10 +38,10 @@
             this.txtBuscarDni = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVerificarNuevaHuella = new System.Windows.Forms.Button();
             this.radbGestionarHuellas = new System.Windows.Forms.RadioButton();
             this.radbAdministrar = new System.Windows.Forms.RadioButton();
             this.btnVerAnticipadas = new System.Windows.Forms.Button();
-            this.btnVerificarNuevaHuella = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoCiudadanos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +143,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar ciudadano";
             // 
+            // btnVerificarNuevaHuella
+            // 
+            this.btnVerificarNuevaHuella.BackColor = System.Drawing.Color.White;
+            this.btnVerificarNuevaHuella.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerificarNuevaHuella.Location = new System.Drawing.Point(357, 62);
+            this.btnVerificarNuevaHuella.Name = "btnVerificarNuevaHuella";
+            this.btnVerificarNuevaHuella.Size = new System.Drawing.Size(146, 30);
+            this.btnVerificarNuevaHuella.TabIndex = 46;
+            this.btnVerificarNuevaHuella.Text = "Controlar nueva huella";
+            this.btnVerificarNuevaHuella.UseVisualStyleBackColor = false;
+            this.btnVerificarNuevaHuella.Click += new System.EventHandler(this.btnVerificarNuevaHuella_Click);
+            // 
             // radbGestionarHuellas
             // 
             this.radbGestionarHuellas.AutoSize = true;
@@ -178,18 +190,6 @@
             this.btnVerAnticipadas.Text = "Ver anticipadas";
             this.btnVerAnticipadas.UseVisualStyleBackColor = false;
             this.btnVerAnticipadas.Click += new System.EventHandler(this.btnVerAnticipadas_Click);
-            // 
-            // btnVerificarNuevaHuella
-            // 
-            this.btnVerificarNuevaHuella.BackColor = System.Drawing.Color.White;
-            this.btnVerificarNuevaHuella.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerificarNuevaHuella.Location = new System.Drawing.Point(357, 62);
-            this.btnVerificarNuevaHuella.Name = "btnVerificarNuevaHuella";
-            this.btnVerificarNuevaHuella.Size = new System.Drawing.Size(146, 30);
-            this.btnVerificarNuevaHuella.TabIndex = 46;
-            this.btnVerificarNuevaHuella.Text = "Verificar nueva huella";
-            this.btnVerificarNuevaHuella.UseVisualStyleBackColor = false;
-            this.btnVerificarNuevaHuella.Click += new System.EventHandler(this.btnVerificarNuevaHuella_Click);
             // 
             // CiudadanoNuevo
             // 

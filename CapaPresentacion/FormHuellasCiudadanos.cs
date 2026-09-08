@@ -65,7 +65,7 @@ namespace CapaPresentacion
 
             if (this.idCiudadanoGlobal == 0)
             {
-                lblTitulo.Text = "Verificar huellas";
+                lblTitulo.Text = "Controlar huellas";
                 return;
             }
             else{
@@ -666,15 +666,21 @@ namespace CapaPresentacion
 
                 if (modoIdentificacion)
                 {
-                    NHuella nHuellas = new NHuella();
-                    MessageBox.Show("Identificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //NHuella nHuellas = new NHuella();
+                    //MessageBox.Show("Identificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    (List<DHuella> listaHuellas, string errorResponse) = await nHuellas.RetornarListaTodas();
-                    if (listaHuellas == null)
-                    {
-                        MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                    //(List<DHuella> listaHuellas, string errorResponse) = await nHuellas.RetornarListaTodas();
+                    //if (listaHuellas == null)
+                    //{
+                    //    MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //    return;
+                    //}
+
+                    DSQLite sqlite = new DSQLite();
+
+                    sqlite.Inicializar();
+
+                    List<DHuella> listaHuellas = sqlite.ObtenerTodasLasHuellas();
 
                     if (listaHuellas.Count == 0)
                     {

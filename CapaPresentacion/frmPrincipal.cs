@@ -2,6 +2,7 @@
 //using CapaNegocio;
 //using Newtonsoft.Json;
 using CapaDatos;
+using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace CapaPresentacion
             //FNuevo.Show();
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
+        private async void frmPrincipal_Load(object sender, EventArgs e)
         {
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
@@ -67,6 +68,28 @@ namespace CapaPresentacion
                 MessageBox.Show(
                     "SQLite inicializado correctamente."
                 );
+
+                //SINCRONIZACION INICIAL
+                NHuella nHuella = new NHuella();
+
+                (bool estadoResponse, string errorResponse) = await nHuella.Sincronizar();
+
+                if (estadoResponse == false)
+                {
+                    MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                //sqlite.Inicializar();
+
+                long version = sqlite.ObtenerUltimaVersion();
+
+                MessageBox.Show(
+                    $"Versión local: {version}"
+                );
+
+                //FIN SINCRONIZACION INICIAL
             }
             catch (Exception ex)
             {

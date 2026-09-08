@@ -50,7 +50,7 @@
             // 
             // groupVisita
             // 
-            this.groupVisita.BackColor = System.Drawing.Color.SlateGray;
+            this.groupVisita.BackColor = System.Drawing.Color.OrangeRed;
             this.groupVisita.Controls.Add(this.txtSexo);
             this.groupVisita.Controls.Add(this.label5);
             this.groupVisita.Controls.Add(this.txtIdCiudadano);
@@ -244,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackColor = System.Drawing.Color.OrangeRed;
             this.ClientSize = new System.Drawing.Size(548, 346);
             this.Controls.Add(this.groupVisita);
             this.Name = "FormHuellasEncontrado";

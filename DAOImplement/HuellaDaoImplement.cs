@@ -173,6 +173,26 @@ namespace DAOImplement
         //FIN LISTA HUELLAS X CIUDADANO
         //-----------------------------------------------------------------------------------------
 
+        //SINCRONIZAR
+        public async Task<(bool estado, string error)> sincronizar()
+        {
+            DSQLite sqlite = new DSQLite();
+
+            sqlite.Inicializar();
+
+            long ultimaVersion = sqlite.ObtenerUltimaVersion();
+
+            if (ultimaVersion == 0)
+            {
+                return await sincronizacionInicial();
+            }
+
+            return await sincronizacionIncremental();
+        }
+        //FIN SINCRONIZAR
+        //----------------------------------------------------------------------------------------
+
+
         //SINCRONIZACION INICIAL
         public async Task<(bool estado, string error)> sincronizacionInicial()
         {
@@ -235,12 +255,73 @@ namespace DAOImplement
         //FIN SINCRONIZACION INICIAL
         //------------------------------------------------------------------------------------------
 
+        //SINCRONIZACION INCREMENTAL
+        public async Task<(bool estado, string error)> sincronizacionIncremental()
+        {
+            string token = SessionManager.Token;
+
+            try
+            {
+                DSQLite sqlite = new DSQLite();
+                sqlite.Inicializar();
+
+                long ultimaVersion = sqlite.ObtenerUltimaVersion();
+
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    HttpResponseMessage httpResponse = await httpClient.GetAsync(url_base + "/huellas/sincronizacion/" + ultimaVersion);
+
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        string content = await httpResponse.Content.ReadAsStringAsync();
+
+                        List<DHuellaCambio> cambios = JsonConvert.DeserializeObject<List<DHuellaCambio>>(content);
+
+                        if (cambios == null || cambios.Count == 0)
+                        {
+                            return (true, null);
+                        }
+
+                        sqlite.AplicarSincronizacionIncremental(cambios);
+
+                        return (true, null);
+                    }
+                    else
+                    {
+                        string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+
+                        var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+
+                        return (false,$"Error en la sincronización: {mensaje}"
+                        );
+                    }
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                return (false, $"Error de conexión: {ex.Message}");
+            }
+            catch (JsonException)
+            {
+                return (false, "Error inesperado al procesar la respuesta.");
+            }
+            catch (Exception ex)
+            {
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN SINCRONIZACION INCREMENTAL
+        //--------------------------------------------------------------------------------------
+
 
         //QUITAR HUELLA
         public Task<(bool, string error)> quitarHuella(int idHuella, string detalle_motivo)
         {
             throw new NotImplementedException();
         }
+
         //FIN QUITAR HUELLA
         //-------------------------------------------------------------------------------------
     }

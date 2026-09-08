@@ -38,28 +38,7 @@ namespace CapaPresentacion
 
             radbAdministrar.Checked = true;
 
-            //SINCRONIZACION INICIAL
-            NHuella nHuella = new NHuella();
-
-            (bool estadoResponse, string errorResponse) = await nHuella.SincronizacionInicial();
             
-            if (estadoResponse == false)
-            {
-                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DSQLite sqlite = new DSQLite();
-
-            sqlite.Inicializar();
-
-            long version = sqlite.ObtenerUltimaVersion();
-
-            MessageBox.Show(
-                $"Versión local: {version}"
-            );
-
-            //FIN SINCRONIZACION INICIAL
         }
 
         public CiudadanoNuevo()
@@ -178,6 +157,7 @@ namespace CapaPresentacion
             {
                 e.SuppressKeyPress = true;
 
+                
                 this.idCiudadanoGlobal = Convert.ToInt32(dataListadoCiudadanos.CurrentRow.Cells["id_ciudadano"].Value.ToString());
 
                 if (radbGestionarHuellas.Checked == true)
