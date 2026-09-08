@@ -65,31 +65,20 @@ namespace CapaPresentacion
 
                 sqlite.Inicializar();
 
-                MessageBox.Show(
-                    "SQLite inicializado correctamente."
-                );
-
-                //SINCRONIZACION INICIAL
+                //SINCRONIZACION
                 NHuella nHuella = new NHuella();
 
+                this.Enabled = false;
                 (bool estadoResponse, string errorResponse) = await nHuella.Sincronizar();
+                this.Enabled = true;
 
                 if (estadoResponse == false)
                 {
                     MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-
-                //sqlite.Inicializar();
-
-                long version = sqlite.ObtenerUltimaVersion();
-
-                MessageBox.Show(
-                    $"Versión local: {version}"
-                );
-
-                //FIN SINCRONIZACION INICIAL
+                                
+                //FIN SINCRONIZACION 
             }
             catch (Exception ex)
             {

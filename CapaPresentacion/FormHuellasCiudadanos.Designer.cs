@@ -91,7 +91,7 @@
             // 
             this.opMED.AutoSize = true;
             this.opMED.BackColor = System.Drawing.Color.Black;
-            this.opMED.Location = new System.Drawing.Point(5, 87);
+            this.opMED.Location = new System.Drawing.Point(5, 102);
             this.opMED.Name = "opMED";
             this.opMED.Size = new System.Drawing.Size(15, 14);
             this.opMED.TabIndex = 93;
@@ -102,7 +102,7 @@
             // 
             this.opAD.AutoSize = true;
             this.opAD.BackColor = System.Drawing.Color.Black;
-            this.opAD.Location = new System.Drawing.Point(35, 47);
+            this.opAD.Location = new System.Drawing.Point(35, 56);
             this.opAD.Name = "opAD";
             this.opAD.Size = new System.Drawing.Size(15, 14);
             this.opAD.TabIndex = 92;
@@ -113,7 +113,7 @@
             // 
             this.opMAD.AutoSize = true;
             this.opMAD.BackColor = System.Drawing.Color.Black;
-            this.opMAD.Location = new System.Drawing.Point(76, 33);
+            this.opMAD.Location = new System.Drawing.Point(76, 39);
             this.opMAD.Name = "opMAD";
             this.opMAD.Size = new System.Drawing.Size(15, 14);
             this.opMAD.TabIndex = 91;
@@ -124,7 +124,7 @@
             // 
             this.opID.AutoSize = true;
             this.opID.BackColor = System.Drawing.Color.Black;
-            this.opID.Location = new System.Drawing.Point(115, 33);
+            this.opID.Location = new System.Drawing.Point(113, 38);
             this.opID.Name = "opID";
             this.opID.Size = new System.Drawing.Size(15, 14);
             this.opID.TabIndex = 90;
@@ -135,7 +135,7 @@
             // 
             this.opPD.AutoSize = true;
             this.opPD.BackColor = System.Drawing.Color.Black;
-            this.opPD.Location = new System.Drawing.Point(174, 127);
+            this.opPD.Location = new System.Drawing.Point(174, 151);
             this.opPD.Name = "opPD";
             this.opPD.Size = new System.Drawing.Size(15, 14);
             this.opPD.TabIndex = 89;
@@ -146,7 +146,7 @@
             // 
             this.opPI.AutoSize = true;
             this.opPI.BackColor = System.Drawing.Color.Black;
-            this.opPI.Location = new System.Drawing.Point(210, 128);
+            this.opPI.Location = new System.Drawing.Point(210, 151);
             this.opPI.Name = "opPI";
             this.opPI.Size = new System.Drawing.Size(15, 14);
             this.opPI.TabIndex = 88;
@@ -157,7 +157,7 @@
             // 
             this.opII.AutoSize = true;
             this.opII.BackColor = System.Drawing.Color.Black;
-            this.opII.Location = new System.Drawing.Point(274, 28);
+            this.opII.Location = new System.Drawing.Point(274, 31);
             this.opII.Name = "opII";
             this.opII.Size = new System.Drawing.Size(15, 14);
             this.opII.TabIndex = 87;
@@ -168,7 +168,7 @@
             // 
             this.opMAI.AutoSize = true;
             this.opMAI.BackColor = System.Drawing.Color.Black;
-            this.opMAI.Location = new System.Drawing.Point(313, 27);
+            this.opMAI.Location = new System.Drawing.Point(313, 30);
             this.opMAI.Name = "opMAI";
             this.opMAI.Size = new System.Drawing.Size(15, 14);
             this.opMAI.TabIndex = 86;
@@ -179,7 +179,7 @@
             // 
             this.opAI.AutoSize = true;
             this.opAI.BackColor = System.Drawing.Color.Black;
-            this.opAI.Location = new System.Drawing.Point(353, 40);
+            this.opAI.Location = new System.Drawing.Point(354, 46);
             this.opAI.Name = "opAI";
             this.opAI.Size = new System.Drawing.Size(15, 14);
             this.opAI.TabIndex = 85;
@@ -191,7 +191,7 @@
             this.opMEI.AutoSize = true;
             this.opMEI.BackColor = System.Drawing.Color.Black;
             this.opMEI.ForeColor = System.Drawing.Color.Black;
-            this.opMEI.Location = new System.Drawing.Point(385, 82);
+            this.opMEI.Location = new System.Drawing.Point(385, 95);
             this.opMEI.Name = "opMEI";
             this.opMEI.Size = new System.Drawing.Size(15, 14);
             this.opMEI.TabIndex = 84;
@@ -204,7 +204,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 182);
+            this.label2.Location = new System.Drawing.Point(9, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 24);
             this.label2.TabIndex = 83;
@@ -216,7 +216,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(218, 177);
+            this.label1.Location = new System.Drawing.Point(218, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 24);
             this.label1.TabIndex = 82;
@@ -227,7 +227,7 @@
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.manos_lila;
             this.pictureBox1.Location = new System.Drawing.Point(5, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(395, 211);
+            this.pictureBox1.Size = new System.Drawing.Size(395, 253);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 80;
             this.pictureBox1.TabStop = false;
@@ -496,9 +496,9 @@
             this.gboxRegistrar.Enabled = false;
             this.gboxRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxRegistrar.ForeColor = System.Drawing.Color.White;
-            this.gboxRegistrar.Location = new System.Drawing.Point(734, 223);
+            this.gboxRegistrar.Location = new System.Drawing.Point(734, 194);
             this.gboxRegistrar.Name = "gboxRegistrar";
-            this.gboxRegistrar.Size = new System.Drawing.Size(167, 248);
+            this.gboxRegistrar.Size = new System.Drawing.Size(167, 154);
             this.gboxRegistrar.TabIndex = 109;
             this.gboxRegistrar.TabStop = false;
             this.gboxRegistrar.Text = "ENROLAR HUELLA";
@@ -540,7 +540,7 @@
             this.gboxIdentificar.Controls.Add(this.btnIdentificarHuellas);
             this.gboxIdentificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxIdentificar.ForeColor = System.Drawing.Color.White;
-            this.gboxIdentificar.Location = new System.Drawing.Point(318, 101);
+            this.gboxIdentificar.Location = new System.Drawing.Point(318, 72);
             this.gboxIdentificar.Name = "gboxIdentificar";
             this.gboxIdentificar.Size = new System.Drawing.Size(199, 117);
             this.gboxIdentificar.TabIndex = 116;
@@ -599,7 +599,7 @@
             this.lblTituloImagenHuellas.BackColor = System.Drawing.Color.Transparent;
             this.lblTituloImagenHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloImagenHuellas.ForeColor = System.Drawing.Color.White;
-            this.lblTituloImagenHuellas.Location = new System.Drawing.Point(328, 48);
+            this.lblTituloImagenHuellas.Location = new System.Drawing.Point(328, 42);
             this.lblTituloImagenHuellas.Name = "lblTituloImagenHuellas";
             this.lblTituloImagenHuellas.Size = new System.Drawing.Size(20, 24);
             this.lblTituloImagenHuellas.TabIndex = 117;
@@ -650,7 +650,7 @@
             this.gboxVerificarHuella.Controls.Add(this.btnCancelarVerificar);
             this.gboxVerificarHuella.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxVerificarHuella.ForeColor = System.Drawing.Color.White;
-            this.gboxVerificarHuella.Location = new System.Drawing.Point(529, 104);
+            this.gboxVerificarHuella.Location = new System.Drawing.Point(529, 75);
             this.gboxVerificarHuella.Name = "gboxVerificarHuella";
             this.gboxVerificarHuella.Size = new System.Drawing.Size(199, 114);
             this.gboxVerificarHuella.TabIndex = 118;
@@ -675,9 +675,9 @@
             this.gboxHuellas.Controls.Add(this.pictureBox1);
             this.gboxHuellas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxHuellas.ForeColor = System.Drawing.Color.White;
-            this.gboxHuellas.Location = new System.Drawing.Point(318, 224);
+            this.gboxHuellas.Location = new System.Drawing.Point(318, 195);
             this.gboxHuellas.Name = "gboxHuellas";
-            this.gboxHuellas.Size = new System.Drawing.Size(410, 247);
+            this.gboxHuellas.Size = new System.Drawing.Size(410, 283);
             this.gboxHuellas.TabIndex = 118;
             this.gboxHuellas.TabStop = false;
             this.gboxHuellas.Text = "HUELLAS";

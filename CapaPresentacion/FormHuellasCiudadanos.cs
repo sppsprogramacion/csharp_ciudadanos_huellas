@@ -103,8 +103,25 @@ namespace CapaPresentacion
         }
 
        
-        private void btnIdentificarHuellas_Click(object sender, EventArgs e)
+        private async void btnIdentificarHuellas_Click(object sender, EventArgs e)
         {
+            DSQLite sqlite = new DSQLite();
+
+            //SINCRONIZACION DE HUELLAS
+            NHuella nHuella = new NHuella();
+
+            this.Enabled = false;
+            (bool estadoResponse, string errorResponse) = await nHuella.Sincronizar();
+            this.Enabled = true;
+
+            if (estadoResponse == false)
+            {
+                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //FIN SINCRONIZACION DE HUELLAS
+
+
             lblTituloImagenHuellas.Text = "IDENTIFICAR HUELLAS";
 
             btnIdentificarHuellas.Enabled = false;
@@ -546,16 +563,14 @@ namespace CapaPresentacion
 
                 if (modoVerificacion || modoIdentificacion)
                 {
-                    resultado =
-                        fingerprintProcessor.ExtractFeaturesForVerification(
+                    resultado = fingerprintProcessor.ExtractFeaturesForVerification(
                             e.Sample,
                             out featureSet
                         );
                 }
                 else
                 {
-                    resultado =
-                        fingerprintProcessor.ExtractFeaturesForEnrollment(
+                    resultado = fingerprintProcessor.ExtractFeaturesForEnrollment(
                             e.Sample,
                             out featureSet
                         );
@@ -565,8 +580,7 @@ namespace CapaPresentacion
                 {
                     EjecutarEnUI(() =>
                     {
-                        lblEstado.Text =
-                            "La calidad de la huella no es suficiente.";
+                        lblEstado.Text = "La calidad de la huella no es suficiente.";
                     });
 
                     return;
@@ -580,43 +594,7 @@ namespace CapaPresentacion
                 if (modoVerificacion)
                 {
                     NHuella nHuellas = new NHuella();
-                    MessageBox.Show("verificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //PRUEBA SQLITE
-                    //DSQLite sqlite = new DSQLite();
-                    //byte[] bytesHuella = sqlite.ObtenerHuella(1);
-
-                    //if (bytesHuella == null)
-                    //{
-                    //    MessageBox.Show("No se encontró la huella.");
-                    //    return;
-                    //}
-
-                    //DPFP.Template templatePrueba =
-                    //    fingerprintTemplate.LoadTemplate(bytesHuella);
-
-                    //if (templatePrueba == null)
-                    //{
-                    //    MessageBox.Show("No se pudo reconstruir el template.");
-                    //    return;
-                    //}
-
-                    //MessageBox.Show(
-                    //    "Template recuperado correctamente desde SQLite."
-                    //);
-
-                    //if (fingerprintVerifier.Verify(featureSet, templatePrueba))
-                    //{
-                    //    MessageBox.Show("COINCIDE");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("NO COINCIDE");
-                    //}
-
-                    //return;
-                    //MOMENTANEO
-
+                    MessageBox.Show("Verificando huella", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     (List<DHuella> listaHuellas, string errorResponse) = await nHuellas.RetornarListaXCiudadano(Convert.ToInt32(txtIdCiudadano.Text));
                     if (listaHuellas == null)
@@ -642,7 +620,8 @@ namespace CapaPresentacion
 
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
-                                MessageBox.Show( $"COINCIDE - dedo_id: {huella.dedo_id}", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
 
                                 return;
                             }
@@ -654,7 +633,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    MessageBox.Show("NO COINCIDE", "Atención al Ciudadano",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("NO SE ENCONTRO COINCIDENCIA DE ESTA HUELLA", "Atención al Ciudadano",MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
                     
@@ -666,6 +645,8 @@ namespace CapaPresentacion
 
                 if (modoIdentificacion)
                 {
+                    MessageBox.Show("Identificando huella", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     //NHuella nHuellas = new NHuella();
                     //MessageBox.Show("Identificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -680,7 +661,7 @@ namespace CapaPresentacion
 
                     sqlite.Inicializar();
 
-                    List<DHuella> listaHuellas = sqlite.ObtenerTodasLasHuellas();
+                    List<DHuellaLocal> listaHuellas = sqlite.ObtenerTodasLasHuellas();
 
                     if (listaHuellas.Count == 0)
                     {
@@ -689,17 +670,19 @@ namespace CapaPresentacion
                         return;
                     }
 
-                    foreach (DHuella huella in listaHuellas)
+                    foreach (DHuellaLocal huella in listaHuellas)
                     {
                         try
                         {
-                            byte[] templateBytes = Convert.FromBase64String(huella.huella);
 
-                            DPFP.Template template = fingerprintTemplate.LoadTemplate(templateBytes);
+                            //byte[] templateBytes = Convert.FromBase64String(huella.huella);
+
+                            //DPFP.Template template = fingerprintTemplate.LoadTemplate(templateBytes);
+                            DPFP.Template template = fingerprintTemplate.LoadTemplate(huella.huella);
 
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
-                                MessageBox.Show($"COINCIDE - dedo_id: {huella.dedo_id}", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                                 FormHuellasEncontrado formHuellasEncontrado = new FormHuellasEncontrado(huella.ciudadano_id);
                                 formHuellasEncontrado.ShowDialog();
@@ -713,7 +696,7 @@ namespace CapaPresentacion
                         }
                     }
 
-                    MessageBox.Show("NO COINCIDE", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("NO SE ENCONTRO COINCIDENCIA DE ESTA HUELLA", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         
                     return;
 
@@ -721,7 +704,7 @@ namespace CapaPresentacion
 
 
                 // -----------------------------------------
-                // MODO REGISTRO
+                // MODO REGISTRO - formacion del template
                 // -----------------------------------------
 
                 bool agregada = fingerprintTemplate.AddFeatures(featureSet);
@@ -753,18 +736,6 @@ namespace CapaPresentacion
                             }
                         });
 
-                        //DSQLite sqlite = new DSQLite();
-
-                        //sqlite.GuardarHuella(
-                        //    1,                          // id_huella_ciudadano
-                        //    4,                          // ciudadano_id
-                        //    7,                          // dedo_id
-                        //    templateBytesRegistrado     // template digitalpersona
-                        //);
-
-                        //MessageBox.Show(
-                        //    "Huella guardada en SQLite correctamente."
-                        //);
                     }
                     else if (agregada)
                     {
@@ -785,7 +756,8 @@ namespace CapaPresentacion
             }
         }
         //FIN METODO DE CAPTURA PARA REGISTRO Y/O VERIFICACION
-        //-----------------------------------------------------
+        //-------------------------------------------------------------------------------------------
+
 
         protected override void OnFormClosing(
             FormClosingEventArgs e)

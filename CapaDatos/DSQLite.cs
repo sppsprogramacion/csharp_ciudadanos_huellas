@@ -128,9 +128,9 @@ namespace CapaDatos
         //------------------------------------------------------------------
 
         //LISTA DE TODAS LAS HUELLAS
-        public List<DHuella> ObtenerTodasLasHuellas()
+        public List<DHuellaLocal> ObtenerTodasLasHuellas()
         {
-            List<DHuella> lista = new List<DHuella>();
+            List<DHuellaLocal> lista = new List<DHuellaLocal>();
 
             using (SQLiteConnection conexion =new SQLiteConnection(cadenaConexion))
             {
@@ -147,7 +147,7 @@ namespace CapaDatos
                 {
                     while (reader.Read())
                     {
-                        DHuella huella = new DHuella();
+                        DHuellaLocal huella = new DHuellaLocal();
 
                         huella.id_huella_ciudadano = Convert.ToInt32(reader["id_huella_ciudadano"]);
 
@@ -155,11 +155,12 @@ namespace CapaDatos
 
                         huella.dedo_id = Convert.ToInt32(reader["dedo_id"]);
 
-                        byte[] templateBytes = (byte[])reader["huella"];
+                        //byte[] templateBytes = (byte[])reader["huella"];
 
                         // Como DHuella actualmente maneja
                         // huella como Base64:
-                        huella.huella = Convert.ToBase64String(templateBytes);
+                        //huella.huella = Convert.ToBase64String(templateBytes);
+                        huella.huella = (byte[])reader["huella"];
 
                         lista.Add(huella);
                     }
