@@ -620,7 +620,7 @@ namespace CapaPresentacion
 
                             if (fingerprintVerifier.Verify(featureSet, template))
                             {
-                                MessageBox.Show($"COINCIDENCIA ENCONCTRADA CON ESTA HUELLA", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show($"COINCIDENCIA ENCONTRADA CON ESTA HUELLA", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
                                 return;
@@ -646,17 +646,7 @@ namespace CapaPresentacion
                 if (modoIdentificacion)
                 {
                     MessageBox.Show("Identificando huella", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //NHuella nHuellas = new NHuella();
-                    //MessageBox.Show("Identificando", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //(List<DHuella> listaHuellas, string errorResponse) = await nHuellas.RetornarListaTodas();
-                    //if (listaHuellas == null)
-                    //{
-                    //    MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //    return;
-                    //}
-
+                         
                     DSQLite sqlite = new DSQLite();
 
                     sqlite.Inicializar();
