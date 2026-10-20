@@ -107,22 +107,22 @@ namespace CapaPresentacion
 
             var data = new
             {
-                dni = Convert.ToInt32(txtDni.Text),               
-                apellido = txtApellido.Text,
-                nombre = txtNombre.Text,
+                dni = Convert.ToInt32(txtDni.Text.Trim()),               
+                apellido = txtApellido.Text.Trim(),
+                nombre = txtNombre.Text.Trim(),
                 sexo_id = Convert.ToInt32(cmbSexo.SelectedValue.ToString()),
                 estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
-                telefono = txtTelefono.Text,
+                telefono = txtTelefono.Text.Trim(),
                 fecha_nac = dtpickFechaNacimiento.Value,
                 nacionalidad_id = Convert.ToString(cmbNacionalidad.SelectedValue.ToString()),
                 pais_id = cmbPais.SelectedValue.ToString(),
                 provincia_id = cmbProvincia.SelectedValue.ToString(),
                 departamento_id = Convert.ToInt32(cmbDepartamento.SelectedValue.ToString()),
                 municipio_id = Convert.ToInt32(cmbMunicipio.SelectedValue.ToString()),
-                ciudad = txtCiudad.Text,
-                barrio = txtBarrio.Text,
-                direccion = txtDireccion.Text,
-                numero_dom = Convert.ToInt32(txtNumDomicilio.Text)
+                ciudad = txtCiudad.Text.Trim(),
+                barrio = txtBarrio.Text.Trim(),
+                direccion = txtDireccion.Text.Trim(),
+                numero_dom = Convert.ToInt32(txtNumDomicilio.Text.Trim())
 
             };
 
