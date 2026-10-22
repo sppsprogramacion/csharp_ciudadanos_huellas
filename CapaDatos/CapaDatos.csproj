@@ -102,6 +102,8 @@
     <Compile Include="DCategoriasCiudadano.cs" />
     <Compile Include="DCiudadano.cs" />
     <Compile Include="DCiudadanosCategorias.cs" />
+    <Compile Include="DEntradaSalidaSabanaCiudadano.cs" />
+    <Compile Include="DEntradaSalidaSabanaInterno.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="DExcepcionIngresoVisita.cs" />
     <Compile Include="DHuella.cs" />

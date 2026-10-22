@@ -107,6 +107,7 @@
     <Compile Include="CiudadanoDaoImpl.cs" />
     <Compile Include="CiudadanosCategoriasDaoImpl.cs" />
     <Compile Include="DepartamentoDaolmpl.cs" />
+    <Compile Include="EntradaSalidaDaoImplement.cs" />
     <Compile Include="EstadoCivilDaoImpl.cs" />
     <Compile Include="ExcepcionIngresoVisitaDaoImpl.cs" />
     <Compile Include="HuellaDaoImplement.cs" />

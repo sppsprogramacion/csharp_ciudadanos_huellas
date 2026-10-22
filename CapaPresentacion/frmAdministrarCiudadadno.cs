@@ -2296,6 +2296,60 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnVerSabana_Click(object sender, EventArgs e)
+        {
+            this.CargarDataGridSabana();
+        }
+
+
+        //METODO PARA OBTENER LA LISTA DE SABANA DEL CIUDADANO
+        async private void CargarDataGridSabana()
+        {
+            NEntradaSalida nEntradaSalida = new NEntradaSalida();
+            (List<DEntradaSalidaSabanaCiudadano> listaSabana, string errorResponse) = await nEntradaSalida.ListaSabanaXCiudadano(Convert.ToInt32(txtIdCiudadano.Text), dtpFechaInicioSabana.Value.ToString("yyyy-MM-dd"), dtpFechaFinSabana.Value.ToString("yyyy-MM-dd"));
+
+            if (listaSabana == null)
+            {
+                MessageBox.Show(errorResponse, "Atencion Ciudadanos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaSabana
+                .Select(c => new
+                {
+                    Fecha = c.fecha_registro,
+                    Interno = c.nombre_interno,
+                    Parentesco = c.parentesco,
+                    Entrada = c.hora_registro,
+                    Salida = c.hora_egreso,
+                    Menores = c.menores,
+                    Organismo = c.organismo
+                })
+                .ToList();
+
+            dtgIngresos.DataSource = datosfiltrados;
+
+            if (listaSabana.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros", "Restrición Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                dtgIngresos.Columns[0].Width = 80;
+                dtgIngresos.Columns[1].Width = 250;
+                dtgIngresos.Columns[2].Width = 90;
+                dtgIngresos.Columns[3].Width = 70;
+                dtgIngresos.Columns[4].Width = 70;
+                dtgIngresos.Columns[5].Width = 300;
+                dtgIngresos.Columns[6].Width = 150;
+
+            }
+        }
+        
+        //FIN METODO PARA OBTENER LA LISTA DE SABANA DEL CIUDADANO
+        //----------------------------------------------------------------------------------
     }
 
 }

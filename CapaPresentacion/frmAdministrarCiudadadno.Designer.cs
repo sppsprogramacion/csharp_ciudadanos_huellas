@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministrarCiudadadno));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabCodigoRojo = new System.Windows.Forms.TabControl();
             this.tabEditarCiudadano = new System.Windows.Forms.TabPage();
             this.opMED = new System.Windows.Forms.CheckBox();
@@ -136,6 +140,11 @@
             this.txtEstablecerDiscapacidad = new System.Windows.Forms.TextBox();
             this.btnEstablecerDiscapacidad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnQuitarCodigoRojo = new System.Windows.Forms.Button();
+            this.btnEstablecerCodigoRojo = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabEstablecerCategorias = new System.Windows.Forms.TabPage();
             this.btnHistorialCategorias = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -256,11 +265,13 @@
             this.dtgvProhibiciones = new System.Windows.Forms.DataGridView();
             this.btnVerProhibiciones = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnQuitarCodigoRojo = new System.Windows.Forms.Button();
-            this.btnEstablecerCodigoRojo = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.btnVerSabana = new System.Windows.Forms.Button();
+            this.dtgIngresos = new System.Windows.Forms.DataGridView();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dtpFechaInicioSabana = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.dtpFechaFinSabana = new System.Windows.Forms.DateTimePicker();
             this.tabCodigoRojo.SuspendLayout();
             this.tabEditarCiudadano.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -294,10 +305,13 @@
             this.tabExcepcionesIngreso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvExcepcionesIngreso)).BeginInit();
             this.groupBox12.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabVerProhibiciones.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProhibiciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgIngresos)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCodigoRojo
@@ -1539,6 +1553,60 @@
             this.panel1.Size = new System.Drawing.Size(512, 445);
             this.panel1.TabIndex = 10;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(10, 301);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(99, 16);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Observación:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(16, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(260, 25);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Establecer Código Rojo";
+            // 
+            // btnQuitarCodigoRojo
+            // 
+            this.btnQuitarCodigoRojo.BackColor = System.Drawing.Color.White;
+            this.btnQuitarCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarCodigoRojo.Image")));
+            this.btnQuitarCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuitarCodigoRojo.Location = new System.Drawing.Point(238, 366);
+            this.btnQuitarCodigoRojo.Name = "btnQuitarCodigoRojo";
+            this.btnQuitarCodigoRojo.Size = new System.Drawing.Size(210, 51);
+            this.btnQuitarCodigoRojo.TabIndex = 4;
+            this.btnQuitarCodigoRojo.Text = "Quitar Código Rojo";
+            this.btnQuitarCodigoRojo.UseVisualStyleBackColor = false;
+            // 
+            // btnEstablecerCodigoRojo
+            // 
+            this.btnEstablecerCodigoRojo.BackColor = System.Drawing.Color.White;
+            this.btnEstablecerCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstablecerCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnEstablecerCodigoRojo.Image")));
+            this.btnEstablecerCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstablecerCodigoRojo.Location = new System.Drawing.Point(13, 366);
+            this.btnEstablecerCodigoRojo.Name = "btnEstablecerCodigoRojo";
+            this.btnEstablecerCodigoRojo.Size = new System.Drawing.Size(210, 51);
+            this.btnEstablecerCodigoRojo.TabIndex = 3;
+            this.btnEstablecerCodigoRojo.Text = "           Establecer Código Rojo";
+            this.btnEstablecerCodigoRojo.UseVisualStyleBackColor = false;
+            this.btnEstablecerCodigoRojo.Click += new System.EventHandler(this.btnEstablecerCodigoRojo_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 322);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(490, 20);
+            this.textBox1.TabIndex = 1;
+            // 
             // tabEstablecerCategorias
             // 
             this.tabEstablecerCategorias.Controls.Add(this.btnHistorialCategorias);
@@ -2611,6 +2679,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.dtpFechaInicioSabana);
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.dtpFechaFinSabana);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.btnVerSabana);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -2866,59 +2940,113 @@
             this.label23.TabIndex = 1;
             this.label23.Text = "Formulario Administrar datos Ciudadanos:";
             // 
-            // textBox1
+            // btnVerSabana
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 322);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(490, 20);
-            this.textBox1.TabIndex = 1;
+            this.btnVerSabana.BackColor = System.Drawing.Color.White;
+            this.btnVerSabana.Image = global::CapaPresentacion.Properties.Resources.actualiza2;
+            this.btnVerSabana.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerSabana.Location = new System.Drawing.Point(289, 20);
+            this.btnVerSabana.Name = "btnVerSabana";
+            this.btnVerSabana.Size = new System.Drawing.Size(137, 37);
+            this.btnVerSabana.TabIndex = 2;
+            this.btnVerSabana.Text = "         Ver Sabana";
+            this.btnVerSabana.UseVisualStyleBackColor = false;
+            this.btnVerSabana.Click += new System.EventHandler(this.btnVerSabana_Click);
             // 
-            // btnQuitarCodigoRojo
+            // dtgIngresos
             // 
-            this.btnQuitarCodigoRojo.BackColor = System.Drawing.Color.White;
-            this.btnQuitarCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarCodigoRojo.Image")));
-            this.btnQuitarCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitarCodigoRojo.Location = new System.Drawing.Point(238, 366);
-            this.btnQuitarCodigoRojo.Name = "btnQuitarCodigoRojo";
-            this.btnQuitarCodigoRojo.Size = new System.Drawing.Size(210, 51);
-            this.btnQuitarCodigoRojo.TabIndex = 4;
-            this.btnQuitarCodigoRojo.Text = "Quitar Código Rojo";
-            this.btnQuitarCodigoRojo.UseVisualStyleBackColor = false;
+            this.dtgIngresos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgIngresos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgIngresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgIngresos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgIngresos.EnableHeadersVisualStyles = false;
+            this.dtgIngresos.GridColor = System.Drawing.Color.DimGray;
+            this.dtgIngresos.Location = new System.Drawing.Point(7, 20);
+            this.dtgIngresos.MultiSelect = false;
+            this.dtgIngresos.Name = "dtgIngresos";
+            this.dtgIngresos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgIngresos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgIngresos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgIngresos.Size = new System.Drawing.Size(1079, 484);
+            this.dtgIngresos.TabIndex = 2;
             // 
-            // btnEstablecerCodigoRojo
+            // groupBox8
             // 
-            this.btnEstablecerCodigoRojo.BackColor = System.Drawing.Color.White;
-            this.btnEstablecerCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstablecerCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnEstablecerCodigoRojo.Image")));
-            this.btnEstablecerCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstablecerCodigoRojo.Location = new System.Drawing.Point(13, 366);
-            this.btnEstablecerCodigoRojo.Name = "btnEstablecerCodigoRojo";
-            this.btnEstablecerCodigoRojo.Size = new System.Drawing.Size(210, 51);
-            this.btnEstablecerCodigoRojo.TabIndex = 3;
-            this.btnEstablecerCodigoRojo.Text = "           Establecer Código Rojo";
-            this.btnEstablecerCodigoRojo.UseVisualStyleBackColor = false;
-            this.btnEstablecerCodigoRojo.Click += new System.EventHandler(this.btnEstablecerCodigoRojo_Click);
+            this.groupBox8.Controls.Add(this.dtgIngresos);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.ForeColor = System.Drawing.Color.Black;
+            this.groupBox8.Location = new System.Drawing.Point(11, 75);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1110, 510);
+            this.groupBox8.TabIndex = 93;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Entradas de visitas";
             // 
-            // label16
+            // label24
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(16, 73);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(260, 25);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Establecer Código Rojo";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(17, 16);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(87, 15);
+            this.label24.TabIndex = 115;
+            this.label24.Text = "FECHA INICIO:";
             // 
-            // label21
+            // dtpFechaInicioSabana
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(10, 301);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(99, 16);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Observación:";
+            this.dtpFechaInicioSabana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicioSabana.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicioSabana.Location = new System.Drawing.Point(20, 36);
+            this.dtpFechaInicioSabana.Name = "dtpFechaInicioSabana";
+            this.dtpFechaInicioSabana.Size = new System.Drawing.Size(115, 21);
+            this.dtpFechaInicioSabana.TabIndex = 114;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(154, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(71, 15);
+            this.label28.TabIndex = 113;
+            this.label28.Text = "FECHA FIN:";
+            // 
+            // dtpFechaFinSabana
+            // 
+            this.dtpFechaFinSabana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinSabana.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinSabana.Location = new System.Drawing.Point(157, 36);
+            this.dtpFechaFinSabana.Name = "dtpFechaFinSabana";
+            this.dtpFechaFinSabana.Size = new System.Drawing.Size(115, 21);
+            this.dtpFechaFinSabana.TabIndex = 112;
             // 
             // frmAdministrarCiudadadno
             // 
@@ -2980,11 +3108,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvExcepcionesIngreso)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabVerProhibiciones.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProhibiciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgIngresos)).EndInit();
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3224,6 +3356,13 @@
         private System.Windows.Forms.Button btnEstablecerCodigoRojo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnVerSabana;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.DataGridView dtgIngresos;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicioSabana;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinSabana;
     }
 }
 

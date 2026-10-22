@@ -104,6 +104,7 @@
     <Compile Include="ICiudadanoDao.cs" />
     <Compile Include="ICiudadanosCategoriasDao.cs" />
     <Compile Include="IDepartamentoDao.cs" />
+    <Compile Include="IEntradaSalidaDao.cs" />
     <Compile Include="IEstadoCivilDao.cs" />
     <Compile Include="IExcepcionIngresoVisitaDao.cs" />
     <Compile Include="IHuellaDao.cs" />
