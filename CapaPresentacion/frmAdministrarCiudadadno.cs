@@ -644,66 +644,7 @@ namespace CapaPresentacion
             
             this.tabCodigoRojo.SelectedIndex = 3;
         }
-
-        private async void btnAsignarVisita_Click(object sender, EventArgs e)
-        {//inicio del boton asignar visitas
-            if (this.txtIdCiuadanoVincularvisita.Text == string.Empty)
-            {
-                MessageBox.Show("Debe seleccionar el ciudadano");
-            }
-            else
-            {
-                NCiudadano nCiudadano = new NCiudadano();
-
-                //limpiar errores de provider
-                errorProvider.Clear();
-
-                //validacion de formulario
-                var datosFormulario = new CiudadanoDatos
-                {
-                    txtAsignarVisitaDetalle = txtAsignarVisitaDetalle.Text,
-                };
-
-                var validator = new AsignarComoVisitaValidator();
-                var result = validator.Validate(datosFormulario);
-
-                if (!result.IsValid)
-                {
-                    MessageBox.Show("Complete correctamente los campos del formulario", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    foreach (var failure in result.Errors)
-                    {
-                        Control control = Controls.Find(failure.PropertyName, true)[0];
-                        errorProvider.SetError(control, failure.ErrorMessage);
-                    }
-                    return;
-                }
-                //fin validacion...........................
-
-                var data = new
-                {
-                    novedad_detalle = txtAsignarVisitaDetalle.Text,
-                };
-
-                string dataCiudadano = JsonConvert.SerializeObject(data);
-
-                (bool respuestaEditar, string errorResponse) = await nCiudadano.establecerVisita(Convert.ToInt32(txtIdCiudadano.Text), dataCiudadano);
-
-                if (respuestaEditar)
-                {
-
-                    MessageBox.Show("Se establecio correctamente como visita", "Atencion ciudadanos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //actualiza datos del ciudadano y controla si esta como vivista
-                    this.ActualizarCiudadano();
-                    this.txtAsignarVisitaDetalle.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show(errorResponse, "Atencion ciudadanos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                          
-                }
-            }
-        }//fin del boton asignar visitas
+                
 
         private async void btnEstablecerDiscapacidad_Click(object sender, EventArgs e)
         {
@@ -1013,9 +954,6 @@ namespace CapaPresentacion
             this.ControlTieneDiscapacidad();
             //fin controlar es visita y discapacidad
 
-            this.txtIdCiuadanoVincularvisita.Text = txtIdCiudadano.Text;
-            this.txtDniVisita.Text = txtDni.Text;
-            this.txtNombreVisita.Text = txtApellido.Text + " " + txtNombre.Text;
         }
 
         //ACTUALIZAR CIUDADANO
@@ -1053,16 +991,11 @@ namespace CapaPresentacion
             {
                 lblEsVisitaPrincipal.Text = "Ciudadano registrado como visita";
                 lblEsVisitaPrincipal.ForeColor = Color.SteelBlue;
-                lblEsVisita.Text = "Ciudadano registrado como visita";
-                lblEsVisita.ForeColor = Color.SteelBlue;
-                btnAsignarVisita.Enabled = false;
             }
             else
             {
                 lblEsVisitaPrincipal.Text = "Ciudadano no registrado como visita";
                 lblEsVisitaPrincipal.ForeColor = Color.Red;
-                lblEsVisita.Text = "Ciudadano no registrado como visita";
-                lblEsVisita.ForeColor = Color.Red;
             }
         }
         //FIN CONTROL ES VISITA
@@ -1628,71 +1561,8 @@ namespace CapaPresentacion
         {
             MessageBox.Show("Hola Mundo");
         }
-
-        private async void btnQuitarVisita_Click(object sender, EventArgs e)
-        {//inicio quitar ciudadano como visita
-            
-
-            if (this.txtIdCiuadanoVincularvisita.Text == string.Empty)
-            {
-                MessageBox.Show("Debe seleccionar el ciudadano");
-            }
-
-            else
-            {
-                NCiudadano nCiudadano = new NCiudadano();
-
-                //limpiar errores de provider
-                errorProvider.Clear();
-
-                //validacion de formulario
-                var datosFormulario = new CiudadanoDatos
-                {
-                    txtAsignarVisitaDetalle = txtAsignarVisitaDetalle.Text,
-                };
-
-                var validator = new AsignarComoVisitaValidator();
-                var result = validator.Validate(datosFormulario);
-
-                if (!result.IsValid)
-                {
-                    MessageBox.Show("Complete correctamente los campos del formulario", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    foreach (var failure in result.Errors)
-                    {
-                        Control control = Controls.Find(failure.PropertyName, true)[0];
-                        errorProvider.SetError(control, failure.ErrorMessage);
-                    }
-                    return;
-                }
-                //fin validacion...........................
-
-                var data = new
-                {
-                    novedad_detalle = txtAsignarVisitaDetalle.Text,
-                };
-
-                string dataCiudadano = JsonConvert.SerializeObject(data);
-
-                (bool respuestaEditar, string errorResponse) = await nCiudadano.quitarVisita(Convert.ToInt32(txtIdCiuadanoVincularvisita.Text), dataCiudadano);
-
-                if (respuestaEditar)
-                {
-
-                    MessageBox.Show("Se quitó correctamente al ciudadano como visita", "Atencion ciudadanos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //actualiza datos del ciudadano y controla si esta como vivista
-                    this.ActualizarCiudadano();
-                    this.txtAsignarVisitaDetalle.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show(errorResponse, "Atencion ciudadanos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-            }
-
-        }//fin quitar ciudadano como visita
-
+        
+        
         private async void btnAbrirFormularioImprimir_Click(object sender, EventArgs e)
         {
             if (this.txtIdCiudadano.Text == string.Empty)
@@ -2420,6 +2290,11 @@ namespace CapaPresentacion
         private void btnHistorialCategorias_Click(object sender, EventArgs e)
         {
             this.CargarCategoriasHistoricaDelCiudadano();
+        }
+
+        private void btnEstablecerCodigoRojo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

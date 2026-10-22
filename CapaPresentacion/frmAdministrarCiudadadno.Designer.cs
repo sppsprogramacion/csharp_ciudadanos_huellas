@@ -31,6 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministrarCiudadadno));
             this.tabCodigoRojo = new System.Windows.Forms.TabControl();
             this.tabEditarCiudadano = new System.Windows.Forms.TabPage();
+            this.opMED = new System.Windows.Forms.CheckBox();
+            this.opAD = new System.Windows.Forms.CheckBox();
+            this.opMAD = new System.Windows.Forms.CheckBox();
+            this.opID = new System.Windows.Forms.CheckBox();
+            this.opPD = new System.Windows.Forms.CheckBox();
+            this.opPI = new System.Windows.Forms.CheckBox();
+            this.opII = new System.Windows.Forms.CheckBox();
+            this.opMAI = new System.Windows.Forms.CheckBox();
+            this.opAI = new System.Windows.Forms.CheckBox();
+            this.opMEI = new System.Windows.Forms.CheckBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnCancelarSubirImagen = new System.Windows.Forms.Button();
             this.btnAbrirFormularioImprimir = new System.Windows.Forms.Button();
             this.lblMenorEdad = new System.Windows.Forms.Label();
@@ -123,19 +136,6 @@
             this.txtEstablecerDiscapacidad = new System.Windows.Forms.TextBox();
             this.btnEstablecerDiscapacidad = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnQuitarVisita = new System.Windows.Forms.Button();
-            this.lblEsVisita = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btnAsignarVisita = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.txtAsignarVisitaDetalle = new System.Windows.Forms.TextBox();
-            this.txtIdCiuadanoVincularvisita = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtDniVisita = new System.Windows.Forms.TextBox();
-            this.txtNombreVisita = new System.Windows.Forms.TextBox();
             this.tabEstablecerCategorias = new System.Windows.Forms.TabPage();
             this.btnHistorialCategorias = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -234,10 +234,6 @@
             this.dtpFechaExcepcion = new System.Windows.Forms.DateTimePicker();
             this.label64 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnQuitarCodigoRojo = new System.Windows.Forms.Button();
-            this.btnEstablecerCodigoRojo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabVerProhibiciones = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label57 = new System.Windows.Forms.Label();
@@ -260,21 +256,14 @@
             this.dtgvProhibiciones = new System.Windows.Forms.DataGridView();
             this.btnVerProhibiciones = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
-            this.opMED = new System.Windows.Forms.CheckBox();
-            this.opAD = new System.Windows.Forms.CheckBox();
-            this.opMAD = new System.Windows.Forms.CheckBox();
-            this.opID = new System.Windows.Forms.CheckBox();
-            this.opPD = new System.Windows.Forms.CheckBox();
-            this.opPI = new System.Windows.Forms.CheckBox();
-            this.opII = new System.Windows.Forms.CheckBox();
-            this.opMAI = new System.Windows.Forms.CheckBox();
-            this.opAI = new System.Windows.Forms.CheckBox();
-            this.opMEI = new System.Windows.Forms.CheckBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnQuitarCodigoRojo = new System.Windows.Forms.Button();
+            this.btnEstablecerCodigoRojo = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabCodigoRojo.SuspendLayout();
             this.tabEditarCiudadano.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagenCargar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -289,7 +278,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabEstablecerCategorias.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriasCiudadano)).BeginInit();
@@ -306,12 +294,10 @@
             this.tabExcepcionesIngreso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvExcepcionesIngreso)).BeginInit();
             this.groupBox12.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabVerProhibiciones.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProhibiciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabCodigoRojo
@@ -371,6 +357,141 @@
             this.tabEditarCiudadano.TabIndex = 0;
             this.tabEditarCiudadano.Text = "Editar Ciudadano";
             this.tabEditarCiudadano.UseVisualStyleBackColor = true;
+            // 
+            // opMED
+            // 
+            this.opMED.AutoSize = true;
+            this.opMED.BackColor = System.Drawing.Color.Black;
+            this.opMED.Location = new System.Drawing.Point(598, 482);
+            this.opMED.Name = "opMED";
+            this.opMED.Size = new System.Drawing.Size(15, 14);
+            this.opMED.TabIndex = 119;
+            this.opMED.UseVisualStyleBackColor = false;
+            // 
+            // opAD
+            // 
+            this.opAD.AutoSize = true;
+            this.opAD.BackColor = System.Drawing.Color.Black;
+            this.opAD.Location = new System.Drawing.Point(622, 455);
+            this.opAD.Name = "opAD";
+            this.opAD.Size = new System.Drawing.Size(15, 14);
+            this.opAD.TabIndex = 118;
+            this.opAD.UseVisualStyleBackColor = false;
+            // 
+            // opMAD
+            // 
+            this.opMAD.AutoSize = true;
+            this.opMAD.BackColor = System.Drawing.Color.Black;
+            this.opMAD.Location = new System.Drawing.Point(652, 445);
+            this.opMAD.Name = "opMAD";
+            this.opMAD.Size = new System.Drawing.Size(15, 14);
+            this.opMAD.TabIndex = 117;
+            this.opMAD.UseVisualStyleBackColor = false;
+            // 
+            // opID
+            // 
+            this.opID.AutoSize = true;
+            this.opID.BackColor = System.Drawing.Color.Black;
+            this.opID.Location = new System.Drawing.Point(681, 445);
+            this.opID.Name = "opID";
+            this.opID.Size = new System.Drawing.Size(15, 14);
+            this.opID.TabIndex = 116;
+            this.opID.UseVisualStyleBackColor = false;
+            // 
+            // opPD
+            // 
+            this.opPD.AutoSize = true;
+            this.opPD.BackColor = System.Drawing.Color.Black;
+            this.opPD.Location = new System.Drawing.Point(726, 508);
+            this.opPD.Name = "opPD";
+            this.opPD.Size = new System.Drawing.Size(15, 14);
+            this.opPD.TabIndex = 115;
+            this.opPD.UseVisualStyleBackColor = false;
+            // 
+            // opPI
+            // 
+            this.opPI.AutoSize = true;
+            this.opPI.BackColor = System.Drawing.Color.Black;
+            this.opPI.Location = new System.Drawing.Point(757, 509);
+            this.opPI.Name = "opPI";
+            this.opPI.Size = new System.Drawing.Size(15, 14);
+            this.opPI.TabIndex = 114;
+            this.opPI.UseVisualStyleBackColor = false;
+            // 
+            // opII
+            // 
+            this.opII.AutoSize = true;
+            this.opII.BackColor = System.Drawing.Color.Black;
+            this.opII.Location = new System.Drawing.Point(804, 441);
+            this.opII.Name = "opII";
+            this.opII.Size = new System.Drawing.Size(15, 14);
+            this.opII.TabIndex = 113;
+            this.opII.UseVisualStyleBackColor = false;
+            // 
+            // opMAI
+            // 
+            this.opMAI.AutoSize = true;
+            this.opMAI.BackColor = System.Drawing.Color.Black;
+            this.opMAI.Location = new System.Drawing.Point(834, 441);
+            this.opMAI.Name = "opMAI";
+            this.opMAI.Size = new System.Drawing.Size(15, 14);
+            this.opMAI.TabIndex = 112;
+            this.opMAI.UseVisualStyleBackColor = false;
+            // 
+            // opAI
+            // 
+            this.opAI.AutoSize = true;
+            this.opAI.BackColor = System.Drawing.Color.Black;
+            this.opAI.Location = new System.Drawing.Point(865, 451);
+            this.opAI.Name = "opAI";
+            this.opAI.Size = new System.Drawing.Size(15, 14);
+            this.opAI.TabIndex = 111;
+            this.opAI.UseVisualStyleBackColor = false;
+            // 
+            // opMEI
+            // 
+            this.opMEI.AutoSize = true;
+            this.opMEI.BackColor = System.Drawing.Color.Black;
+            this.opMEI.ForeColor = System.Drawing.Color.Black;
+            this.opMEI.Location = new System.Drawing.Point(887, 480);
+            this.opMEI.Name = "opMEI";
+            this.opMEI.Size = new System.Drawing.Size(15, 14);
+            this.opMEI.TabIndex = 110;
+            this.opMEI.UseVisualStyleBackColor = false;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.Color.Transparent;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.Color.DimGray;
+            this.label70.Location = new System.Drawing.Point(605, 545);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(116, 16);
+            this.label70.TabIndex = 109;
+            this.label70.Text = "MANO DERECHA";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.BackColor = System.Drawing.Color.Transparent;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ForeColor = System.Drawing.Color.DimGray;
+            this.label72.Location = new System.Drawing.Point(774, 545);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(122, 16);
+            this.label72.TabIndex = 108;
+            this.label72.Text = "MANO IZQUIERDA";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.manos_lila;
+            this.pictureBox4.Location = new System.Drawing.Point(599, 437);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(303, 144);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 107;
+            this.pictureBox4.TabStop = false;
             // 
             // btnCancelarSubirImagen
             // 
@@ -1327,9 +1448,9 @@
             // btnQuitarDiscapacidad
             // 
             this.btnQuitarDiscapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarDiscapacidad.Location = new System.Drawing.Point(244, 389);
+            this.btnQuitarDiscapacidad.Location = new System.Drawing.Point(251, 366);
             this.btnQuitarDiscapacidad.Name = "btnQuitarDiscapacidad";
-            this.btnQuitarDiscapacidad.Size = new System.Drawing.Size(196, 36);
+            this.btnQuitarDiscapacidad.Size = new System.Drawing.Size(210, 51);
             this.btnQuitarDiscapacidad.TabIndex = 44;
             this.btnQuitarDiscapacidad.Text = "Quitar Discapacidad";
             this.btnQuitarDiscapacidad.UseVisualStyleBackColor = true;
@@ -1361,7 +1482,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(19, 349);
+            this.label29.Location = new System.Drawing.Point(19, 301);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(99, 16);
             this.label29.TabIndex = 10;
@@ -1370,10 +1491,10 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(116, 73);
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(17, 73);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(240, 24);
+            this.label41.Size = new System.Drawing.Size(273, 25);
             this.label41.TabIndex = 9;
             this.label41.Text = "Establecer Discapacidad";
             // 
@@ -1388,17 +1509,17 @@
             // 
             // txtEstablecerDiscapacidad
             // 
-            this.txtEstablecerDiscapacidad.Location = new System.Drawing.Point(120, 348);
+            this.txtEstablecerDiscapacidad.Location = new System.Drawing.Point(22, 322);
             this.txtEstablecerDiscapacidad.Name = "txtEstablecerDiscapacidad";
-            this.txtEstablecerDiscapacidad.Size = new System.Drawing.Size(343, 20);
+            this.txtEstablecerDiscapacidad.Size = new System.Drawing.Size(441, 20);
             this.txtEstablecerDiscapacidad.TabIndex = 6;
             // 
             // btnEstablecerDiscapacidad
             // 
             this.btnEstablecerDiscapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstablecerDiscapacidad.Location = new System.Drawing.Point(54, 389);
+            this.btnEstablecerDiscapacidad.Location = new System.Drawing.Point(22, 366);
             this.btnEstablecerDiscapacidad.Name = "btnEstablecerDiscapacidad";
-            this.btnEstablecerDiscapacidad.Size = new System.Drawing.Size(167, 37);
+            this.btnEstablecerDiscapacidad.Size = new System.Drawing.Size(210, 51);
             this.btnEstablecerDiscapacidad.TabIndex = 7;
             this.btnEstablecerDiscapacidad.Text = "Establecer Discapacidad";
             this.btnEstablecerDiscapacidad.UseVisualStyleBackColor = true;
@@ -1408,144 +1529,15 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnQuitarVisita);
-            this.panel1.Controls.Add(this.lblEsVisita);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.btnAsignarVisita);
-            this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.label30);
-            this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.label40);
-            this.panel1.Controls.Add(this.txtAsignarVisitaDetalle);
-            this.panel1.Controls.Add(this.txtIdCiuadanoVincularvisita);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.txtDniVisita);
-            this.panel1.Controls.Add(this.txtNombreVisita);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.btnQuitarCodigoRojo);
+            this.panel1.Controls.Add(this.btnEstablecerCodigoRojo);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(34, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 445);
             this.panel1.TabIndex = 10;
-            // 
-            // btnQuitarVisita
-            // 
-            this.btnQuitarVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarVisita.Location = new System.Drawing.Point(248, 388);
-            this.btnQuitarVisita.Name = "btnQuitarVisita";
-            this.btnQuitarVisita.Size = new System.Drawing.Size(199, 37);
-            this.btnQuitarVisita.TabIndex = 41;
-            this.btnQuitarVisita.Text = "Quitar Visitas";
-            this.btnQuitarVisita.UseVisualStyleBackColor = true;
-            this.btnQuitarVisita.Click += new System.EventHandler(this.btnQuitarVisita_Click);
-            // 
-            // lblEsVisita
-            // 
-            this.lblEsVisita.AutoSize = true;
-            this.lblEsVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEsVisita.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblEsVisita.Location = new System.Drawing.Point(27, 14);
-            this.lblEsVisita.Name = "lblEsVisita";
-            this.lblEsVisita.Size = new System.Drawing.Size(76, 20);
-            this.lblEsVisita.TabIndex = 40;
-            this.lblEsVisita.Text = "Es visita";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(23, 111);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(21, 13);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "ID:";
-            // 
-            // btnAsignarVisita
-            // 
-            this.btnAsignarVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignarVisita.Location = new System.Drawing.Point(49, 388);
-            this.btnAsignarVisita.Name = "btnAsignarVisita";
-            this.btnAsignarVisita.Size = new System.Drawing.Size(173, 37);
-            this.btnAsignarVisita.TabIndex = 5;
-            this.btnAsignarVisita.Text = "Asignar como visita";
-            this.btnAsignarVisita.UseVisualStyleBackColor = true;
-            this.btnAsignarVisita.Click += new System.EventHandler(this.btnAsignarVisita_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(23, 201);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(93, 13);
-            this.label24.TabIndex = 38;
-            this.label24.Text = "Apellido y nombre:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(21, 155);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(29, 13);
-            this.label30.TabIndex = 37;
-            this.label30.Text = "DNI:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(21, 350);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(99, 16);
-            this.label28.TabIndex = 7;
-            this.label28.Text = "Observación:";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(142, 80);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(195, 24);
-            this.label40.TabIndex = 6;
-            this.label40.Text = "Asignar como Visita";
-            // 
-            // txtAsignarVisitaDetalle
-            // 
-            this.txtAsignarVisitaDetalle.Location = new System.Drawing.Point(122, 349);
-            this.txtAsignarVisitaDetalle.Name = "txtAsignarVisitaDetalle";
-            this.txtAsignarVisitaDetalle.Size = new System.Drawing.Size(372, 20);
-            this.txtAsignarVisitaDetalle.TabIndex = 4;
-            // 
-            // txtIdCiuadanoVincularvisita
-            // 
-            this.txtIdCiuadanoVincularvisita.Location = new System.Drawing.Point(24, 127);
-            this.txtIdCiuadanoVincularvisita.Name = "txtIdCiuadanoVincularvisita";
-            this.txtIdCiuadanoVincularvisita.ReadOnly = true;
-            this.txtIdCiuadanoVincularvisita.Size = new System.Drawing.Size(198, 20);
-            this.txtIdCiuadanoVincularvisita.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(256, 121);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(217, 206);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtDniVisita
-            // 
-            this.txtDniVisita.Location = new System.Drawing.Point(24, 172);
-            this.txtDniVisita.Name = "txtDniVisita";
-            this.txtDniVisita.ReadOnly = true;
-            this.txtDniVisita.Size = new System.Drawing.Size(198, 20);
-            this.txtDniVisita.TabIndex = 2;
-            // 
-            // txtNombreVisita
-            // 
-            this.txtNombreVisita.Location = new System.Drawing.Point(24, 217);
-            this.txtNombreVisita.Name = "txtNombreVisita";
-            this.txtNombreVisita.ReadOnly = true;
-            this.txtNombreVisita.Size = new System.Drawing.Size(198, 20);
-            this.txtNombreVisita.TabIndex = 3;
             // 
             // tabEstablecerCategorias
             // 
@@ -2619,60 +2611,13 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.btnQuitarCodigoRojo);
-            this.tabPage2.Controls.Add(this.btnEstablecerCodigoRojo);
-            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1216, 591);
             this.tabPage2.TabIndex = 9;
-            this.tabPage2.Text = "Código Rojo";
+            this.tabPage2.Text = "Sabana";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bernard MT Condensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(235, 45);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(745, 57);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Establecer Ciudadanos con Código Rojo";
-            // 
-            // btnQuitarCodigoRojo
-            // 
-            this.btnQuitarCodigoRojo.BackColor = System.Drawing.Color.White;
-            this.btnQuitarCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarCodigoRojo.Image")));
-            this.btnQuitarCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitarCodigoRojo.Location = new System.Drawing.Point(610, 288);
-            this.btnQuitarCodigoRojo.Name = "btnQuitarCodigoRojo";
-            this.btnQuitarCodigoRojo.Size = new System.Drawing.Size(233, 51);
-            this.btnQuitarCodigoRojo.TabIndex = 2;
-            this.btnQuitarCodigoRojo.Text = "Quitar Código Rojo";
-            this.btnQuitarCodigoRojo.UseVisualStyleBackColor = false;
-            // 
-            // btnEstablecerCodigoRojo
-            // 
-            this.btnEstablecerCodigoRojo.BackColor = System.Drawing.Color.White;
-            this.btnEstablecerCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstablecerCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnEstablecerCodigoRojo.Image")));
-            this.btnEstablecerCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstablecerCodigoRojo.Location = new System.Drawing.Point(353, 288);
-            this.btnEstablecerCodigoRojo.Name = "btnEstablecerCodigoRojo";
-            this.btnEstablecerCodigoRojo.Size = new System.Drawing.Size(251, 51);
-            this.btnEstablecerCodigoRojo.TabIndex = 1;
-            this.btnEstablecerCodigoRojo.Text = "Establecer Código Rojo";
-            this.btnEstablecerCodigoRojo.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(353, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(490, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // tabVerProhibiciones
             // 
@@ -2921,140 +2866,59 @@
             this.label23.TabIndex = 1;
             this.label23.Text = "Formulario Administrar datos Ciudadanos:";
             // 
-            // opMED
+            // textBox1
             // 
-            this.opMED.AutoSize = true;
-            this.opMED.BackColor = System.Drawing.Color.Black;
-            this.opMED.Location = new System.Drawing.Point(598, 482);
-            this.opMED.Name = "opMED";
-            this.opMED.Size = new System.Drawing.Size(15, 14);
-            this.opMED.TabIndex = 119;
-            this.opMED.UseVisualStyleBackColor = false;
+            this.textBox1.Location = new System.Drawing.Point(12, 322);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(490, 20);
+            this.textBox1.TabIndex = 1;
             // 
-            // opAD
+            // btnQuitarCodigoRojo
             // 
-            this.opAD.AutoSize = true;
-            this.opAD.BackColor = System.Drawing.Color.Black;
-            this.opAD.Location = new System.Drawing.Point(622, 455);
-            this.opAD.Name = "opAD";
-            this.opAD.Size = new System.Drawing.Size(15, 14);
-            this.opAD.TabIndex = 118;
-            this.opAD.UseVisualStyleBackColor = false;
+            this.btnQuitarCodigoRojo.BackColor = System.Drawing.Color.White;
+            this.btnQuitarCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarCodigoRojo.Image")));
+            this.btnQuitarCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuitarCodigoRojo.Location = new System.Drawing.Point(238, 366);
+            this.btnQuitarCodigoRojo.Name = "btnQuitarCodigoRojo";
+            this.btnQuitarCodigoRojo.Size = new System.Drawing.Size(210, 51);
+            this.btnQuitarCodigoRojo.TabIndex = 4;
+            this.btnQuitarCodigoRojo.Text = "Quitar Código Rojo";
+            this.btnQuitarCodigoRojo.UseVisualStyleBackColor = false;
             // 
-            // opMAD
+            // btnEstablecerCodigoRojo
             // 
-            this.opMAD.AutoSize = true;
-            this.opMAD.BackColor = System.Drawing.Color.Black;
-            this.opMAD.Location = new System.Drawing.Point(652, 445);
-            this.opMAD.Name = "opMAD";
-            this.opMAD.Size = new System.Drawing.Size(15, 14);
-            this.opMAD.TabIndex = 117;
-            this.opMAD.UseVisualStyleBackColor = false;
+            this.btnEstablecerCodigoRojo.BackColor = System.Drawing.Color.White;
+            this.btnEstablecerCodigoRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstablecerCodigoRojo.Image = ((System.Drawing.Image)(resources.GetObject("btnEstablecerCodigoRojo.Image")));
+            this.btnEstablecerCodigoRojo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstablecerCodigoRojo.Location = new System.Drawing.Point(13, 366);
+            this.btnEstablecerCodigoRojo.Name = "btnEstablecerCodigoRojo";
+            this.btnEstablecerCodigoRojo.Size = new System.Drawing.Size(210, 51);
+            this.btnEstablecerCodigoRojo.TabIndex = 3;
+            this.btnEstablecerCodigoRojo.Text = "           Establecer Código Rojo";
+            this.btnEstablecerCodigoRojo.UseVisualStyleBackColor = false;
+            this.btnEstablecerCodigoRojo.Click += new System.EventHandler(this.btnEstablecerCodigoRojo_Click);
             // 
-            // opID
+            // label16
             // 
-            this.opID.AutoSize = true;
-            this.opID.BackColor = System.Drawing.Color.Black;
-            this.opID.Location = new System.Drawing.Point(681, 445);
-            this.opID.Name = "opID";
-            this.opID.Size = new System.Drawing.Size(15, 14);
-            this.opID.TabIndex = 116;
-            this.opID.UseVisualStyleBackColor = false;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(16, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(260, 25);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Establecer Código Rojo";
             // 
-            // opPD
+            // label21
             // 
-            this.opPD.AutoSize = true;
-            this.opPD.BackColor = System.Drawing.Color.Black;
-            this.opPD.Location = new System.Drawing.Point(726, 508);
-            this.opPD.Name = "opPD";
-            this.opPD.Size = new System.Drawing.Size(15, 14);
-            this.opPD.TabIndex = 115;
-            this.opPD.UseVisualStyleBackColor = false;
-            // 
-            // opPI
-            // 
-            this.opPI.AutoSize = true;
-            this.opPI.BackColor = System.Drawing.Color.Black;
-            this.opPI.Location = new System.Drawing.Point(757, 509);
-            this.opPI.Name = "opPI";
-            this.opPI.Size = new System.Drawing.Size(15, 14);
-            this.opPI.TabIndex = 114;
-            this.opPI.UseVisualStyleBackColor = false;
-            // 
-            // opII
-            // 
-            this.opII.AutoSize = true;
-            this.opII.BackColor = System.Drawing.Color.Black;
-            this.opII.Location = new System.Drawing.Point(804, 441);
-            this.opII.Name = "opII";
-            this.opII.Size = new System.Drawing.Size(15, 14);
-            this.opII.TabIndex = 113;
-            this.opII.UseVisualStyleBackColor = false;
-            // 
-            // opMAI
-            // 
-            this.opMAI.AutoSize = true;
-            this.opMAI.BackColor = System.Drawing.Color.Black;
-            this.opMAI.Location = new System.Drawing.Point(834, 441);
-            this.opMAI.Name = "opMAI";
-            this.opMAI.Size = new System.Drawing.Size(15, 14);
-            this.opMAI.TabIndex = 112;
-            this.opMAI.UseVisualStyleBackColor = false;
-            // 
-            // opAI
-            // 
-            this.opAI.AutoSize = true;
-            this.opAI.BackColor = System.Drawing.Color.Black;
-            this.opAI.Location = new System.Drawing.Point(865, 451);
-            this.opAI.Name = "opAI";
-            this.opAI.Size = new System.Drawing.Size(15, 14);
-            this.opAI.TabIndex = 111;
-            this.opAI.UseVisualStyleBackColor = false;
-            // 
-            // opMEI
-            // 
-            this.opMEI.AutoSize = true;
-            this.opMEI.BackColor = System.Drawing.Color.Black;
-            this.opMEI.ForeColor = System.Drawing.Color.Black;
-            this.opMEI.Location = new System.Drawing.Point(887, 480);
-            this.opMEI.Name = "opMEI";
-            this.opMEI.Size = new System.Drawing.Size(15, 14);
-            this.opMEI.TabIndex = 110;
-            this.opMEI.UseVisualStyleBackColor = false;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.BackColor = System.Drawing.Color.Transparent;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.ForeColor = System.Drawing.Color.DimGray;
-            this.label70.Location = new System.Drawing.Point(605, 545);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(116, 16);
-            this.label70.TabIndex = 109;
-            this.label70.Text = "MANO DERECHA";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.BackColor = System.Drawing.Color.Transparent;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.ForeColor = System.Drawing.Color.DimGray;
-            this.label72.Location = new System.Drawing.Point(774, 545);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(122, 16);
-            this.label72.TabIndex = 108;
-            this.label72.Text = "MANO IZQUIERDA";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.manos_lila;
-            this.pictureBox4.Location = new System.Drawing.Point(599, 437);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(303, 144);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 107;
-            this.pictureBox4.TabStop = false;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(10, 301);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(99, 16);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Observación:";
             // 
             // frmAdministrarCiudadadno
             // 
@@ -3072,6 +2936,7 @@
             this.tabCodigoRojo.ResumeLayout(false);
             this.tabEditarCiudadano.ResumeLayout(false);
             this.tabEditarCiudadano.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagenCargar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -3092,7 +2957,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabEstablecerCategorias.ResumeLayout(false);
             this.tabEstablecerCategorias.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -3116,14 +2980,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvExcepcionesIngreso)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabVerProhibiciones.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProhibiciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3197,13 +3058,7 @@
         private System.Windows.Forms.TextBox txtDetalleMotivo;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtDetalleDomicilio;
-        private System.Windows.Forms.TextBox txtIdCiuadanoVincularvisita;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtNombreVisita;
-        private System.Windows.Forms.TextBox txtDniVisita;
-        private System.Windows.Forms.Button btnAsignarVisita;
         private System.Windows.Forms.Button btnVincularVisitas;
-        private System.Windows.Forms.TextBox txtAsignarVisitaDetalle;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtEstablecerDiscapacidad;
         private System.Windows.Forms.Button btnEstablecerDiscapacidad;
@@ -3222,21 +3077,15 @@
         private System.Windows.Forms.Button btnCrearCiudadanosCategorias;
         private System.Windows.Forms.DataGridView dgvCategoriasCiudadano;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnActualizarPestañaVinculacion;
         private System.Windows.Forms.DataGridView dgvRegistroDiario;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button btnActualizarDatos;
         private System.Windows.Forms.Button btnActualizarAsignar;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label lblEsVisita;
         private System.Windows.Forms.Label lblEsVisitaPrincipal;
         private System.Windows.Forms.Label lblDetalleTieneDiscapacidad;
         private System.Windows.Forms.Label lblTieneDiscapacidad;
@@ -3276,7 +3125,6 @@
         private System.Windows.Forms.ComboBox cmbParentescosMenor;
         private System.Windows.Forms.Label lblMenorEdad;
         private System.Windows.Forms.Button btnQuitarDiscapacidad;
-        private System.Windows.Forms.Button btnQuitarVisita;
         private System.Windows.Forms.Button btnAbrirFormularioImprimir;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnImprimirFormularioEmpadronamiento;
@@ -3336,10 +3184,6 @@
         private System.Windows.Forms.Button btnImprimirVinculos;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnQuitarCodigoRojo;
-        private System.Windows.Forms.Button btnEstablecerCodigoRojo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabPage tabVerProhibiciones;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label57;
@@ -3375,6 +3219,11 @@
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnQuitarCodigoRojo;
+        private System.Windows.Forms.Button btnEstablecerCodigoRojo;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label21;
     }
 }
 
