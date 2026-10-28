@@ -118,5 +118,12 @@ namespace CapaPresentacion
             frmSalidaCiudadano salidaCiudadano = new frmSalidaCiudadano();
             salidaCiudadano.ShowDialog();
         }
+
+        private void btnSaban_Click(object sender, EventArgs e)
+        {
+            FormSabanaBuscar formInternosBuscar = new FormSabanaBuscar();
+
+            formInternosBuscar.ShowDialog();
+        }
     }
 }

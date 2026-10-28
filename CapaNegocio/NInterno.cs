@@ -26,5 +26,17 @@ namespace CapaNegocio
         }
         //FIN RETORNAR INTERNOS POR APELLIDO..................................
 
+        //RETORNAR X APELLIDO GENERAL
+        public async Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido)
+        {
+            IInternoDao internoDao = new InternoDaoImpl();
+
+            (List<DInterno> listaInternos, string error) = await internoDao.ListaInternosXApellidoGeneral(apellido);
+
+            return (listaInternos, error);
+        }
+        //FIN RETORNAR X APELLIDO GENERAL
+        //..............................................................................
+
     }
 }

@@ -37,6 +37,7 @@
             this.btnListaExcepciones = new System.Windows.Forms.Button();
             this.btn_Consultas = new System.Windows.Forms.Button();
             this.btnEgresoCiudadano = new System.Windows.Forms.Button();
+            this.btnSaban = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,11 +152,27 @@
             this.btnEgresoCiudadano.UseVisualStyleBackColor = false;
             this.btnEgresoCiudadano.Click += new System.EventHandler(this.btnEgresoCiudadano_Click);
             // 
+            // btnSaban
+            // 
+            this.btnSaban.BackColor = System.Drawing.Color.White;
+            this.btnSaban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaban.Font = new System.Drawing.Font("Britannic Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaban.Image = ((System.Drawing.Image)(resources.GetObject("btnSaban.Image")));
+            this.btnSaban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaban.Location = new System.Drawing.Point(300, 190);
+            this.btnSaban.Name = "btnSaban";
+            this.btnSaban.Size = new System.Drawing.Size(215, 65);
+            this.btnSaban.TabIndex = 16;
+            this.btnSaban.Text = "               Sabana de Visitas e Internos";
+            this.btnSaban.UseVisualStyleBackColor = false;
+            this.btnSaban.Click += new System.EventHandler(this.btnSaban_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 542);
+            this.Controls.Add(this.btnSaban);
             this.Controls.Add(this.btnEgresoCiudadano);
             this.Controls.Add(this.btn_Consultas);
             this.Controls.Add(this.btnListaExcepciones);
@@ -184,5 +201,6 @@
         private System.Windows.Forms.Button btnListaExcepciones;
         private System.Windows.Forms.Button btn_Consultas;
         private System.Windows.Forms.Button btnEgresoCiudadano;
+        private System.Windows.Forms.Button btnSaban;
     }
 }

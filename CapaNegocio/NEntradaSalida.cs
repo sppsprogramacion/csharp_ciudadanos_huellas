@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class NEntradaSalida
     {
         //LISTA SABANA POR CIUDADANO
-        public async Task<(List<DEntradaSalidaSabanaCiudadano>, string error)> ListaSabanaXCiudadano(int idCiudadano,string fechaInicio, string fechaFin)
+        public async Task<(List<DEntradaSalidaSabanaCiudadano>, string error)> ListaSabanaXCiudadano(int idCiudadano, string fechaInicio, string fechaFin)
         {
             IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
 
@@ -23,16 +23,42 @@ namespace CapaNegocio
         }
         //FIN LISTA SABANA POR CIUDADANO..................................
 
-        //LISTA SABANA POR INTERNO
-        public async Task<(List<DEntradaSalidaSabanaInterno>, string error)> ListaSabanaXInterno(int idCiudadano, string fechaInicio, string fechaFin)
+        //LISTA SABANA POR INTERNMO
+        public async Task<(List<DEntradaSalidaSabanaInterno>, string error)> ListaSabanaXInterno(int idInterno, string fechaInicio, string fechaFin)
         {
             IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
 
-            (List<DEntradaSalidaSabanaInterno> listaEntradas, string errorResponse) = await entradaSalidaDao.ListaEntradaSalidaSabanaXInterno(idCiudadano, fechaInicio, fechaFin);
+            (List<DEntradaSalidaSabanaInterno> listaEntradas, string errorResponse) = await entradaSalidaDao.ListaEntradaSalidaSabanaXinterno(idInterno, fechaInicio, fechaFin);
 
 
             return (listaEntradas, errorResponse);
         }
         //FIN LISTA SABANA POR INTERNO..................................
+
+        //SABANA POR CIUDADANO
+        public async Task<(DCiudadanoSabanaResponse, string error)> BuscarCiudadanoSabanaXInterno(int idCiudadano, string fechaInicio, string fechaFin)
+        {
+            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
+
+            (DCiudadanoSabanaResponse listaEntradas, string errorResponse) = await entradaSalidaDao.BuscarCiudadanoSabanaXCiudadano(idCiudadano, fechaInicio, fechaFin);
+
+
+            return (listaEntradas, errorResponse);
+        }
+        //FIN SABANA POR CIUDADANO..................................
+        //------------------------------------------------------------------------------------
+
+        //SABANA POR INTERNO
+        public async Task<(DInternoSabanaResponse, string error)> BuscarInternoSabanaXInterno(int idInterno, string fechaInicio, string fechaFin)
+        {
+            IEntradaSalidaDao entradaSalidaDao = new EntradaSalidaDaoImplement();
+
+            (DInternoSabanaResponse listaEntradas, string errorResponse) = await entradaSalidaDao.BuscarInternoSabanaXInterno(idInterno, fechaInicio, fechaFin);
+
+
+            return (listaEntradas, errorResponse);
+        }
+        //FIN SABANA POR INTERNO..................................
+        //------------------------------------------------------------
     }
 }

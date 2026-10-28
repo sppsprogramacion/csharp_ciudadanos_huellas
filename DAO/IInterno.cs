@@ -15,5 +15,6 @@ namespace DAO
     {//inicio clase
         //Task<List<DCiudadano>> retornarListaInternoXApellido(string apellido);
         Task<(List<DInterno>, string error)> retornarListaInternoXApellido(string apellido);
+        Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido);
     }//fin clase
 }

@@ -101,7 +101,10 @@
     <Compile Include="DAbogadoInterno.cs" />
     <Compile Include="DCategoriasCiudadano.cs" />
     <Compile Include="DCiudadano.cs" />
+    <Compile Include="DCiudadanoSabanaResponse.cs" />
     <Compile Include="DCiudadanosCategorias.cs" />
+    <Compile Include="DElegirBusquedaInterno.cs" />
+    <Compile Include="DEntradaSalida.cs" />
     <Compile Include="DEntradaSalidaSabanaCiudadano.cs" />
     <Compile Include="DEntradaSalidaSabanaInterno.cs" />
     <Compile Include="Departamento.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="DHuellaCambio.cs" />
     <Compile Include="DHuellaLocal.cs" />
     <Compile Include="DInterno.cs" />
+    <Compile Include="DInternoSabanaResponse.cs" />
     <Compile Include="DLoginResponse.cs" />
     <Compile Include="DMenorACargo.cs" />
     <Compile Include="DMotivoAtencion.cs" />
