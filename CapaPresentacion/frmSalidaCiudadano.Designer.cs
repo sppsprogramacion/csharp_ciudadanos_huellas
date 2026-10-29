@@ -34,13 +34,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscarApellido = new System.Windows.Forms.Button();
             this.dgvListaRegistroDiario = new System.Windows.Forms.DataGridView();
-            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
             this.btnRegistrarSalida = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRegistroDiario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,12 @@
             // 
             // txtIdRegistroDiario
             // 
-            this.txtIdRegistroDiario.Location = new System.Drawing.Point(44, 530);
+            this.txtIdRegistroDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdRegistroDiario.Location = new System.Drawing.Point(44, 555);
             this.txtIdRegistroDiario.Name = "txtIdRegistroDiario";
-            this.txtIdRegistroDiario.Size = new System.Drawing.Size(50, 20);
+            this.txtIdRegistroDiario.ReadOnly = true;
+            this.txtIdRegistroDiario.Size = new System.Drawing.Size(50, 22);
             this.txtIdRegistroDiario.TabIndex = 1;
-            this.txtIdRegistroDiario.Visible = false;
             // 
             // label3
             // 
@@ -76,10 +78,12 @@
             // 
             this.btnBuscarApellido.BackColor = System.Drawing.Color.White;
             this.btnBuscarApellido.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarApellido.Image")));
-            this.btnBuscarApellido.Location = new System.Drawing.Point(309, 94);
+            this.btnBuscarApellido.Location = new System.Drawing.Point(278, 89);
             this.btnBuscarApellido.Name = "btnBuscarApellido";
-            this.btnBuscarApellido.Size = new System.Drawing.Size(35, 33);
-            this.btnBuscarApellido.TabIndex = 7;
+            this.btnBuscarApellido.Size = new System.Drawing.Size(132, 33);
+            this.btnBuscarApellido.TabIndex = 3;
+            this.btnBuscarApellido.Text = "Buscar";
+            this.btnBuscarApellido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscarApellido.UseVisualStyleBackColor = false;
             this.btnBuscarApellido.Click += new System.EventHandler(this.btnBuscarApellido_Click);
             // 
@@ -89,17 +93,8 @@
             this.dgvListaRegistroDiario.Location = new System.Drawing.Point(44, 156);
             this.dgvListaRegistroDiario.Name = "dgvListaRegistroDiario";
             this.dgvListaRegistroDiario.Size = new System.Drawing.Size(719, 368);
-            this.dgvListaRegistroDiario.TabIndex = 9;
+            this.dgvListaRegistroDiario.TabIndex = 4;
             this.dgvListaRegistroDiario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvListaCiudadanos_KeyDown);
-            // 
-            // dtpHoraSalida
-            // 
-            this.dtpHoraSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraSalida.Location = new System.Drawing.Point(684, 39);
-            this.dtpHoraSalida.Name = "dtpHoraSalida";
-            this.dtpHoraSalida.Size = new System.Drawing.Size(79, 20);
-            this.dtpHoraSalida.TabIndex = 10;
             // 
             // btnRegistrarSalida
             // 
@@ -108,11 +103,12 @@
             this.btnRegistrarSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarSalida.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarSalida.Image")));
             this.btnRegistrarSalida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarSalida.Location = new System.Drawing.Point(253, 542);
+            this.btnRegistrarSalida.Location = new System.Drawing.Point(529, 541);
             this.btnRegistrarSalida.Name = "btnRegistrarSalida";
-            this.btnRegistrarSalida.Size = new System.Drawing.Size(265, 47);
-            this.btnRegistrarSalida.TabIndex = 11;
+            this.btnRegistrarSalida.Size = new System.Drawing.Size(235, 47);
+            this.btnRegistrarSalida.TabIndex = 6;
             this.btnRegistrarSalida.Text = "Registrar Horario Salida ";
+            this.btnRegistrarSalida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrarSalida.UseVisualStyleBackColor = false;
             this.btnRegistrarSalida.Click += new System.EventHandler(this.btnRegistrarSalida_Click);
             // 
@@ -140,7 +136,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(141, 72);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(106, 20);
-            this.dtpFecha.TabIndex = 15;
+            this.dtpFecha.TabIndex = 0;
             // 
             // dtpHoraInicio
             // 
@@ -148,7 +144,7 @@
             this.dtpHoraInicio.Location = new System.Drawing.Point(141, 102);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.Size = new System.Drawing.Size(106, 20);
-            this.dtpHoraInicio.TabIndex = 16;
+            this.dtpHoraInicio.TabIndex = 1;
             // 
             // dtpHoraFin
             // 
@@ -156,13 +152,32 @@
             this.dtpHoraFin.Location = new System.Drawing.Point(141, 130);
             this.dtpHoraFin.Name = "dtpHoraFin";
             this.dtpHoraFin.Size = new System.Drawing.Size(106, 20);
-            this.dtpHoraFin.TabIndex = 17;
+            this.dtpHoraFin.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(102, 555);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(419, 22);
+            this.txtNombre.TabIndex = 18;
+            // 
+            // dtpHoraSalida
+            // 
+            this.dtpHoraSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraSalida.Location = new System.Drawing.Point(684, 39);
+            this.dtpHoraSalida.Name = "dtpHoraSalida";
+            this.dtpHoraSalida.Size = new System.Drawing.Size(79, 20);
+            this.dtpHoraSalida.TabIndex = 10;
             // 
             // frmSalidaCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 609);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dtpHoraFin);
             this.Controls.Add(this.dtpHoraInicio);
             this.Controls.Add(this.dtpFecha);
@@ -180,6 +195,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario de Salidas de Ciudadano";
+            this.Load += new System.EventHandler(this.frmSalidaCiudadano_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRegistroDiario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,12 +209,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBuscarApellido;
         private System.Windows.Forms.DataGridView dgvListaRegistroDiario;
-        private System.Windows.Forms.DateTimePicker dtpHoraSalida;
         private System.Windows.Forms.Button btnRegistrarSalida;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpHoraInicio;
         private System.Windows.Forms.DateTimePicker dtpHoraFin;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DateTimePicker dtpHoraSalida;
     }
 }

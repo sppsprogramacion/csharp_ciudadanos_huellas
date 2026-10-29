@@ -121,7 +121,7 @@ namespace DAOImplement
         //FIN RETORNAR LISTA X CIUDADANO...................................
 
         //RETORNAR LISTA POR FECHA
-        public async Task<(List<DRegistroDiario>, string error)> retornarListaRegistroDiario(string fecha_ingreso, string hora_inicio, string hora_fin)
+        public async Task<(List<DRegistroDiario>, string error)> retornarListaRegistroDiario(string fecha_inicio, string fecha_fin, string hora_inicio, string hora_fin)
         {
             //throw new NotImplementedException();
             List<DRegistroDiario> listaRegistroDiario = new List<DRegistroDiario>();
@@ -132,7 +132,7 @@ namespace DAOImplement
                 // Agregar el token en los headers
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/registro-diario/lista-fecha-hora?fecha_ingreso=" + fecha_ingreso + "&hora_inicio=" +  hora_inicio + "&hora_fin=" + hora_fin);
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/registro-diario/lista-fecha-hora?fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin + "&hora_inicio=" +  hora_inicio + "&hora_fin=" + hora_fin);
                                                                                                                                   
 
                 if (httpResponse.IsSuccessStatusCode)
@@ -169,7 +169,6 @@ namespace DAOImplement
         //FIN RETORNAR LISTA POR FECHA
 
         //INICIO LISTA PENDIENTE DE SALIDA
-
         public async Task<(List<DRegistroDiario>, string error)> retornarListaPendienteSalida()
         {
 
@@ -222,26 +221,53 @@ namespace DAOImplement
         }
         
         //INICIO EGRESO DE REGISTRO DIARIO
-       public async Task<HttpResponseMessage> crearEgresoRegistroDiario(int idRegistroDiario, string dataRegistroDiario)
+        public async Task<(bool, string error)> crearEgresoRegistroDiario(int idRegistroDiario, string dataRegistroDiario)
         {
             //variable token
             string token = SessionManager.Token;
 
             try
             {
-                //agregar tpken a la cabecera
+                // Crear el contenido de la solicitud HTTP
+                //StringContent content = new StringContent(dataRegistroDiario, Encoding.UTF8, "application/json");
+                // Enviar la solicitud HTTP POST
+                //HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/registro-diario/egreso?id_registro=" + idRegistroDiario, content);
+
+                //return httpResponse;
+
+                //
+                // Agregar el token en los headers
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 // Crear el contenido de la solicitud HTTP
                 StringContent content = new StringContent(dataRegistroDiario, Encoding.UTF8, "application/json");
+
                 // Enviar la solicitud HTTP POST
                 HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/registro-diario/egreso?id_registro=" + idRegistroDiario, content);
 
-                return httpResponse;
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
 
-            }
+                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
 
-            
+                    if (dataRespuesta.Affected > 0)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        return (false, "No se pudo editar el registro");
+                    }
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error en la edición: {mensaje}");
+                }
+
+            }            
             catch (HttpRequestException httpRequestException)
             {
                 // Capturar errores de la solicitud HTTP

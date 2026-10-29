@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.Login.Datos;
 using CapaPresentacion.Validaciones.Login.ValidacionLogin;
 using CommonCache;
@@ -28,6 +29,12 @@ namespace CapaPresentacion
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            //// Ajustar el tamaño del formulario            
+            FormularioAyudas.AjustarFormulario(this);
         }
 
         private async void btnAcceder_Click(object sender, EventArgs e)
@@ -95,5 +102,7 @@ namespace CapaPresentacion
             
             Application.Exit();
         }
+
+        
     }
 }

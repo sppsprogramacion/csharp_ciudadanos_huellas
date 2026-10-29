@@ -64,8 +64,8 @@ namespace CapaPresentacion
             List<DOrganismoDestino> listaOrganismoDestino = await nOrganismoDestino.retornarOrganismoDestinoListaxUsuario(1);
             cmbOrganismoDestino.DataSource = listaOrganismoDestino;
 
-            dtpFechaRegistroDiario.Format = DateTimePickerFormat.Custom;
-            dtpFechaRegistroDiario.CustomFormat = "dd-MM-yyyy HH:mm";
+            //dtpFechaRegistroDiario.Format = DateTimePickerFormat.Custom;
+            //dtpFechaRegistroDiario.CustomFormat = "dd-MM-yyyy HH:mm";
 
         }
         private void Limpiar()
@@ -267,11 +267,11 @@ namespace CapaPresentacion
                     //MessageBox.Show("Hola Mundo");
                     CrearTicket ticket = new CrearTicket();
                     ticket.espacio1_en_blanco = " ";
-                    ticket.fecha_registro = Convert.ToString(dtpFechaRegistroDiario.Value);
-                    ticket.nombre_ciudadano = "Nombre:" + " " + txtNombreCiudadano.Text;
-                    ticket.motivo_atencion = "Motivo:" + " " + cmbMotivoAtencion.Text;
-                    ticket.sector = "Sector:" + " " + cmbSector.Text;
-                    ticket.nombre_interno = "Interno:" + " " + txtBuscarInternos.Text;
+                    ticket.fecha_registro = registroDiario.fecha_ingreso.ToShortDateString();
+                    ticket.nombre_ciudadano = "Nombre: "  + txtNombreCiudadano.Text;
+                    ticket.motivo_atencion = "Motivo: " + cmbMotivoAtencion.Text;
+                    ticket.sector = "Sector: " + cmbSector.Text;
+                    ticket.nombre_interno = "Interno: " + txtBuscarInternos.Text;
                     ticket.espacio2_en_blanco = " ";
                     //ticket.logotipo = pictureBox1.Image;
                     ticket.imprimir(ticket);
@@ -281,7 +281,6 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show("Revisar codigo");
                     MessageBox.Show(errorResponseRegistroDiario, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     //dgvListadoInternos.DataSource = listaAbogadoInterno;
                 }
@@ -417,6 +416,172 @@ namespace CapaPresentacion
 
 
             dgvCiudadanosRegistroDiario.DataSource = datosFiltrados;
+        }
+
+        private async void btnIngresos_Click(object sender, EventArgs e)
+        {
+            if (this.txtIdCiudadanoIngreso.Text == string.Empty)
+            {
+                MessageBox.Show("Debe esperar que cargue los datos del ciudadano", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+
+            }
+            else
+            {
+                NRegistroDiario nRegistroDiario = new NRegistroDiario();
+
+                this.Enabled = false;
+                (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.RetornarListaXCiudadano(Convert.ToInt32(this.txtIdCiudadanoIngreso.Text));
+                this.Enabled = true;
+
+                if (listaRegistroDiario == null)
+                {
+                    MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                NParentesco nInterno = new NParentesco();
+                //List<DParentesco> listaParentescos = new List<DParentesco>();
+                (List<DParentesco> listaParentescos, string errorResponseParentesco) = await nInterno.retornarListaParentesco();
+
+                var datosFiltrados = listaRegistroDiario
+                .Select(c => new
+                {
+                    Ingreso = c.fecha_ingreso,
+                    HoraIngreso = c.hora_ingreso,
+                    HoraEgreso = c.hora_egreso,
+                    TipoAtencion = c.tipo_atencion.tipo_atencion,
+                    TipoAcceso = c.tipo_acceso.tipo_acceso,
+                    SectorDestino = c.sector_destino.sector_destino,
+                    MotivoAtencion = c.motivo_atencion.motivo_atencion,
+                    Interno = c.interno,
+                    Observacion = c.observaciones,
+                    Organismo = c.organismo.organismo,
+                    Usuario = c.usuario.apellido + " " + c.usuario.nombre
+
+                })
+                .ToList();
+
+                dtgResultados.DataSource = datosFiltrados;
+
+            }
+        }
+
+        private async void btnProhibiciones_Click(object sender, EventArgs e)
+        {
+            if (this.txtIdCiudadanoIngreso.Text == string.Empty)
+            {
+                MessageBox.Show("Debe esperar que cargue los datos del ciudadano", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            NProhibicionVisita nProhibicionVisita = new NProhibicionVisita();
+
+            this.Enabled = false;
+            (List<DProhibicionVisita> listaProhibicionesVisita, string errorResponse) = await nProhibicionVisita.RetornarListaProhibicionesVisita(Convert.ToInt32(txtIdCiudadanoIngreso.Text));
+            this.Enabled = true;
+
+
+            if (listaProhibicionesVisita == null)
+            {
+                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaProhibicionesVisita
+                .Select(c => new
+                {
+                    Id = c.id_prohibicion_visita,
+                    Disposicion = c.disposicion,
+                    Detalle = c.detalle,
+                    FechaInicio = c.fecha_inicio,
+                    FechaFin = c.fecha_fin,
+                    FechaProhibicion = c.fecha_prohibicion,
+                    Organismo = c.organismo.organismo,
+                    Prohibida = c.vigente,
+                    TipoLevantamiento = c.tipo_levantamiento,
+                    Anulado = c.anulado
+
+                })
+                .ToList();
+
+            dtgResultados.DataSource = datosfiltrados;
+
+            if (listaProhibicionesVisita.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+
+                dtgResultados.Columns[2].Width = 300;
+            }
+
+            foreach (DataGridViewRow row in dtgResultados.Rows)
+            {
+                if (row.Cells["Prohibida"].Value != null && Convert.ToBoolean(row.Cells["Prohibida"].Value) == true)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Orange; // Cambiar color de fondo
+                    row.DefaultCellStyle.ForeColor = Color.Black;    // Cambiar color del texto
+                }
+
+                if (row.Cells["Anulado"].Value != null && Convert.ToBoolean(row.Cells["Anulado"].Value) == true)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Black; // Cambiar color de fondo
+                    row.DefaultCellStyle.ForeColor = Color.White;    // Cambiar color del texto
+                }
+            }
+        }
+
+        private async void btnCategorias_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Boton nuevo");
+            if (this.txtIdCiudadanoIngreso.Text == string.Empty)
+            {
+                MessageBox.Show("Debe esperar que cargue los datos del ciudadano", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            NCiuddanosCategorias nCiudadanosCategorias = new NCiuddanosCategorias();
+
+            this.Enabled = false;
+            (List<DCiudadanosCategorias> listaCiudadanosCategorias, string errorResponse) = await nCiudadanosCategorias.retornarCiudadanosCategoriasVigentesXCiudadano(Convert.ToInt32(txtIdCiudadanoIngreso.Text));
+            this.Enabled = true;
+
+            if (listaCiudadanosCategorias == null)
+            {
+                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var datosFiltrados = listaCiudadanosCategorias
+                .Select(c => new
+                {
+                    IdCategoriaCiudadano = c.id_ciudadano_categoria,
+                    Categoria = c.categoria_ciudadano.categoria_ciudadano,
+                    FechaCarga = c.fecha_carga,
+                    OrganismoCarga = c.organismo.organismo,
+                    UsuarioCarga = c.usuario.apellido + " " + c.usuario.nombre
+
+                })
+                .ToList();
+
+            dtgResultados.DataSource = datosFiltrados;
+
+            if (listaCiudadanosCategorias.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+
+                dtgResultados.Columns[1].Width = 150;
+                dtgResultados.Columns[3].Width = 150;
+                dtgResultados.Columns[4].Width = 150;
+            }
         }
     }
 }

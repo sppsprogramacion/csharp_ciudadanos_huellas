@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.AdministrarCiudadano.Datos;
 using CapaPresentacion.Validaciones.AdministrarCiudadano.ValidacionCiudadano;
 using CapaPresentacion.Validaciones.NuevoCiudadano.Datos;
@@ -27,14 +28,25 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        private void frmSalidaCiudadano_Load(object sender, EventArgs e)
+        {
+            //// Ajustar el tamaño del formulario            
+            FormularioAyudas.AjustarFormulario(this);
+
+        }
+
         private async void btnBuscarApellido_Click(object sender, EventArgs e)
         {
             //limpiar errores de provider
             errorProvider.Clear();
 
-            NRegistroDiario nRegistroDiario = new NRegistroDiario();
-            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFecha.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:MM:ss"), this.dtpHoraFin.Value.ToString("HH:MM:ss"));
+            txtIdRegistroDiario.Text = string.Empty;
+            txtNombre.Text = string.Empty;
 
+            NRegistroDiario nRegistroDiario = new NRegistroDiario();
+            this.Enabled = false;
+            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFecha.Value.ToString("yyyy-MM-dd"), this.dtpFecha.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:MM:ss"), this.dtpHoraFin.Value.ToString("HH:MM:ss"));
+            this.Enabled = true;
 
             if (listaRegistroDiario == null)
             {
@@ -68,7 +80,7 @@ namespace CapaPresentacion
 
             if (listaRegistroDiario.Count == 0)
             {
-                MessageBox.Show("No se encontraron registros", "Restrición Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se encontraron registros", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -80,7 +92,7 @@ namespace CapaPresentacion
 
         }
 
-        private async void dgvListaCiudadanos_KeyDown(object sender, KeyEventArgs e)
+        private void dgvListaCiudadanos_KeyDown(object sender, KeyEventArgs e)
         {
             //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
             if (e.KeyCode == Keys.Enter)
@@ -93,18 +105,17 @@ namespace CapaPresentacion
                     int idCiudadano;
 
                     idCiudadano = Convert.ToInt32(this.dgvListaRegistroDiario.CurrentRow.Cells["idRegistroDiario"].Value);
-
-                   
-
+                                    
                     this.txtIdRegistroDiario.Text = idCiudadano.ToString();
-                    MessageBox.Show("Registro seleccionado correctamente"); 
+                    txtNombre.Text = this.dgvListaRegistroDiario.CurrentRow.Cells["Nombre"].Value.ToString();
+                    MessageBox.Show("Registro seleccionado correctamente", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information); 
                    
 
 
                 }//fin if
                 else
                 {
-                    MessageBox.Show("Debe seleccionar el registro en la grilla.");
+                    MessageBox.Show("Debe seleccionar el registro en la grilla.", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
             }
@@ -114,36 +125,14 @@ namespace CapaPresentacion
         {
             if (this.txtIdRegistroDiario.Text == string.Empty)
             {
-                MessageBox.Show("Debe seleccionar un ciudadano de la lista");
+                MessageBox.Show("Debe seleccionar un ciudadano de la lista", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             else
             {
                 NRegistroDiario nRegistroDiario = new NRegistroDiario();
 
-                //limpiar errores de provider
-                //errorProvider.Clear();
-
-                /*//validacion de formulario
-                var datosFormulario = new CiudadanoDatos
-                {
-                    txtDetalleCategoriaQuitar = txtDetalleCategoriaQuitar.Text,
-                };
-
-                var validator = new QuitarCategoriaDelCiudadano();
-                var result = validator.Validate(datosFormulario);
-
-                if (!result.IsValid)
-                {
-                    MessageBox.Show("Complete correctamente los campos del formulario", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    foreach (var failure in result.Errors)
-                    {
-                        Control control = Controls.Find(failure.PropertyName, true)[0];
-                        errorProvider.SetError(control, failure.ErrorMessage);
-                    }
-                    return;
-                }
-                //fin validacion...........................*/
+                
 
                 var data = new
                 {                    
@@ -159,15 +148,17 @@ namespace CapaPresentacion
 
                 try
                 {
-                    HttpResponseMessage httpResponse = await nRegistroDiario.crearEgresoRegistroDiario(Convert.ToInt32(txtIdRegistroDiario.Text), dataRegistroDiario);
+                    (bool respuestaEditar, string errorEditarResponse) = await nRegistroDiario.crearEgresoRegistroDiario(Convert.ToInt32(txtIdRegistroDiario.Text), dataRegistroDiario);
 
-                    if (httpResponse.IsSuccessStatusCode)
+                    if (respuestaEditar)
                     {
-                        var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
                         MessageBox.Show("Se estableció la hora correctamente", "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        txtIdRegistroDiario.Text = string.Empty;
+                        txtNombre.Text = string.Empty;
 
-                        (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFecha.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:MM:ss"), this.dtpHoraFin.Value.ToString("HH:MM:ss"));
+
+                        (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFecha.Value.ToString("yyyy-MM-dd"), this.dtpFecha.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:MM:ss"), this.dtpHoraFin.Value.ToString("HH:MM:ss"));
 
 
                         if (listaRegistroDiario == null)
@@ -202,7 +193,7 @@ namespace CapaPresentacion
 
                         if (listaRegistroDiario.Count == 0)
                         {
-                            MessageBox.Show("No se encontraron registros", "Restrición Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No se encontraron registros", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         else
@@ -215,9 +206,8 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        string errorMessage = await httpResponse.Content.ReadAsStringAsync();
-                        MessageBox.Show("No se pudo editar el registro.");
-                        MessageBox.Show($"Error de la API: {errorMessage}", $"Error {httpResponse.StatusCode}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(errorEditarResponse, "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        
                     }
 
                 }
@@ -229,5 +219,7 @@ namespace CapaPresentacion
 
             }
         }
+
+       
     }
 }

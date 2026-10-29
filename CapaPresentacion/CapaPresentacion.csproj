@@ -471,6 +471,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_spps2.ico" />
+    <None Include="Resources\usuario2.png" />
     <None Include="Resources\persona-icono.png" />
     <None Include="Resources\buscar_identidad_29x29.png" />
     <None Include="Resources\ver_novedades.png" />

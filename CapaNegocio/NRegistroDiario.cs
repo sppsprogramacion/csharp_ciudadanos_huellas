@@ -37,11 +37,11 @@ namespace CapaNegocio
         //FIN RETORNAR LISTA POR CIUDADANO
 
         //RETORNAR LISTA REGISTRO DIARIO POR FECHA
-        public async Task<(List<DRegistroDiario>, string error)> retornarListaRegistroDiario(string fecha_ingreso, string hora_inicio, string hora_fin)
+        public async Task<(List<DRegistroDiario>, string error)> retornarListaRegistroDiario(string fecha_inicio, string fecha_fin, string hora_inicio, string hora_fin)
         {
             IRegistroDiarioDao registroDiarioDao = new RegistroDiarioDaoImpl();
 
-            (List<DRegistroDiario> listaRegsitroDiario, string errorResponse) = await registroDiarioDao.retornarListaRegistroDiario(fecha_ingreso, hora_inicio, hora_fin);
+            (List<DRegistroDiario> listaRegsitroDiario, string errorResponse) = await registroDiarioDao.retornarListaRegistroDiario(fecha_inicio, fecha_fin, hora_inicio, hora_fin);
 
 
             return (listaRegsitroDiario, errorResponse);
@@ -61,14 +61,14 @@ namespace CapaNegocio
         //FIN RETORNAR LISTA PENDIENTE DE SALIDA..................................
 
         //DAR SALIDA A CIDADANOS 
-       public async Task<HttpResponseMessage> crearEgresoRegistroDiario(int idRegistroDiario, string dataRegistroDiario)
+       public async Task<(bool, string error)> crearEgresoRegistroDiario(int idRegistroDiario, string dataRegistroDiario)
 
         {
             IRegistroDiarioDao registroDiarioDao = new RegistroDiarioDaoImpl();
 
-            HttpResponseMessage registroDiarioResponse = await registroDiarioDao.crearEgresoRegistroDiario(idRegistroDiario, dataRegistroDiario);
+            (bool registroDiarioResponse, string error)  = await registroDiarioDao.crearEgresoRegistroDiario(idRegistroDiario, dataRegistroDiario);
 
-            return registroDiarioResponse;
+            return (registroDiarioResponse, error);
 
         }
         //FIN DAR SALIDA A CIUDADANOS

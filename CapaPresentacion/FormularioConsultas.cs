@@ -39,13 +39,20 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        private void FormularioConsultas_Load(object sender, EventArgs e)
+        {
+            //// Ajustar el tamaño del formulario            
+            FormularioAyudas.AjustarFormulario(this);
+
+        }
+
         private async void btnImprimirReporte_Click(object sender, EventArgs e)
         {
             NRegistroDiario nRegistroDiario = new NRegistroDiario();
             DRegistroDiario dRegistroDiario = new DRegistroDiario();
 
            
-            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFechaInicio.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:mm:ss"), this.dtpHoraFin.Value.ToString("HH:mm:ss"));
+            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFechaInicio.Value.ToString("yyyy-MM-dd"), this.dtpFechaFin.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:mm:ss"), this.dtpHoraFin.Value.ToString("HH:mm:ss"));
             //MessageBox.Show("la fecha que ingreso es: " + " " + this.dtpFechaInicio.Value.ToString("yyyy-MM-dd"));
             //MessageBox.Show("la de ingreso es: " + " " + this.dtpHoraInicio.Value.ToString("HH:mm:ss"));
             //MessageBox.Show("la hora de salida es: " + " " + this.dtpHoraFin.Value.ToString("HH:mm:ss"));
@@ -177,7 +184,7 @@ namespace CapaPresentacion
         private async void btnVerRegistroDiario_Click(object sender, EventArgs e)
         {
             NRegistroDiario nRegistroDiario = new NRegistroDiario();
-            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFechaInicio.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:mm:ss"), this.dtpHoraFin.Value.ToString("HH:mm:ss"));
+            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaRegistroDiario(this.dtpFechaInicio.Value.ToString("yyyy-MM-dd"), this.dtpFechaFin.Value.ToString("yyyy-MM-dd"), this.dtpHoraInicio.Value.ToString("HH:mm:ss"), this.dtpHoraFin.Value.ToString("HH:mm:ss"));
             
 
             if (listaRegistroDiario == null)
@@ -189,13 +196,14 @@ namespace CapaPresentacion
             var datosFiltrados = listaRegistroDiario
             .Select(c => new
             {
+                Nombre = c.ciudadano.apellido + " " + c.ciudadano.nombre,
+                Fecha = c.fecha_ingreso.ToShortDateString(),
                 Ingreso = c.hora_ingreso,
                 Egreso = c.hora_egreso,
                 Destino = c.organismo.organismo,
                 División = c.sector_destino.sector_destino,
                 TipoAcceso = c.tipo_atencion.tipo_atencion,
                 Motivo = c.motivo_atencion.motivo_atencion,
-                Nombre = c.ciudadano.apellido + " " + c.ciudadano.nombre,
                 Sexo = c.ciudadano.sexo.sexo,
                 Dni = c.ciudadano.dni,
                 Interno = c.interno,
@@ -220,14 +228,11 @@ namespace CapaPresentacion
             else
             {
 
-                dgvRegistroDiario.Columns[1].Width = 200;
+                dgvRegistroDiario.Columns[0].Width = 200;
             }
         }
 
-        private void FormularioConsultas_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private async void btnVerListadoPendiente_Click(object sender, EventArgs e)
         {
@@ -244,13 +249,14 @@ namespace CapaPresentacion
             var datosFiltrados = listaRegistroDiario
             .Select(c => new
             {
+                Nombre = c.ciudadano.apellido + " " + c.ciudadano.nombre,
+                Fecha = c.fecha_ingreso.ToShortDateString(),
                 Ingreso = c.hora_ingreso,
                 Egreso = c.hora_egreso,
                 Destino = c.organismo.organismo,
                 División = c.sector_destino.sector_destino,
                 TipoAcceso = c.tipo_atencion.tipo_atencion,
                 Motivo = c.motivo_atencion.motivo_atencion,
-                Nombre = c.ciudadano.apellido + " " + c.ciudadano.nombre,
                 Sexo = c.ciudadano.sexo.sexo,
                 Dni = c.ciudadano.dni,
                 Interno = c.interno,
@@ -272,7 +278,7 @@ namespace CapaPresentacion
             else
             {
 
-                //dgvRegistroDiario.Columns[1].Width = 200;
+                dgvRegistroDiario.Columns[0].Width = 200;
             }
         }
     }

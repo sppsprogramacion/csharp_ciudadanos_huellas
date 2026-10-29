@@ -21,7 +21,7 @@ namespace CapaPresentacion.Reportes.AdministrarRegistroDiario
         {
             MemoryStream ms = new MemoryStream();
 
-            Document doc = new Document(PageSize.A4.Rotate(), 50, 50, 50, 50);
+            Document doc = new Document(PageSize.A4.Rotate(), 50, 50, 30, 50);
 
             PdfWriter writer = PdfWriter.GetInstance(doc, ms);
             writer.CloseStream = false; // evita cerrar el MemoryStream al cerrar el documento
@@ -34,19 +34,17 @@ namespace CapaPresentacion.Reportes.AdministrarRegistroDiario
             var fuenteNormal = FontFactory.GetFont(FontFactory.HELVETICA, 6, BaseColor.BLACK);
             var fuenteEncabezado = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8, BaseColor.BLACK);
 
-            //logo encabezado
-            //string rutaImagen = Path.Combine(Application.StartupPath, "Resources/Img-reportes/", "logo_spps2.png");
-            //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(rutaImagen);
 
             // Cargar directamente desde Resources
-            System.Drawing.Image logoImg = Properties.Resources.logo_spps2;
+            //System.Drawing.Image logoImg = Properties.Resources.logo_spps2;
             // Convertir a iTextSharp Image
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logoImg, System.Drawing.Imaging.ImageFormat.Png);
+            //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logoImg, System.Drawing.Imaging.ImageFormat.Png);
+            //logo.ScaleAbsolute(40, 40);
+            //logo.SetAbsolutePosition(150, 770);
+            //doc.Add(logo);
+            //doc.Add(new Paragraph(" "));
+
             string organismo = CurrentUser.Instance.organismo.ToUpper();
-            logo.ScaleAbsolute(40, 40);
-            logo.SetAbsolutePosition(150, 770);
-            doc.Add(logo);
-            doc.Add(new Paragraph(" "));
 
             // Crear tabla con 1 columnas
             PdfPTable tablaEncabezado = new PdfPTable(1);
@@ -104,12 +102,13 @@ namespace CapaPresentacion.Reportes.AdministrarRegistroDiario
             doc.Add(new Paragraph(" "));
 
             
-            PdfPTable tablaRegistrodiario = new PdfPTable(12);
+            PdfPTable tablaRegistrodiario = new PdfPTable(13);
             tablaRegistrodiario.WidthPercentage = 110;
-            tablaRegistrodiario.SetWidths(new float[] { 1.2f, 0.5f, 0.5f, 0.6f, 0.6f, 1.1f, 1.1f, 0.8f, 1.8f, 1.1f, 1.6f, 1.1f });
+            tablaRegistrodiario.SetWidths(new float[] { 1.2f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 1.1f, 1.1f, 0.7f, 1.5f, 1.1f, 1.6f, 1.0f });
             tablaRegistrodiario.AddCell(new Paragraph("Nombre", fuenteEncabezado));
             tablaRegistrodiario.AddCell(new Paragraph("Dni", fuenteEncabezado));
             tablaRegistrodiario.AddCell(new Paragraph("Sexo", fuenteEncabezado));
+            tablaRegistrodiario.AddCell(new Paragraph("Fecha", fuenteEncabezado));
             tablaRegistrodiario.AddCell(new Paragraph("Ingreso", fuenteEncabezado));
             tablaRegistrodiario.AddCell(new Paragraph("Egreso", fuenteEncabezado)); 
             tablaRegistrodiario.AddCell(new Paragraph("Destino", fuenteEncabezado));
@@ -126,6 +125,7 @@ namespace CapaPresentacion.Reportes.AdministrarRegistroDiario
                 tablaRegistrodiario.AddCell(new Paragraph(registroDiario.ciudadano.apellido + " " + registroDiario.ciudadano.nombre, fuenteNormal));
                 tablaRegistrodiario.AddCell(new Paragraph(registroDiario.ciudadano.dni.ToString(), fuenteNormal));
                 tablaRegistrodiario.AddCell(new Paragraph(registroDiario.ciudadano.sexo.sexo.ToString(), fuenteNormal));
+                tablaRegistrodiario.AddCell(new Paragraph(registroDiario.fecha_ingreso.ToShortDateString(), fuenteNormal));
                 tablaRegistrodiario.AddCell(new Paragraph(registroDiario.hora_ingreso.ToString(), fuenteNormal));
                 DateTime? fechaNula = Convert.ToDateTime(registroDiario.hora_egreso);
                 DateTime fecha_Null = new DateTime(01, 01, 0001, 00, 00, 00);
