@@ -211,7 +211,7 @@ namespace CapaPresentacion
         private async void CargarVisitas()
         {
             NCiudadano nCiudadano = new NCiudadano();
-            (List<DCiudadano> listaCiudadanos, string errorResponse) = await nCiudadano.RetornarListaCiudadanosXApellido(txtBusqueda.Text);
+            (List<DCiudadano> listaCiudadanos, string errorResponse) = await nCiudadano.RetornarListaCiudadanosXapellido(txtBusqueda.Text);
 
             if (listaCiudadanos == null)
             {

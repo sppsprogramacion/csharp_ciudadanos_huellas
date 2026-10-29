@@ -127,6 +127,7 @@
             // pictureFoto
             // 
             this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
             this.pictureFoto.Location = new System.Drawing.Point(822, 19);
             this.pictureFoto.Name = "pictureFoto";
             this.pictureFoto.Size = new System.Drawing.Size(122, 133);

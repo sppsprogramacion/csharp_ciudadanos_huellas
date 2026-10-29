@@ -44,6 +44,13 @@ namespace CapaDatos
         public string discapacidad_detalle { get; set; }
         public int organismo_alta_id { get; set; }
         public string novedad_detalle { get; set; }
-      
+
+
+        public List<DEntradaSalida> entradas_salidas { get; set; }
+        public List<DExcepcionIngresoVisita> excepciones_visita { get; set; }
+        //public List<> menores_acargo { get; set; }
+        public List<DProhibicionVisita> prohibiciones_visita { get; set; }
+        public List<DVisitaInterno> visitas_internos { get; set; }
+
     }
 }

@@ -36,6 +36,8 @@ namespace CapaNegocio
         }
         //FIN RETORNAR CIUDADANOS POR APELLIDO..................................
 
+        
+
         //RETORNAR CIUDADANOS X APELLIDO
         public async Task<(List<DCiudadano>, string error)> RetornarListaCiudadanosConEdadXapellido(string apellido)
         {
