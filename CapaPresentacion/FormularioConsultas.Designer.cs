@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioConsultas));
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.btnVerListadoPendiente = new System.Windows.Forms.Button();
             this.btnVerRegistroDiario = new System.Windows.Forms.Button();
             this.btnImprimirReporte = new System.Windows.Forms.Button();
@@ -41,8 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRegistroDiario = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroDiario)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.dtpFechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(139, 56);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(9, 56);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(125, 20);
             this.dtpFechaInicio.TabIndex = 0;
@@ -62,7 +62,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dtpFechaFin);
-            this.panel1.Controls.Add(this.btnVerListadoPendiente);
             this.panel1.Controls.Add(this.btnVerRegistroDiario);
             this.panel1.Controls.Add(this.btnImprimirReporte);
             this.panel1.Controls.Add(this.dtpHoraFin);
@@ -72,10 +71,30 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtpFechaInicio);
-            this.panel1.Location = new System.Drawing.Point(7, 2);
+            this.panel1.Location = new System.Drawing.Point(7, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 192);
+            this.panel1.Size = new System.Drawing.Size(371, 192);
             this.panel1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(159, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Fecha fin:";
+            // 
+            // dtpFechaFin
+            // 
+            this.dtpFechaFin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(162, 56);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(125, 20);
+            this.dtpFechaFin.TabIndex = 10;
             // 
             // btnVerListadoPendiente
             // 
@@ -84,7 +103,7 @@
             this.btnVerListadoPendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerListadoPendiente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerListadoPendiente.Image")));
             this.btnVerListadoPendiente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerListadoPendiente.Location = new System.Drawing.Point(8, 139);
+            this.btnVerListadoPendiente.Location = new System.Drawing.Point(391, 154);
             this.btnVerListadoPendiente.Name = "btnVerListadoPendiente";
             this.btnVerListadoPendiente.Size = new System.Drawing.Size(217, 35);
             this.btnVerListadoPendiente.TabIndex = 9;
@@ -99,7 +118,7 @@
             this.btnVerRegistroDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerRegistroDiario.Image = ((System.Drawing.Image)(resources.GetObject("btnVerRegistroDiario.Image")));
             this.btnVerRegistroDiario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerRegistroDiario.Location = new System.Drawing.Point(237, 139);
+            this.btnVerRegistroDiario.Location = new System.Drawing.Point(9, 149);
             this.btnVerRegistroDiario.Name = "btnVerRegistroDiario";
             this.btnVerRegistroDiario.Size = new System.Drawing.Size(186, 35);
             this.btnVerRegistroDiario.TabIndex = 8;
@@ -114,7 +133,7 @@
             this.btnImprimirReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirReporte.Image")));
             this.btnImprimirReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirReporte.Location = new System.Drawing.Point(424, 139);
+            this.btnImprimirReporte.Location = new System.Drawing.Point(199, 149);
             this.btnImprimirReporte.Name = "btnImprimirReporte";
             this.btnImprimirReporte.Size = new System.Drawing.Size(161, 35);
             this.btnImprimirReporte.TabIndex = 7;
@@ -126,7 +145,7 @@
             // 
             this.dtpHoraFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraFin.Location = new System.Drawing.Point(292, 108);
+            this.dtpHoraFin.Location = new System.Drawing.Point(162, 108);
             this.dtpHoraFin.Name = "dtpHoraFin";
             this.dtpHoraFin.Size = new System.Drawing.Size(125, 20);
             this.dtpHoraFin.TabIndex = 6;
@@ -135,7 +154,7 @@
             // 
             this.dtpHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(139, 108);
+            this.dtpHoraInicio.Location = new System.Drawing.Point(9, 108);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.Size = new System.Drawing.Size(125, 20);
             this.dtpHoraInicio.TabIndex = 5;
@@ -144,7 +163,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(289, 92);
+            this.label4.Location = new System.Drawing.Point(159, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 4;
@@ -154,7 +173,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 92);
+            this.label3.Location = new System.Drawing.Point(6, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 3;
@@ -164,7 +183,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 40);
+            this.label2.Location = new System.Drawing.Point(6, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 2;
@@ -173,41 +192,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(88, 4);
+            this.label1.Location = new System.Drawing.Point(4, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 29);
+            this.label1.Size = new System.Drawing.Size(273, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Imprimir Reporte Registro Diario ";
             // 
             // dgvRegistroDiario
             // 
             this.dgvRegistroDiario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistroDiario.Location = new System.Drawing.Point(11, 212);
+            this.dgvRegistroDiario.Location = new System.Drawing.Point(11, 202);
             this.dgvRegistroDiario.Name = "dgvRegistroDiario";
             this.dgvRegistroDiario.Size = new System.Drawing.Size(1194, 446);
             this.dgvRegistroDiario.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(289, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Fecha fin:";
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(292, 56);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(125, 20);
-            this.dtpFechaFin.TabIndex = 10;
             // 
             // FormularioConsultas
             // 
@@ -217,6 +216,7 @@
             this.ClientSize = new System.Drawing.Size(1248, 683);
             this.Controls.Add(this.dgvRegistroDiario);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnVerListadoPendiente);
             this.Name = "FormularioConsultas";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

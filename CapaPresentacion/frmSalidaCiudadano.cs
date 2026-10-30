@@ -33,6 +33,9 @@ namespace CapaPresentacion
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
+            //hora de incio
+            dtpHoraInicio.Value = new DateTime( DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 0, 0);
+
         }
 
         private async void btnBuscarApellido_Click(object sender, EventArgs e)
@@ -220,6 +223,52 @@ namespace CapaPresentacion
             }
         }
 
-       
+        private async void btnVerListadoPendiente_Click(object sender, EventArgs e)
+        {
+            NRegistroDiario nRegistroDiario = new NRegistroDiario();
+            (List<DRegistroDiario> listaRegistroDiario, string errorResponse) = await nRegistroDiario.retornarListaPendienteSalida();
+
+
+            if (listaRegistroDiario == null)
+            {
+                MessageBox.Show(errorResponse, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var datosFiltrados = listaRegistroDiario
+            .Select(c => new
+            {
+                IdRegistroDiario = c.id_resgistro_diario,
+                Nombre = c.ciudadano.apellido + " " + c.ciudadano.nombre,
+                Ingreso = c.hora_ingreso,
+                Egreso = c.hora_egreso,
+                Destino = c.organismo.organismo,
+                División = c.sector_destino.sector_destino,
+                TipoAcceso = c.tipo_atencion.tipo_atencion,
+                Motivo = c.motivo_atencion.motivo_atencion,
+                Sexo = c.ciudadano.sexo.sexo,
+                Dni = c.ciudadano.dni,
+                Interno = c.interno,
+                Obs = c.observaciones,
+                Operador = c.usuario.apellido + " " + c.usuario.nombre
+
+
+
+            })
+            .ToList();
+
+            dgvListaRegistroDiario.DataSource = datosFiltrados;
+
+            if (listaRegistroDiario.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros", "Atencion al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+
+                dgvListaRegistroDiario.Columns[1].Width = 200;
+            }
+        }
     }
 }

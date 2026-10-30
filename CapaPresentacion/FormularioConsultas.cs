@@ -44,7 +44,12 @@ namespace CapaPresentacion
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
+            //hora de incio
+            dtpHoraInicio.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 0, 0);
+
         }
+
+    
 
         private async void btnImprimirReporte_Click(object sender, EventArgs e)
         {
