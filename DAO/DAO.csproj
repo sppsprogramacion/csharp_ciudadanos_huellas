@@ -127,6 +127,7 @@
     <Compile Include="ITipoAcceso.cs" />
     <Compile Include="ITipoAtencion.cs" />
     <Compile Include="ITipoDefensorDao.cs" />
+    <Compile Include="IUsuarioDao.cs" />
     <Compile Include="IVisitaInternoDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -39,6 +39,17 @@ namespace CapaPresentacion
         public frmPrincipal()
         {
             InitializeComponent();
+
+            bool esAdmin = CurrentUser.Instance.roles != null && CurrentUser.Instance.roles.Contains("ciudadanoAdmin");
+
+            if (esAdmin)
+            {
+                btnAdministrarUsuarios.Visible = true;
+            }
+            else
+            {
+                btnAdministrarUsuarios.Visible = false;
+            }
         }
 
         private void btnAdministrar_Click(object sender, EventArgs e)
@@ -128,6 +139,20 @@ namespace CapaPresentacion
             FormSabanaBuscar formInternosBuscar = new FormSabanaBuscar();
 
             formInternosBuscar.ShowDialog();
+        }
+
+        private void btnAdministrarUsuarios_Click(object sender, EventArgs e)
+        {
+
+            FormAdministrarUsuarios formAdministrarUsuarios = new FormAdministrarUsuarios();
+            formAdministrarUsuarios.ShowDialog();
+        }
+
+        private void picUsuario_Click(object sender, EventArgs e)
+        {
+            FormCuentaUsuario formCuentaUsuario = new FormCuentaUsuario();
+
+            formCuentaUsuario.ShowDialog();
         }
     }
 }

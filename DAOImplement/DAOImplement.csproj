@@ -131,6 +131,7 @@
     <Compile Include="TipoAccesoDaoImpl.cs" />
     <Compile Include="TipoAtencionDaoImpl.cs" />
     <Compile Include="TipoDefensorDaoImpl.cs" />
+    <Compile Include="UsuarioDaoImplement.cs" />
     <Compile Include="VisitaInternoDaoImpl.cs" />
   </ItemGroup>
   <ItemGroup>

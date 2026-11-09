@@ -126,6 +126,7 @@
     <Compile Include="NTipoAcceso.cs" />
     <Compile Include="NTipoAtencion.cs" />
     <Compile Include="NTipoDefensor.cs" />
+    <Compile Include="NUsuario.cs" />
     <Compile Include="NVisitaInterno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

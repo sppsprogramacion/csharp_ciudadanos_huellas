@@ -193,6 +193,18 @@
     <Compile Include="Biometria\FingerprintVerifier.cs" />
     <Compile Include="CrearReporte.cs" />
     <Compile Include="CrearTicket.cs" />
+    <Compile Include="FormAdministrarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministrarUsuarios.designer.cs">
+      <DependentUpon>FormAdministrarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCuentaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCuentaUsuario.designer.cs">
+      <DependentUpon>FormCuentaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormExcepcionesIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CiudadanoNuevo.resx">
       <DependentUpon>CiudadanoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdministrarUsuarios.resx">
+      <DependentUpon>FormAdministrarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCuentaUsuario.resx">
+      <DependentUpon>FormCuentaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExcepcionesIngreso.resx">
       <DependentUpon>FormExcepcionesIngreso.cs</DependentUpon>

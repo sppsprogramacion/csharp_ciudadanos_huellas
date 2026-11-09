@@ -40,10 +40,11 @@
             this.btnSaban = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
+            this.btnAdministrarUsuarios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -199,23 +200,39 @@
             this.lblUsuario.TabIndex = 80;
             this.lblUsuario.Text = "label1";
             // 
-            // pictureBox1
+            // picUsuario
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.usuario2;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 509);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
+            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.usuario2;
+            this.picUsuario.Location = new System.Drawing.Point(8, 509);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Size = new System.Drawing.Size(25, 25);
+            this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUsuario.TabIndex = 79;
+            this.picUsuario.TabStop = false;
+            this.picUsuario.Click += new System.EventHandler(this.picUsuario_Click);
+            // 
+            // btnAdministrarUsuarios
+            // 
+            this.btnAdministrarUsuarios.BackColor = System.Drawing.Color.White;
+            this.btnAdministrarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdministrarUsuarios.Location = new System.Drawing.Point(70, 342);
+            this.btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
+            this.btnAdministrarUsuarios.Size = new System.Drawing.Size(202, 65);
+            this.btnAdministrarUsuarios.TabIndex = 16;
+            this.btnAdministrarUsuarios.Text = "Administrar usuarios";
+            this.btnAdministrarUsuarios.UseVisualStyleBackColor = false;
+            this.btnAdministrarUsuarios.Click += new System.EventHandler(this.btnAdministrarUsuarios_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 542);
+            this.Controls.Add(this.btnAdministrarUsuarios);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picUsuario);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSaban);
             this.Controls.Add(this.btnListaExcepciones);
@@ -229,7 +246,7 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,6 +265,7 @@
         private System.Windows.Forms.Button btnSaban;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picUsuario;
+        private System.Windows.Forms.Button btnAdministrarUsuarios;
     }
 }
