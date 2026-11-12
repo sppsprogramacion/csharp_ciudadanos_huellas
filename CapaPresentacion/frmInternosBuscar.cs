@@ -72,6 +72,9 @@ namespace CapaPresentacion
                     id_interno = c.id_interno,
                     Interno = c.apellido + " " + c.nombre,
                     Prontuario = c.prontuario,
+                    NumAlc1 = c.num_alc_1,
+                    NumAlc2 = c.num_alc_2,
+                    NumAlc3 = c.num_alc_3,
                     Sexo = c.sexo.sexo
 
                 })
